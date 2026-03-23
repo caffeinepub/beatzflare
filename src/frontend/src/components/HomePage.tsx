@@ -1,6 +1,5 @@
 import { genres, songs } from "@/data/mockData";
 import type { Song } from "@/data/mockData";
-import { Play } from "lucide-react";
 import { motion } from "motion/react";
 import GenreCard from "./GenreCard";
 import HeroSection from "./HeroSection";
@@ -17,6 +16,8 @@ interface HomePageProps {
   onPrev: () => void;
   onGenre: (genreId: string) => void;
   onExplore: () => void;
+  starredSongs: Set<string>;
+  onToggleStar: (songId: string) => void;
 }
 
 export default function HomePage({
@@ -29,12 +30,45 @@ export default function HomePage({
   onPrev,
   onGenre,
   onExplore,
+  starredSongs,
+  onToggleStar,
 }: HomePageProps) {
   const justForYou = songs.slice(0, 10);
+  const favoriteSongs = songs.filter((s) => starredSongs.has(s.id));
 
   return (
     <div className="pb-24">
       <HeroSection onExplore={onExplore} />
+
+      {/* Favorites section */}
+      {favoriteSongs.length > 0 && (
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
+          <motion.h2
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="text-xl font-black uppercase tracking-widest text-white mb-6"
+          >
+            ⭐ My Favorites
+          </motion.h2>
+          <div
+            className="flex gap-4 overflow-x-auto pb-2 scrollbar-hide"
+            data-ocid="favorites.list"
+          >
+            {favoriteSongs.map((song, i) => (
+              <div key={song.id} className="flex-shrink-0 w-40">
+                <SongCard
+                  song={song}
+                  onPlay={onPlay}
+                  index={i + 1}
+                  isStarred={true}
+                  onToggleStar={onToggleStar}
+                />
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* Featured Genres */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 py-12">
@@ -87,6 +121,8 @@ export default function HomePage({
                   song={song}
                   onPlay={onPlay}
                   index={i + 1}
+                  isStarred={starredSongs.has(song.id)}
+                  onToggleStar={onToggleStar}
                 />
               ))}
             </div>

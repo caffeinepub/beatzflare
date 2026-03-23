@@ -8,11 +8,18 @@ interface GenrePageProps {
   genreId: string;
   onBack: () => void;
   onPlay: (song: Song) => void;
+  starredSongs: Set<string>;
+  onToggleStar: (songId: string) => void;
 }
 
-export default function GenrePage({ genreId, onBack, onPlay }: GenrePageProps) {
+export default function GenrePage({
+  genreId,
+  onBack,
+  onPlay,
+  starredSongs,
+  onToggleStar,
+}: GenrePageProps) {
   const genre = genres.find((g) => g.id === genreId);
-  // Match by category field in the genre record, not by genreId directly
   const genreSongs = genre
     ? songs.filter((s) => s.category === genre.category)
     : [];
@@ -55,7 +62,14 @@ export default function GenrePage({ genreId, onBack, onPlay }: GenrePageProps) {
         data-ocid="genre.list"
       >
         {genreSongs.map((song, i) => (
-          <SongCard key={song.id} song={song} onPlay={onPlay} index={i + 1} />
+          <SongCard
+            key={song.id}
+            song={song}
+            onPlay={onPlay}
+            index={i + 1}
+            isStarred={starredSongs.has(song.id)}
+            onToggleStar={onToggleStar}
+          />
         ))}
         {genreSongs.length === 0 && (
           <div className="col-span-full text-center py-16 text-muted-foreground">

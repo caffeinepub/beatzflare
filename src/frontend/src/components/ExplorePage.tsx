@@ -7,9 +7,16 @@ import SongCard from "./SongCard";
 interface ExplorePageProps {
   onPlay: (song: Song) => void;
   onGenre: (genreId: string) => void;
+  starredSongs: Set<string>;
+  onToggleStar: (songId: string) => void;
 }
 
-export default function ExplorePage({ onPlay, onGenre }: ExplorePageProps) {
+export default function ExplorePage({
+  onPlay,
+  onGenre,
+  starredSongs,
+  onToggleStar,
+}: ExplorePageProps) {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 space-y-12">
       <div>
@@ -56,6 +63,8 @@ export default function ExplorePage({ onPlay, onGenre }: ExplorePageProps) {
                   song={song}
                   onPlay={onPlay}
                   index={i + 1}
+                  isStarred={starredSongs.has(song.id)}
+                  onToggleStar={onToggleStar}
                 />
               ))}
             </div>

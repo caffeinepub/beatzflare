@@ -23,6 +23,7 @@ export default function App() {
   const [volume, setVolume] = useState(75);
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+  const [starredSongs, setStarredSongs] = useState<Set<string>>(new Set());
   const progressRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const hasExternalMedia = !!(
@@ -86,6 +87,18 @@ export default function App() {
     setCurrentPage("Genre");
   };
 
+  const handleToggleStar = useCallback((songId: string) => {
+    setStarredSongs((prev) => {
+      const next = new Set(prev);
+      if (next.has(songId)) {
+        next.delete(songId);
+      } else {
+        next.add(songId);
+      }
+      return next;
+    });
+  }, []);
+
   const renderPage = () => {
     if (currentPage === "Genre" && currentGenre) {
       return (
@@ -93,11 +106,20 @@ export default function App() {
           genreId={currentGenre}
           onBack={() => handleNavigate("Home")}
           onPlay={handlePlay}
+          starredSongs={starredSongs}
+          onToggleStar={handleToggleStar}
         />
       );
     }
     if (currentPage === "Explore" || currentPage === "Charts") {
-      return <ExplorePage onPlay={handlePlay} onGenre={handleGenre} />;
+      return (
+        <ExplorePage
+          onPlay={handlePlay}
+          onGenre={handleGenre}
+          starredSongs={starredSongs}
+          onToggleStar={handleToggleStar}
+        />
+      );
     }
     return (
       <HomePage
@@ -110,6 +132,8 @@ export default function App() {
         onPrev={handlePrev}
         onGenre={handleGenre}
         onExplore={() => handleNavigate("Explore")}
+        starredSongs={starredSongs}
+        onToggleStar={handleToggleStar}
       />
     );
   };

@@ -1,13 +1,21 @@
 import type { Song } from "@/data/mockData";
-import { Play } from "lucide-react";
+import { Play, Star } from "lucide-react";
 
 interface SongCardProps {
   song: Song;
   onPlay: (song: Song) => void;
   index: number;
+  isStarred?: boolean;
+  onToggleStar?: (songId: string) => void;
 }
 
-export default function SongCard({ song, onPlay, index }: SongCardProps) {
+export default function SongCard({
+  song,
+  onPlay,
+  index,
+  isStarred = false,
+  onToggleStar,
+}: SongCardProps) {
   return (
     <button
       type="button"
@@ -26,6 +34,27 @@ export default function SongCard({ song, onPlay, index }: SongCardProps) {
             <Play className="w-4 h-4 text-primary-foreground fill-primary-foreground ml-0.5" />
           </div>
         </div>
+        {/* Star button */}
+        {onToggleStar && (
+          <button
+            type="button"
+            data-ocid={`song.toggle.${index}`}
+            onClick={(e) => {
+              e.stopPropagation();
+              onToggleStar(song.id);
+            }}
+            className="absolute top-2 right-2 w-7 h-7 rounded-full bg-black/50 flex items-center justify-center opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity hover:bg-black/70 z-10"
+            aria-label={
+              isStarred ? "Remove from favorites" : "Add to favorites"
+            }
+          >
+            <Star
+              className={`w-3.5 h-3.5 transition-colors ${
+                isStarred ? "fill-yellow-400 text-yellow-400" : "text-white/80"
+              }`}
+            />
+          </button>
+        )}
       </div>
 
       {/* Info */}
