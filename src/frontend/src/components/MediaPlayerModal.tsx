@@ -44,6 +44,24 @@ function getSoundCloudEmbedUrl(rawUrl: string, multiTrack: boolean): string {
   return `https://w.soundcloud.com/player/?url=${encodeURIComponent(url)}&auto_play=true&color=%23C9A84C&hide_related=true&show_comments=false&show_user=false&show_reposts=false&buying=false&sharing=false&download=false&show_playcount=false&show_teaser=false&visual=${multiTrack ? "true" : "false"}&show_artwork=${multiTrack ? "true" : "false"}&single_active=true`;
 }
 
+/** Category-specific artwork for each section */
+const CATEGORY_PHOTOS: Record<string, string> = {
+  "Masoom Sharma": "/assets/generated/masoom-sharma.dim_400x400.jpg",
+  "Sapna Chaudhary": "/assets/generated/sapna-chaudhary.dim_400x400.jpg",
+  "Renuka Panwar": "/assets/generated/renuka-panwar.dim_400x400.jpg",
+  "Haryanvi Hits": "/assets/generated/jaat-haryanvi.dim_400x400.jpg",
+  "Punjabi Hits": "/assets/generated/jatt-punjabi.dim_400x400.jpg",
+  "Bollywood Hits": "/assets/generated/bollywood-hits.dim_400x400.jpg",
+  "90s Hits": "/assets/generated/90s-hits.dim_400x400.jpg",
+  "Sad Songs": "/assets/generated/sad-songs.dim_400x400.jpg",
+  "Top 100": "/assets/generated/top-100.dim_400x400.jpg",
+  VVIP: "/assets/generated/vvip-section.dim_400x400.jpg",
+};
+
+const SONG_PHOTOS: Record<string, string> = {
+  ms_am1: "/assets/generated/masoom-sharma-real.dim_400x400.jpg",
+};
+
 const BARS: { id: string; h: number; dur: number }[] = [
   { id: "v-a", h: 3, dur: 0.6 },
   { id: "v-b", h: 6, dur: 0.65 },
@@ -87,6 +105,10 @@ export default function MediaPlayerModal({
 
   const playerHeight = multiTrack ? 450 : 166;
 
+  // Category artwork (song-specific first, then category)
+  const artwork =
+    SONG_PHOTOS[song.id] ?? CATEGORY_PHOTOS[song.category] ?? null;
+
   // Determine source label
   const sourceLabel =
     !song.soundcloudUrl && hasAudiomack
@@ -115,33 +137,72 @@ export default function MediaPlayerModal({
           className="relative w-full mx-4 max-w-[480px]"
           onClick={(e) => e.stopPropagation()}
         >
-          {/* Header */}
-          <div className="flex items-start justify-between mb-4 px-1">
-            <div className="flex flex-col gap-1">
-              <div className="flex items-center gap-2.5 flex-wrap">
-                <h2
-                  className="text-lg font-bold"
-                  style={{ color: "oklch(0.93 0.008 72)" }}
-                >
-                  {song.title}
-                </h2>
-                <span className="inline-flex items-center px-2 py-0.5 rounded-md bg-primary/15 border border-primary/35 text-primary text-xs font-black tracking-widest">
-                  BT
-                </span>
+          {/* Song artwork + header row */}
+          <div className="flex items-center gap-4 mb-4 px-1">
+            {/* Category / song image */}
+            {artwork && (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.85 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.4 }}
+                className="flex-shrink-0 w-16 h-16 rounded-xl overflow-hidden border-2 shadow-lg"
+                style={{
+                  borderColor: "oklch(0.74 0.135 70 / 0.45)",
+                  boxShadow: "0 0 20px oklch(0.74 0.135 70 / 0.25)",
+                }}
+              >
+                <img
+                  src={artwork}
+                  alt={song.category}
+                  className="w-full h-full object-cover"
+                />
+              </motion.div>
+            )}
+
+            <div className="flex-1 flex items-start justify-between gap-2 min-w-0">
+              <div className="flex flex-col gap-0.5 min-w-0">
+                <div className="flex items-center gap-2 flex-wrap">
+                  <h2
+                    className="text-base font-bold truncate"
+                    style={{ color: "oklch(0.93 0.008 72)" }}
+                  >
+                    {song.title}
+                  </h2>
+                  <span className="inline-flex items-center px-2 py-0.5 rounded-md bg-primary/15 border border-primary/35 text-primary text-[10px] font-black tracking-widest flex-shrink-0">
+                    BT
+                  </span>
+                </div>
+                <p className="text-sm text-muted-foreground truncate">
+                  {song.artist}
+                </p>
+                <div className="flex items-center gap-2 mt-0.5">
+                  <span
+                    className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full"
+                    style={{
+                      background: "oklch(0.74 0.135 70 / 0.12)",
+                      color: "oklch(0.74 0.135 70)",
+                      border: "1px solid oklch(0.74 0.135 70 / 0.25)",
+                    }}
+                  >
+                    {song.category}
+                  </span>
+                  <p
+                    className="text-[10px]"
+                    style={{ color: "oklch(0.6 0.08 72)" }}
+                  >
+                    {sourceLabel}
+                  </p>
+                </div>
               </div>
-              <p className="text-sm text-muted-foreground">{song.artist}</p>
-              <p className="text-xs" style={{ color: "oklch(0.6 0.08 72)" }}>
-                {sourceLabel}
-              </p>
+              <button
+                type="button"
+                onClick={onClose}
+                data-ocid="media.close_button"
+                className="ml-2 flex-shrink-0 w-8 h-8 rounded-full bg-secondary/60 hover:bg-secondary border border-border/40 flex items-center justify-center text-muted-foreground hover:text-foreground transition-colors"
+              >
+                <X className="w-3.5 h-3.5" />
+              </button>
             </div>
-            <button
-              type="button"
-              onClick={onClose}
-              data-ocid="media.close_button"
-              className="ml-4 flex-shrink-0 w-8 h-8 rounded-full bg-secondary/60 hover:bg-secondary border border-border/40 flex items-center justify-center text-muted-foreground hover:text-foreground transition-colors"
-            >
-              <X className="w-3.5 h-3.5" />
-            </button>
           </div>
 
           <div

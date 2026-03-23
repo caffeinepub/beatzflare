@@ -59,10 +59,24 @@ export default function HeroSection({ onExplore }: HeroSectionProps) {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="font-display text-5xl sm:text-6xl md:text-7xl font-black tracking-tight text-primary text-glow-gold leading-none mb-8"
+          className="font-display text-5xl sm:text-6xl md:text-7xl font-black tracking-tight text-primary text-glow-gold leading-none mb-6"
         >
           BEATZFLARE.
         </motion.h1>
+
+        {/* Developer credit */}
+        <motion.p
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.28 }}
+          className="font-body text-xs tracking-widest uppercase mb-8"
+          style={{ color: "oklch(0.74 0.135 70 / 0.75)" }}
+        >
+          Developed by{" "}
+          <span className="font-bold" style={{ color: "oklch(0.82 0.15 70)" }}>
+            ADARSH CHAUDHARY
+          </span>
+        </motion.p>
 
         <motion.p
           initial={{ opacity: 0 }}

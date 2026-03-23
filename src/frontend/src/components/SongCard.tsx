@@ -1,5 +1,5 @@
 import type { Song } from "@/data/mockData";
-import { Play, Star } from "lucide-react";
+import { Download, Heart, Play } from "lucide-react";
 
 interface SongCardProps {
   song: Song;
@@ -8,14 +8,20 @@ interface SongCardProps {
   isStarred?: boolean;
   onToggleStar?: (songId: string) => void;
   large?: boolean;
+  onDownload?: (song: Song) => void;
 }
 
-const CATEGORY_PHOTOS: Record<string, string> = {
+export const CATEGORY_PHOTOS: Record<string, string> = {
   "Masoom Sharma": "/assets/generated/masoom-sharma.dim_400x400.jpg",
   "Sapna Chaudhary": "/assets/generated/sapna-chaudhary.dim_400x400.jpg",
   "Renuka Panwar": "/assets/generated/renuka-panwar.dim_400x400.jpg",
   "Haryanvi Hits": "/assets/generated/jaat-haryanvi.dim_400x400.jpg",
   "Punjabi Hits": "/assets/generated/jatt-punjabi.dim_400x400.jpg",
+  "Bollywood Hits": "/assets/generated/bollywood-hits.dim_400x400.jpg",
+  "90s Hits": "/assets/generated/90s-hits.dim_400x400.jpg",
+  "Sad Songs": "/assets/generated/sad-songs.dim_400x400.jpg",
+  "Top 100": "/assets/generated/top-100.dim_400x400.jpg",
+  VVIP: "/assets/generated/vvip-section.dim_400x400.jpg",
 };
 
 const SONG_PHOTOS: Record<string, string> = {
@@ -29,11 +35,22 @@ export default function SongCard({
   isStarred = false,
   onToggleStar,
   large = false,
+  onDownload,
 }: SongCardProps) {
   const sourceLabel =
     song.audiomackUrl && !song.soundcloudUrl ? "Audiomack" : "SoundCloud";
 
   const photo = SONG_PHOTOS[song.id] ?? CATEGORY_PHOTOS[song.category];
+
+  const handleDownload = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (onDownload) {
+      onDownload(song);
+    } else {
+      const url = song.audiomackUrl || song.soundcloudUrl;
+      if (url) window.open(url, "_blank", "noopener");
+    }
+  };
 
   return (
     <button
@@ -82,7 +99,8 @@ export default function SongCard({
             <Play className="w-5 h-5 fill-black text-black ml-0.5" />
           </div>
         </div>
-        {/* Star button */}
+
+        {/* Like (Heart) button */}
         {onToggleStar && (
           <button
             type="button"
@@ -92,13 +110,11 @@ export default function SongCard({
               onToggleStar(song.id);
             }}
             className="absolute top-2 right-2 w-7 h-7 rounded-full bg-black/60 flex items-center justify-center opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity hover:bg-black/80 z-10"
-            aria-label={
-              isStarred ? "Remove from favorites" : "Add to favorites"
-            }
+            aria-label={isStarred ? "Unlike" : "Like"}
           >
-            <Star
+            <Heart
               className={`w-3.5 h-3.5 transition-colors ${
-                isStarred ? "fill-yellow-400 text-yellow-400" : "text-white/80"
+                isStarred ? "fill-rose-500 text-rose-500" : "text-white/80"
               }`}
             />
           </button>
@@ -120,16 +136,32 @@ export default function SongCard({
           <p className="font-body text-[10px] text-muted-foreground/60">
             {song.plays} plays
           </p>
-          <span
-            className="font-body text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded-full"
-            style={{
-              background: "rgba(212,160,23,0.12)",
-              color: "#d4a017",
-              border: "1px solid rgba(212,160,23,0.25)",
-            }}
-          >
-            {sourceLabel}
-          </span>
+          <div className="flex items-center gap-1.5">
+            {/* Download button */}
+            <button
+              type="button"
+              data-ocid={`song.download.${index}`}
+              onClick={handleDownload}
+              className="w-5 h-5 rounded flex items-center justify-center hover:bg-primary/20 transition-colors"
+              aria-label="Download song"
+              title="Download / Open source"
+            >
+              <Download
+                className="w-3 h-3"
+                style={{ color: "oklch(0.74 0.135 70 / 0.7)" }}
+              />
+            </button>
+            <span
+              className="font-body text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded-full"
+              style={{
+                background: "rgba(212,160,23,0.12)",
+                color: "#d4a017",
+                border: "1px solid rgba(212,160,23,0.25)",
+              }}
+            >
+              {sourceLabel}
+            </span>
+          </div>
         </div>
       </div>
     </button>
