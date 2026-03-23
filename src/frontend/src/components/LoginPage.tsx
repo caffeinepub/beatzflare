@@ -26,6 +26,13 @@ function saveUsers(users: StoredUser[]) {
   localStorage.setItem("beatzflare_users", JSON.stringify(users));
 }
 
+function doLogin(username: string) {
+  localStorage.setItem(
+    "beatzflare_user",
+    JSON.stringify({ username, loggedIn: true }),
+  );
+}
+
 export default function LoginPage({ onLogin }: LoginPageProps) {
   const [loginUsername, setLoginUsername] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
@@ -39,34 +46,43 @@ export default function LoginPage({ onLogin }: LoginPageProps) {
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
     setLoginError("");
-    if (!loginUsername.trim()) {
+    const uname = loginUsername.trim();
+    const pass = loginPassword;
+    if (!uname) {
       setLoginError("Username is required.");
       return;
     }
-    if (loginPassword.length < 6) {
+    if (pass.length < 6) {
       setLoginError("Password must be at least 6 characters.");
       return;
     }
     const users = getUsers();
-    const match = users.find(
-      (u) =>
-        u.username === loginUsername.trim() && u.password === loginPassword,
+    const existing = users.find(
+      (u) => u.username.toLowerCase() === uname.toLowerCase(),
     );
-    if (!match) {
-      setLoginError("Invalid username or password.");
-      return;
+    if (existing) {
+      // Account exists - verify password
+      if (existing.password !== pass) {
+        setLoginError("Wrong password. Please try again.");
+        return;
+      }
+      doLogin(existing.username);
+      onLogin(existing.username);
+    } else {
+      // No account found - auto-create and log in
+      const newUser: StoredUser = { username: uname, password: pass };
+      users.push(newUser);
+      saveUsers(users);
+      doLogin(uname);
+      onLogin(uname);
     }
-    localStorage.setItem(
-      "beatzflare_user",
-      JSON.stringify({ username: loginUsername.trim(), loggedIn: true }),
-    );
-    onLogin(loginUsername.trim());
   };
 
   const handleSignup = (e: React.FormEvent) => {
     e.preventDefault();
     setSignupError("");
-    if (!signupUsername.trim()) {
+    const uname = signupUsername.trim();
+    if (!uname) {
       setSignupError("Username is required.");
       return;
     }
@@ -79,17 +95,14 @@ export default function LoginPage({ onLogin }: LoginPageProps) {
       return;
     }
     const users = getUsers();
-    if (users.find((u) => u.username === signupUsername.trim())) {
+    if (users.find((u) => u.username.toLowerCase() === uname.toLowerCase())) {
       setSignupError("Username already taken.");
       return;
     }
-    users.push({ username: signupUsername.trim(), password: signupPassword });
+    users.push({ username: uname, password: signupPassword });
     saveUsers(users);
-    localStorage.setItem(
-      "beatzflare_user",
-      JSON.stringify({ username: signupUsername.trim(), loggedIn: true }),
-    );
-    onLogin(signupUsername.trim());
+    doLogin(uname);
+    onLogin(uname);
   };
 
   return (
@@ -101,7 +114,6 @@ export default function LoginPage({ onLogin }: LoginPageProps) {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
     >
-      {/* Background gold glow */}
       <div
         className="pointer-events-none fixed inset-0"
         style={{
@@ -116,7 +128,6 @@ export default function LoginPage({ onLogin }: LoginPageProps) {
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.2, duration: 0.5 }}
       >
-        {/* Logo & Brand */}
         <div className="text-center mb-8">
           <img
             src="/assets/generated/beatzflare-logo.dim_600x400.png"
@@ -134,7 +145,6 @@ export default function LoginPage({ onLogin }: LoginPageProps) {
           </p>
         </div>
 
-        {/* Card */}
         <div
           className="rounded-2xl border p-8"
           style={{
@@ -167,7 +177,6 @@ export default function LoginPage({ onLogin }: LoginPageProps) {
               </TabsTrigger>
             </TabsList>
 
-            {/* LOGIN */}
             <TabsContent value="login">
               <form onSubmit={handleLogin} className="space-y-4">
                 <div className="space-y-1.5">
@@ -201,7 +210,7 @@ export default function LoginPage({ onLogin }: LoginPageProps) {
                     id="login-password"
                     data-ocid="auth.input"
                     type="password"
-                    placeholder="Enter your password"
+                    placeholder="Min 6 characters"
                     value={loginPassword}
                     onChange={(e) => setLoginPassword(e.target.value)}
                     style={{
@@ -231,10 +240,15 @@ export default function LoginPage({ onLogin }: LoginPageProps) {
                 >
                   Login to BEATZFLARE
                 </Button>
+                <p
+                  className="text-center text-xs mt-1"
+                  style={{ color: "oklch(0.55 0.05 75)" }}
+                >
+                  First time? Just enter any username &amp; password to get in.
+                </p>
               </form>
             </TabsContent>
 
-            {/* SIGN UP */}
             <TabsContent value="signup">
               <form onSubmit={handleSignup} className="space-y-4">
                 <div className="space-y-1.5">
@@ -324,7 +338,6 @@ export default function LoginPage({ onLogin }: LoginPageProps) {
           </Tabs>
         </div>
 
-        {/* Footer */}
         <p className="text-center text-xs text-muted-foreground/40 mt-6">
           Powered by MR. DINESH KUMAR CHAUDHARY
         </p>
