@@ -65,7 +65,7 @@ export default function MediaPlayerModal({
 
   let scEmbedSrc = "";
   if ((isSoundCloud || isSearch) && song.soundcloudUrl) {
-    scEmbedSrc = `https://w.soundcloud.com/player/?url=${encodeURIComponent(song.soundcloudUrl)}&auto_play=true&color=%23C9A84C&show_artwork=true&show_user=false&show_reposts=false&buying=false&sharing=false&download=false&show_playcount=false`;
+    scEmbedSrc = `https://w.soundcloud.com/player/?url=${encodeURIComponent(song.soundcloudUrl)}&auto_play=true&color=%23C9A84C&show_artwork=true&show_user=false&show_reposts=false&buying=false&sharing=false&download=false&show_playcount=false&hide_related=true&show_comments=false&show_teaser=false&visual=false`;
   }
 
   let amEmbedSrc = "";
@@ -160,10 +160,11 @@ export default function MediaPlayerModal({
               </div>
 
               {/*
-                SoundCloud iframe — hidden overlays cover:
-                1. Bottom bar ("Play on SoundCloud" text)
-                2. Top-right area ("Play on SoundCloud" link in artwork)
-                The iframe is 166px tall but the container clips to 130px
+                SoundCloud iframe — overlays cover ALL SoundCloud branding:
+                1. Bottom bar ("Play on SoundCloud" footer)
+                2. Top-right ("Play on SoundCloud" in artwork)
+                3. Top-left (SoundCloud logo branding)
+                Overlays have pointer-events ENABLED to block all clicks through to SC links.
               */}
               <div
                 className="relative w-full"
@@ -182,16 +183,25 @@ export default function MediaPlayerModal({
                   src={scEmbedSrc}
                   title={song.title}
                 />
-                {/* Cover the bottom footer bar — "Play on SoundCloud" link */}
+                {/* Bottom overlay — covers "Play on SoundCloud" footer bar */}
                 <div
-                  className="absolute bottom-0 left-0 right-0 z-10 pointer-events-none"
-                  style={{ height: "36px", background: COVER_BG }}
+                  className="absolute bottom-0 left-0 right-0 z-10"
+                  style={{ height: "44px", background: COVER_BG }}
                 />
-                {/* Cover top-right "Play on SoundCloud" link in artwork */}
+                {/* Top-right overlay — covers "Play on SoundCloud" link in artwork */}
                 <div
-                  className="absolute top-0 right-0 z-10 pointer-events-none"
+                  className="absolute top-0 right-0 z-10"
                   style={{
-                    width: "140px",
+                    width: "180px",
+                    height: "40px",
+                    background: COVER_BG,
+                  }}
+                />
+                {/* Top-left overlay — covers SoundCloud logo branding */}
+                <div
+                  className="absolute top-0 left-0 z-10"
+                  style={{
+                    width: "80px",
                     height: "32px",
                     background: COVER_BG,
                   }}
