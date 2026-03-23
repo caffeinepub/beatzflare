@@ -42,7 +42,7 @@ function SectionHeader({
         className="w-1 h-7 rounded-full flex-shrink-0"
         style={{ background: "linear-gradient(to bottom, #d4a017, #92600a)" }}
       />
-      <h2 className="text-xl font-black uppercase tracking-widest text-white">
+      <h2 className="font-display text-xl font-black uppercase tracking-widest text-white">
         {title}
       </h2>
       <div
@@ -112,7 +112,7 @@ export default function HomePage({
           ].map(({ n, k }) => (
             <span
               key={k}
-              className="text-xs font-black tracking-[0.2em] uppercase inline-flex items-center gap-2"
+              className="font-display text-xs font-black tracking-[0.2em] uppercase inline-flex items-center gap-2"
               style={{ color: "#d4a017" }}
             >
               <span className="opacity-60">⬡</span> {n}
@@ -153,7 +153,7 @@ export default function HomePage({
                 className="absolute right-0 top-0 bottom-2 w-16 pointer-events-none"
                 style={{
                   background:
-                    "linear-gradient(to left, oklch(0.09 0.008 55), transparent)",
+                    "linear-gradient(to left, oklch(0.08 0.006 48), transparent)",
                 }}
               />
             </div>
@@ -201,7 +201,7 @@ export default function HomePage({
                     type="button"
                     onClick={onExplore}
                     data-ocid="home.link"
-                    className="text-xs font-bold uppercase tracking-widest hover:opacity-80 transition-opacity"
+                    className="font-body text-xs font-bold uppercase tracking-widest hover:opacity-80 transition-opacity"
                     style={{ color: "#d4a017" }}
                   >
                     View All
@@ -262,75 +262,60 @@ export default function HomePage({
                     type="button"
                     onClick={() => onGenre("masoom")}
                     data-ocid="masoom.link"
-                    className="text-xs font-bold uppercase tracking-widest hover:opacity-80 transition-opacity"
+                    className="font-body text-xs font-bold uppercase tracking-widest hover:opacity-80 transition-opacity"
                     style={{ color: "#d4a017" }}
                   >
-                    View All 60 Songs
+                    View All
                   </button>
                 }
               />
             </motion.div>
-            <div className="relative">
-              <div
-                className="flex gap-4 overflow-x-auto pb-3 scrollbar-hide"
-                data-ocid="masoom.list"
-              >
-                {masoomSongs.map((song, i) => (
-                  <div key={song.id} className="flex-shrink-0 w-40">
-                    <SongCard
-                      song={song}
-                      onPlay={onPlay}
-                      index={i + 1}
-                      isStarred={starredSongs.has(song.id)}
-                      onToggleStar={onToggleStar}
-                    />
-                  </div>
-                ))}
-              </div>
-              <div
-                className="absolute right-0 top-0 bottom-3 w-16 pointer-events-none"
-                style={{
-                  background:
-                    "linear-gradient(to left, oklch(0.09 0.008 55), transparent)",
-                }}
-              />
+            <div className="flex gap-4 overflow-x-auto pb-2 scrollbar-hide">
+              {masoomSongs.map((song, i) => (
+                <div key={song.id} className="flex-shrink-0 w-40">
+                  <SongCard
+                    song={song}
+                    onPlay={onPlay}
+                    index={i + 1}
+                    isStarred={starredSongs.has(song.id)}
+                    onToggleStar={onToggleStar}
+                  />
+                </div>
+              ))}
             </div>
           </section>
           <SectionDivider />
         </>
       )}
 
-      {/* Sapna Chaudhary Hits */}
+      {/* Sapna Chaudhary */}
       {sapnaSongs.length > 0 && (
-        <section
-          className="max-w-7xl mx-auto px-4 sm:px-6 py-8"
-          data-ocid="sapna.section"
-        >
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+        <>
+          <section
+            className="max-w-7xl mx-auto px-4 sm:px-6 py-8"
+            data-ocid="sapna.section"
           >
-            <SectionHeader
-              title="Sapna Chaudhary Hits"
-              action={
-                <button
-                  type="button"
-                  onClick={() => onGenre("sapna")}
-                  data-ocid="sapna.link"
-                  className="text-xs font-bold uppercase tracking-widest hover:opacity-80 transition-opacity"
-                  style={{ color: "#d4a017" }}
-                >
-                  View All 15 Songs
-                </button>
-              }
-            />
-          </motion.div>
-          <div className="relative">
-            <div
-              className="flex gap-4 overflow-x-auto pb-3 scrollbar-hide"
-              data-ocid="sapna.list"
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
             >
+              <SectionHeader
+                title="Sapna Chaudhary"
+                action={
+                  <button
+                    type="button"
+                    onClick={() => onGenre("sapna")}
+                    data-ocid="sapna.link"
+                    className="font-body text-xs font-bold uppercase tracking-widest hover:opacity-80 transition-opacity"
+                    style={{ color: "#d4a017" }}
+                  >
+                    View All
+                  </button>
+                }
+              />
+            </motion.div>
+            <div className="flex gap-4 overflow-x-auto pb-2 scrollbar-hide">
               {sapnaSongs.map((song, i) => (
                 <div key={song.id} className="flex-shrink-0 w-40">
                   <SongCard
@@ -343,15 +328,9 @@ export default function HomePage({
                 </div>
               ))}
             </div>
-            <div
-              className="absolute right-0 top-0 bottom-3 w-16 pointer-events-none"
-              style={{
-                background:
-                  "linear-gradient(to left, oklch(0.09 0.008 55), transparent)",
-              }}
-            />
-          </div>
-        </section>
+          </section>
+          <SectionDivider />
+        </>
       )}
     </div>
   );

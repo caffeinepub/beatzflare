@@ -4,7 +4,6 @@ interface HeroSectionProps {
   onExplore: () => void;
 }
 
-// Decorative music wave bars with stable IDs
 const WAVE_BARS = [
   { id: "w1", h: 18, delay: 0 },
   { id: "w2", h: 34, delay: 0.1 },
@@ -29,14 +28,12 @@ const WAVE_BARS = [
 export default function HeroSection({ onExplore }: HeroSectionProps) {
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-background via-background to-card pt-16 pb-20">
-      {/* Ambient warm light — very subtle */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 left-1/3 w-[500px] h-[400px] bg-primary/5 rounded-full blur-[160px]" />
         <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-primary/4 rounded-full blur-[100px]" />
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 flex flex-col items-center text-center">
-        {/* Live pill */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
@@ -44,17 +41,16 @@ export default function HeroSection({ onExplore }: HeroSectionProps) {
           className="inline-flex items-center gap-2 bg-primary/8 border border-primary/25 rounded-full px-4 py-1.5 mb-8"
         >
           <span className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse" />
-          <span className="text-primary text-xs font-medium tracking-widest">
+          <span className="text-primary text-xs font-medium tracking-widest font-body">
             Now Streaming
           </span>
         </motion.div>
 
-        {/* Headline */}
         <motion.h1
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="text-5xl sm:text-6xl md:text-7xl font-black tracking-tight leading-none mb-1"
+          className="font-display text-5xl sm:text-6xl md:text-7xl font-black tracking-tight leading-none mb-1"
           style={{ color: "oklch(0.93 0.008 72)" }}
         >
           Your Vibe.
@@ -63,7 +59,7 @@ export default function HeroSection({ onExplore }: HeroSectionProps) {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="text-5xl sm:text-6xl md:text-7xl font-black tracking-tight text-primary text-glow-gold leading-none mb-8"
+          className="font-display text-5xl sm:text-6xl md:text-7xl font-black tracking-tight text-primary text-glow-gold leading-none mb-8"
         >
           BEATZFLARE.
         </motion.h1>
@@ -72,7 +68,7 @@ export default function HeroSection({ onExplore }: HeroSectionProps) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.7, delay: 0.35 }}
-          className="text-base sm:text-lg text-muted-foreground max-w-md mb-10 leading-relaxed"
+          className="font-body text-base sm:text-lg text-muted-foreground max-w-md mb-10 leading-relaxed"
         >
           Haryanvi. Punjabi. 90s. Bollywood. <br />
           <span className="text-foreground/70 text-sm">
@@ -88,12 +84,11 @@ export default function HeroSection({ onExplore }: HeroSectionProps) {
           whileTap={{ scale: 0.97 }}
           onClick={onExplore}
           data-ocid="hero.primary_button"
-          className="bg-primary text-primary-foreground font-semibold tracking-wide text-sm px-10 py-3.5 rounded-full glow-gold-sm hover:brightness-105 transition-all"
+          className="font-body bg-primary text-primary-foreground font-semibold tracking-wide text-sm px-10 py-3.5 rounded-full glow-gold-sm hover:brightness-105 transition-all"
         >
           Explore Music
         </motion.button>
 
-        {/* Music wave visual — atmospheric, not fake stats */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -105,7 +100,7 @@ export default function HeroSection({ onExplore }: HeroSectionProps) {
             <motion.div
               key={bar.id}
               className="w-1 rounded-full"
-              style={{ backgroundColor: "oklch(0.72 0.14 72 / 0.3)" }}
+              style={{ backgroundColor: "oklch(0.74 0.135 70 / 0.3)" }}
               animate={{
                 height: [`${bar.h * 0.5}px`, `${bar.h}px`, `${bar.h * 0.5}px`],
                 opacity: [0.3, 0.65, 0.3],

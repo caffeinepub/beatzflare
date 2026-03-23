@@ -61,7 +61,6 @@ export default function LoginPage({ onLogin }: LoginPageProps) {
       (u) => u.username.toLowerCase() === uname.toLowerCase(),
     );
     if (existing) {
-      // Account exists - verify password
       if (existing.password !== pass) {
         setLoginError("Wrong password. Please try again.");
         return;
@@ -69,7 +68,6 @@ export default function LoginPage({ onLogin }: LoginPageProps) {
       doLogin(existing.username);
       onLogin(existing.username);
     } else {
-      // No account found - auto-create and log in
       const newUser: StoredUser = { username: uname, password: pass };
       users.push(newUser);
       saveUsers(users);
@@ -108,7 +106,7 @@ export default function LoginPage({ onLogin }: LoginPageProps) {
   return (
     <motion.div
       className="min-h-screen flex items-center justify-center px-4 py-10"
-      style={{ background: "oklch(0.06 0.01 55)" }}
+      style={{ background: "oklch(0.06 0.006 48)" }}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -118,7 +116,7 @@ export default function LoginPage({ onLogin }: LoginPageProps) {
         className="pointer-events-none fixed inset-0"
         style={{
           background:
-            "radial-gradient(ellipse 70% 50% at 50% 0%, oklch(0.65 0.15 75 / 0.18) 0%, transparent 70%)",
+            "radial-gradient(ellipse 70% 50% at 50% 0%, oklch(0.65 0.15 75 / 0.15) 0%, transparent 70%)",
         }}
       />
 
@@ -135,12 +133,12 @@ export default function LoginPage({ onLogin }: LoginPageProps) {
             className="h-16 w-auto mx-auto mb-3"
           />
           <p
-            className="text-xs tracking-[0.35em] uppercase font-semibold"
+            className="font-display text-xs tracking-[0.35em] uppercase font-semibold"
             style={{ color: "oklch(0.72 0.12 75)" }}
           >
             ESTD 2026
           </p>
-          <p className="text-sm text-muted-foreground mt-1">
+          <p className="font-body text-sm text-muted-foreground mt-1">
             Your Premium Music Experience
           </p>
         </div>
@@ -148,30 +146,30 @@ export default function LoginPage({ onLogin }: LoginPageProps) {
         <div
           className="rounded-2xl border p-8"
           style={{
-            background: "oklch(0.10 0.012 55)",
-            borderColor: "oklch(0.72 0.12 75 / 0.25)",
-            boxShadow: "0 0 40px oklch(0.65 0.15 75 / 0.12)",
+            background: "oklch(0.10 0.012 50)",
+            borderColor: "oklch(0.72 0.12 75 / 0.22)",
+            boxShadow: "0 0 40px oklch(0.65 0.15 75 / 0.1)",
           }}
         >
           <Tabs defaultValue="login" className="w-full">
             <TabsList
               className="w-full mb-6"
               style={{
-                background: "oklch(0.14 0.012 55)",
+                background: "oklch(0.14 0.012 50)",
                 borderRadius: "10px",
               }}
             >
               <TabsTrigger
                 value="login"
                 data-ocid="auth.tab"
-                className="flex-1 data-[state=active]:text-primary data-[state=active]:font-semibold"
+                className="flex-1 font-body data-[state=active]:text-primary data-[state=active]:font-semibold"
               >
                 Login
               </TabsTrigger>
               <TabsTrigger
                 value="signup"
                 data-ocid="auth.tab"
-                className="flex-1 data-[state=active]:text-primary data-[state=active]:font-semibold"
+                className="flex-1 font-body data-[state=active]:text-primary data-[state=active]:font-semibold"
               >
                 Sign Up
               </TabsTrigger>
@@ -182,7 +180,7 @@ export default function LoginPage({ onLogin }: LoginPageProps) {
                 <div className="space-y-1.5">
                   <Label
                     htmlFor="login-username"
-                    className="text-foreground/80 text-xs uppercase tracking-wider"
+                    className="font-body text-foreground/80 text-xs uppercase tracking-wider"
                   >
                     Username
                   </Label>
@@ -193,16 +191,16 @@ export default function LoginPage({ onLogin }: LoginPageProps) {
                     value={loginUsername}
                     onChange={(e) => setLoginUsername(e.target.value)}
                     style={{
-                      background: "oklch(0.14 0.012 55)",
+                      background: "oklch(0.14 0.012 50)",
                       borderColor: "oklch(0.72 0.12 75 / 0.2)",
                     }}
-                    className="focus:border-primary placeholder:text-muted-foreground/50"
+                    className="font-body focus:border-primary placeholder:text-muted-foreground/50"
                   />
                 </div>
                 <div className="space-y-1.5">
                   <Label
                     htmlFor="login-password"
-                    className="text-foreground/80 text-xs uppercase tracking-wider"
+                    className="font-body text-foreground/80 text-xs uppercase tracking-wider"
                   >
                     Password
                   </Label>
@@ -214,16 +212,16 @@ export default function LoginPage({ onLogin }: LoginPageProps) {
                     value={loginPassword}
                     onChange={(e) => setLoginPassword(e.target.value)}
                     style={{
-                      background: "oklch(0.14 0.012 55)",
+                      background: "oklch(0.14 0.012 50)",
                       borderColor: "oklch(0.72 0.12 75 / 0.2)",
                     }}
-                    className="focus:border-primary placeholder:text-muted-foreground/50"
+                    className="font-body focus:border-primary placeholder:text-muted-foreground/50"
                   />
                 </div>
                 {loginError && (
                   <p
                     data-ocid="auth.error_state"
-                    className="text-sm"
+                    className="font-body text-sm"
                     style={{ color: "oklch(0.65 0.18 25)" }}
                   >
                     {loginError}
@@ -232,16 +230,16 @@ export default function LoginPage({ onLogin }: LoginPageProps) {
                 <Button
                   type="submit"
                   data-ocid="auth.submit_button"
-                  className="w-full font-semibold tracking-wide mt-2"
+                  className="w-full font-display font-semibold tracking-wide mt-2"
                   style={{
                     background: "oklch(0.72 0.14 75)",
-                    color: "oklch(0.06 0.01 55)",
+                    color: "oklch(0.06 0.006 48)",
                   }}
                 >
                   Login to BEATZFLARE
                 </Button>
                 <p
-                  className="text-center text-xs mt-1"
+                  className="font-body text-center text-xs mt-1"
                   style={{ color: "oklch(0.55 0.05 75)" }}
                 >
                   First time? Just enter any username &amp; password to get in.
@@ -254,7 +252,7 @@ export default function LoginPage({ onLogin }: LoginPageProps) {
                 <div className="space-y-1.5">
                   <Label
                     htmlFor="signup-username"
-                    className="text-foreground/80 text-xs uppercase tracking-wider"
+                    className="font-body text-foreground/80 text-xs uppercase tracking-wider"
                   >
                     Username
                   </Label>
@@ -265,16 +263,16 @@ export default function LoginPage({ onLogin }: LoginPageProps) {
                     value={signupUsername}
                     onChange={(e) => setSignupUsername(e.target.value)}
                     style={{
-                      background: "oklch(0.14 0.012 55)",
+                      background: "oklch(0.14 0.012 50)",
                       borderColor: "oklch(0.72 0.12 75 / 0.2)",
                     }}
-                    className="focus:border-primary placeholder:text-muted-foreground/50"
+                    className="font-body focus:border-primary placeholder:text-muted-foreground/50"
                   />
                 </div>
                 <div className="space-y-1.5">
                   <Label
                     htmlFor="signup-password"
-                    className="text-foreground/80 text-xs uppercase tracking-wider"
+                    className="font-body text-foreground/80 text-xs uppercase tracking-wider"
                   >
                     Password
                   </Label>
@@ -286,16 +284,16 @@ export default function LoginPage({ onLogin }: LoginPageProps) {
                     value={signupPassword}
                     onChange={(e) => setSignupPassword(e.target.value)}
                     style={{
-                      background: "oklch(0.14 0.012 55)",
+                      background: "oklch(0.14 0.012 50)",
                       borderColor: "oklch(0.72 0.12 75 / 0.2)",
                     }}
-                    className="focus:border-primary placeholder:text-muted-foreground/50"
+                    className="font-body focus:border-primary placeholder:text-muted-foreground/50"
                   />
                 </div>
                 <div className="space-y-1.5">
                   <Label
                     htmlFor="signup-confirm"
-                    className="text-foreground/80 text-xs uppercase tracking-wider"
+                    className="font-body text-foreground/80 text-xs uppercase tracking-wider"
                   >
                     Confirm Password
                   </Label>
@@ -307,16 +305,16 @@ export default function LoginPage({ onLogin }: LoginPageProps) {
                     value={signupConfirm}
                     onChange={(e) => setSignupConfirm(e.target.value)}
                     style={{
-                      background: "oklch(0.14 0.012 55)",
+                      background: "oklch(0.14 0.012 50)",
                       borderColor: "oklch(0.72 0.12 75 / 0.2)",
                     }}
-                    className="focus:border-primary placeholder:text-muted-foreground/50"
+                    className="font-body focus:border-primary placeholder:text-muted-foreground/50"
                   />
                 </div>
                 {signupError && (
                   <p
                     data-ocid="auth.error_state"
-                    className="text-sm"
+                    className="font-body text-sm"
                     style={{ color: "oklch(0.65 0.18 25)" }}
                   >
                     {signupError}
@@ -325,10 +323,10 @@ export default function LoginPage({ onLogin }: LoginPageProps) {
                 <Button
                   type="submit"
                   data-ocid="auth.submit_button"
-                  className="w-full font-semibold tracking-wide mt-2"
+                  className="w-full font-display font-semibold tracking-wide mt-2"
                   style={{
                     background: "oklch(0.72 0.14 75)",
-                    color: "oklch(0.06 0.01 55)",
+                    color: "oklch(0.06 0.006 48)",
                   }}
                 >
                   Create Account
@@ -338,7 +336,7 @@ export default function LoginPage({ onLogin }: LoginPageProps) {
           </Tabs>
         </div>
 
-        <p className="text-center text-xs text-muted-foreground/40 mt-6">
+        <p className="font-body text-center text-xs text-muted-foreground/40 mt-6">
           Powered by MR. DINESH KUMAR CHAUDHARY
         </p>
       </motion.div>

@@ -64,12 +64,11 @@ export default function GenreCard({ genre, onClick, index }: GenreCardProps) {
         }}
       />
 
-      {/* Content — centered vertically */}
+      {/* Content */}
       <div
         className="flex flex-col items-center justify-center gap-3 p-5 h-full"
         style={{ minHeight: "160px" }}
       >
-        {/* Icon */}
         <div
           className="w-16 h-16 rounded-2xl flex items-center justify-center text-3xl flex-shrink-0 transition-transform duration-300 group-hover:scale-110"
           style={{
@@ -79,15 +78,14 @@ export default function GenreCard({ genre, onClick, index }: GenreCardProps) {
         >
           {genre.icon}
         </div>
-        {/* Text */}
         <div className="text-center min-w-0 w-full">
           <h3
-            className="text-sm font-black uppercase tracking-widest leading-tight group-hover:text-primary transition-colors"
+            className="font-display text-sm font-black uppercase tracking-widest leading-tight group-hover:text-primary transition-colors"
             style={{ color: "#e8c560" }}
           >
             {genre.label}
           </h3>
-          <p className="text-[11px] text-muted-foreground mt-1 line-clamp-2 leading-snug">
+          <p className="font-body text-[11px] text-muted-foreground mt-1 line-clamp-2 leading-snug">
             {genre.description}
           </p>
         </div>

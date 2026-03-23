@@ -55,21 +55,25 @@ export default {
           border: 'oklch(var(--sidebar-border) / <alpha-value>)',
           ring: 'oklch(var(--sidebar-ring) / <alpha-value>)',
         },
-        beatz: {
-          green: '#22E6A6',
-          dark: '#121417',
-          card: '#1C1F24',
-          surface: '#23272E',
+        gold: {
+          deep: '#c8930a',
+          DEFAULT: '#d4a017',
+          light: '#e8b830',
         },
       },
       fontFamily: {
-        sans: ['Plus Jakarta Sans', 'Inter', 'system-ui', 'sans-serif'],
-        display: ['Plus Jakarta Sans', 'Inter', 'system-ui', 'sans-serif'],
+        sans: ['DM Sans', 'Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+        display: ['Bricolage Grotesque', 'Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+        body: ['DM Sans', 'Plus Jakarta Sans', 'system-ui', 'sans-serif'],
       },
       borderRadius: {
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)',
+      },
+      letterSpacing: {
+        display: '0.04em',
+        widest2: '0.25em',
       },
       animation: {
         'pulse-glow': 'pulseGlow 2s ease-in-out infinite',

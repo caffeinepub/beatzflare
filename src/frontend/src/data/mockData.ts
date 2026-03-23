@@ -1255,7 +1255,70 @@ export const songs: Song[] = [
     plays: "80M",
     audiomackUrl: "https://audiomack.com/mithoon-2/song/tum-hi-ho-7995494",
   },
-
+  {
+    id: "p41",
+    title: "Ishqa Ve",
+    artist: "Buzz",
+    category: "Punjabi Hits",
+    duration: "3:30",
+    gradient: "from-amber-900/30 to-amber-700/10",
+    plays: "5M",
+    audiomackUrl: "https://audiomack.com/buzz089/song/ishqa-ve",
+  },
+  {
+    id: "p42",
+    title: "Ishq Jalakar (Karvaan)",
+    artist: "Shashwat Sachdev",
+    category: "Punjabi Hits",
+    duration: "3:30",
+    gradient: "from-amber-900/30 to-amber-700/10",
+    plays: "8M",
+    audiomackUrl:
+      "https://audiomack.com/shashwatsachdev/song/ishq-jalakar-karvaan-from-dhurandhar-1",
+  },
+  {
+    id: "p43",
+    title: "Twist",
+    artist: "Ashpikachu",
+    category: "Punjabi Hits",
+    duration: "3:30",
+    gradient: "from-amber-900/30 to-amber-700/10",
+    plays: "4M",
+    audiomackUrl: "https://audiomack.com/ashpikachu678/song/twist",
+  },
+  {
+    id: "p44",
+    title: "Lutt Le Gya (House Mix)",
+    artist: "DJ Happy Chopra",
+    category: "Punjabi Hits",
+    duration: "3:30",
+    gradient: "from-amber-900/30 to-amber-700/10",
+    plays: "6M",
+    audiomackUrl:
+      "https://audiomack.com/djhappychopra/song/lutt-le-gyahouse-mix-dj-happy-chopra",
+  },
+  {
+    id: "p45",
+    title: "Shararat (Dhurandhar)",
+    artist: "Shashwat Sachdev",
+    category: "Punjabi Hits",
+    duration: "3:30",
+    gradient: "from-amber-900/30 to-amber-700/10",
+    plays: "7M",
+    audiomackUrl:
+      "https://audiomack.com/shashwatsachdev/song/shararat-from-dhurandhar-1",
+  },
+  {
+    id: "p46",
+    title: "Rehman Dakait Entry (Remix)",
+    artist: "DJ Apurba RK",
+    category: "Punjabi Hits",
+    duration: "3:30",
+    gradient: "from-amber-900/30 to-amber-700/10",
+    plays: "5M",
+    audiomackUrl:
+      "https://audiomack.com/djapurbark/song/rehman-dakait-entry-song-remix-sher-e-baloch-fa9la-remix-akshaye-khanna-bhutto-mix-gangster-music-dj-apurba-rk",
+  },
   // ===== 90s HITS =====
   {
     id: "90s1",

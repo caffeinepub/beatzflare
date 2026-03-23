@@ -45,7 +45,7 @@ export default function Header({
               key={link}
               onClick={() => onNavigate(link)}
               data-ocid="nav.link"
-              className={`px-3.5 py-2 text-sm rounded-md transition-colors relative ${
+              className={`px-3.5 py-2 text-sm rounded-md transition-colors relative font-body ${
                 currentPage === link
                   ? "text-primary font-semibold"
                   : "text-muted-foreground hover:text-foreground font-medium"
@@ -77,41 +77,37 @@ export default function Header({
         {username && onLogout && (
           <div className="hidden md:flex items-center gap-2 flex-shrink-0">
             <span
-              className="text-xs font-medium truncate max-w-[80px]"
-              style={{ color: "oklch(0.72 0.12 75)" }}
+              className="text-xs font-semibold truncate max-w-[80px]"
+              style={{ color: "#d4a017" }}
             >
               {username}
             </span>
             <button
               type="button"
               onClick={onLogout}
-              data-ocid="auth.button"
-              title="Logout"
-              className="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-secondary text-muted-foreground hover:text-foreground transition-colors"
+              data-ocid="auth.secondary_button"
+              className="flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground transition-colors px-2.5 py-1.5 rounded-lg border border-border/30 hover:border-border/60"
             >
-              <LogOut className="w-4 h-4" />
+              <LogOut className="w-3 h-3" />
+              <span>Logout</span>
             </button>
           </div>
         )}
 
-        {/* Mobile menu toggle */}
+        {/* Mobile menu */}
         <button
           type="button"
-          className="md:hidden w-9 h-9 flex items-center justify-center rounded-lg hover:bg-secondary text-muted-foreground hover:text-foreground transition-colors"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           data-ocid="nav.toggle"
+          className="md:hidden ml-auto p-2 text-muted-foreground hover:text-foreground transition-colors"
         >
-          {mobileMenuOpen ? (
-            <Music2 className="w-4 h-4" />
-          ) : (
-            <Menu className="w-4 h-4" />
-          )}
+          <Menu className="w-5 h-5" />
         </button>
       </div>
 
-      {/* Mobile nav */}
+      {/* Mobile dropdown */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-t border-border/25 bg-background px-4 py-3 flex flex-wrap gap-1">
+        <div className="md:hidden border-t border-border/25 bg-card/95 backdrop-blur-md px-4 py-3 flex flex-col gap-1">
           {navLinks.map((link) => (
             <button
               type="button"
@@ -121,10 +117,10 @@ export default function Header({
                 setMobileMenuOpen(false);
               }}
               data-ocid="nav.link"
-              className={`px-4 py-1.5 text-sm rounded-full border transition-colors ${
+              className={`text-left px-3 py-2.5 text-sm rounded-lg transition-colors font-body ${
                 currentPage === link
-                  ? "text-primary border-primary/30 bg-primary/8 font-semibold"
-                  : "text-muted-foreground border-border/30 hover:text-foreground hover:border-border/60"
+                  ? "text-primary font-semibold bg-primary/8"
+                  : "text-muted-foreground hover:text-foreground"
               }`}
             >
               {link}
@@ -133,11 +129,14 @@ export default function Header({
           {username && onLogout && (
             <button
               type="button"
-              onClick={onLogout}
-              data-ocid="auth.button"
-              className="px-4 py-1.5 text-sm rounded-full border border-border/30 text-muted-foreground hover:text-foreground flex items-center gap-1.5 transition-colors"
+              onClick={() => {
+                onLogout();
+                setMobileMenuOpen(false);
+              }}
+              data-ocid="auth.secondary_button"
+              className="flex items-center gap-2 text-left px-3 py-2.5 text-sm rounded-lg text-muted-foreground hover:text-foreground transition-colors"
             >
-              <LogOut className="w-3 h-3" />
+              <LogOut className="w-4 h-4" />
               Logout ({username})
             </button>
           )}

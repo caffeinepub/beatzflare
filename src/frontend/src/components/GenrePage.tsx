@@ -31,7 +31,7 @@ export default function GenrePage({
         type="button"
         onClick={onBack}
         data-ocid="genre.secondary_button"
-        className="flex items-center gap-2 text-muted-foreground hover:text-white mb-6 transition-colors"
+        className="flex items-center gap-2 text-muted-foreground hover:text-white mb-6 transition-colors font-body text-sm"
       >
         <ArrowLeft className="w-4 h-4" /> Back
       </button>
@@ -46,15 +46,17 @@ export default function GenrePage({
           <div className="absolute inset-0 bg-black/30" />
           <div className="relative">
             <div className="text-5xl mb-3">{genre.emoji}</div>
-            <h1 className="text-4xl font-black text-white">{genre.name}</h1>
-            <p className="text-white/50 text-sm mt-1">
+            <h1 className="font-display text-4xl font-black text-white tracking-tight">
+              {genre.name}
+            </h1>
+            <p className="font-body text-white/50 text-sm mt-1">
               {genreSongs.length} songs
             </p>
           </div>
         </motion.div>
       )}
 
-      <h2 className="text-lg font-bold uppercase tracking-widest text-white mb-4">
+      <h2 className="font-display text-lg font-bold uppercase tracking-widest text-white mb-4">
         Songs
       </h2>
       <div
@@ -72,7 +74,10 @@ export default function GenrePage({
           />
         ))}
         {genreSongs.length === 0 && (
-          <div className="col-span-full text-center py-16 text-muted-foreground">
+          <div
+            className="col-span-full text-center py-16 text-muted-foreground font-body"
+            data-ocid="genre.empty_state"
+          >
             No songs found in this category.
           </div>
         )}

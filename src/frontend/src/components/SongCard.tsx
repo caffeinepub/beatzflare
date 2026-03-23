@@ -18,7 +18,6 @@ const CATEGORY_PHOTOS: Record<string, string> = {
   "Punjabi Hits": "/assets/generated/jatt-punjabi.dim_400x400.jpg",
 };
 
-// Special photo overrides for specific songs (by song id)
 const SONG_PHOTOS: Record<string, string> = {
   ms_am1: "/assets/generated/masoom-sharma-real.dim_400x400.jpg",
 };
@@ -32,9 +31,7 @@ export default function SongCard({
   large = false,
 }: SongCardProps) {
   const sourceLabel =
-    song.audiomackUrl && !song.soundcloudUrl
-      ? "Songs by Audiomack"
-      : "Songs by SoundCloud";
+    song.audiomackUrl && !song.soundcloudUrl ? "Audiomack" : "SoundCloud";
 
   const photo = SONG_PHOTOS[song.id] ?? CATEGORY_PHOTOS[song.category];
 
@@ -47,7 +44,7 @@ export default function SongCard({
     >
       {/* Rank badge */}
       <div
-        className="absolute top-2 left-2 z-10 w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-black"
+        className="absolute top-2 left-2 z-10 w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-black font-display"
         style={{
           background: "linear-gradient(135deg, #d4a017, #92600a)",
           color: "#0a0a00",
@@ -58,7 +55,9 @@ export default function SongCard({
 
       {/* Artwork */}
       <div
-        className={`relative w-full ${large ? "aspect-[4/3]" : "aspect-square"} bg-gradient-to-br ${song.gradient} flex items-center justify-center overflow-hidden`}
+        className={`relative w-full ${
+          large ? "aspect-[4/3]" : "aspect-square"
+        } bg-gradient-to-br ${song.gradient} flex items-center justify-center overflow-hidden`}
       >
         {photo ? (
           <img
@@ -108,21 +107,21 @@ export default function SongCard({
 
       {/* Info */}
       <div className="p-3 pb-3.5 border-t border-transparent group-hover:border-primary/30 transition-colors">
-        <p className="text-sm font-semibold text-foreground truncate leading-snug">
+        <p className="font-body text-sm font-semibold text-foreground truncate leading-snug">
           {song.title}
         </p>
         <p
-          className="text-xs truncate mt-0.5 font-medium"
+          className="font-body text-xs truncate mt-0.5 font-medium"
           style={{ color: "#b8870f" }}
         >
           {song.artist}
         </p>
         <div className="flex items-center justify-between mt-1.5">
-          <p className="text-[10px] text-muted-foreground/60">
+          <p className="font-body text-[10px] text-muted-foreground/60">
             {song.plays} plays
           </p>
           <span
-            className="text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded-full"
+            className="font-body text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded-full"
             style={{
               background: "rgba(212,160,23,0.12)",
               color: "#d4a017",
