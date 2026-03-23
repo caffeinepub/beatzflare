@@ -7,14 +7,11 @@ interface MediaPlayerModalProps {
   onClose: () => void;
 }
 
-type MediaType = "soundcloud" | "audiomack" | "search" | null;
+type MediaType = "soundcloud" | "audiomack" | null;
 
 function getMediaType(song: Song): MediaType {
   if (song.audiomackUrl) return "audiomack";
-  if (song.soundcloudUrl) {
-    if (song.soundcloudUrl.includes("/search?")) return "search";
-    return "soundcloud";
-  }
+  if (song.soundcloudUrl) return "soundcloud";
   return null;
 }
 
@@ -22,13 +19,31 @@ function getAudiomackEmbedUrl(url: string): string {
   try {
     const u = new URL(url);
     const parts = u.pathname.replace(/^\//, "").split("/");
-    if (parts.length >= 3 && parts[1] === "song") {
-      return `https://audiomack.com/embed/song/${parts[0]}/${parts[2]}`;
+    // /artist/song/slug  or  /artist/playlist/slug
+    if (parts.length >= 3) {
+      const type = parts[1] === "playlist" ? "playlist" : "song";
+      return `https://audiomack.com/embed/${type}/${parts[0]}/${parts[2]}`;
     }
   } catch (_) {
     // ignore
   }
   return url;
+}
+
+function isSearchUrl(url: string): boolean {
+  return (
+    url.includes("/search") &&
+    (url.includes("?q=") || url.includes("/search/results"))
+  );
+}
+
+function getSoundCloudEmbedUrl(rawUrl: string): string {
+  if (isSearchUrl(rawUrl)) {
+    // Search embed: auto_play=false so browser allows user to pick a track
+    return `https://w.soundcloud.com/player/?url=${encodeURIComponent(rawUrl)}&auto_play=false&color=%23C9A84C&hide_related=false&show_comments=false&show_user=true&show_reposts=false&buying=false&sharing=false&download=false&show_playcount=false&show_teaser=false&visual=false`;
+  }
+  // Direct track embed: auto_play=true
+  return `https://w.soundcloud.com/player/?url=${encodeURIComponent(rawUrl)}&auto_play=true&color=%23C9A84C&hide_related=true&show_comments=false&show_user=false&show_reposts=false&buying=false&sharing=false&download=false&show_playcount=false&show_teaser=false&visual=false&show_artwork=false&start_track=0&single_active=true`;
 }
 
 const VISUALIZER_BARS: { id: string; h: number; dur: number }[] = [
@@ -49,7 +64,6 @@ const VISUALIZER_BARS: { id: string; h: number; dur: number }[] = [
   { id: "v-o", h: 7, dur: 1.3 },
 ];
 
-// Dark overlay color matching the card background
 const COVER_BG = "oklch(0.12 0.009 55)";
 
 export default function MediaPlayerModal({
@@ -61,17 +75,16 @@ export default function MediaPlayerModal({
 
   const isSoundCloud = mediaType === "soundcloud";
   const isAudiomack = mediaType === "audiomack";
-  const isSearch = mediaType === "search";
 
-  let scEmbedSrc = "";
-  if ((isSoundCloud || isSearch) && song.soundcloudUrl) {
-    scEmbedSrc = `https://w.soundcloud.com/player/?url=${encodeURIComponent(song.soundcloudUrl)}&auto_play=true&color=%23C9A84C&show_artwork=true&show_user=false&show_reposts=false&buying=false&sharing=false&download=false&show_playcount=false&hide_related=true&show_comments=false&show_teaser=false&visual=false`;
-  }
+  const scUrl = song.soundcloudUrl ?? "";
+  const isSearchEmbed = isSoundCloud && isSearchUrl(scUrl);
 
-  let amEmbedSrc = "";
-  if (isAudiomack && song.audiomackUrl) {
-    amEmbedSrc = getAudiomackEmbedUrl(song.audiomackUrl);
-  }
+  const scEmbedSrc = isSoundCloud && scUrl ? getSoundCloudEmbedUrl(scUrl) : "";
+
+  const amEmbedSrc =
+    isAudiomack && song.audiomackUrl
+      ? getAudiomackEmbedUrl(song.audiomackUrl)
+      : "";
 
   return (
     <AnimatePresence>
@@ -106,11 +119,6 @@ export default function MediaPlayerModal({
                 <span className="inline-flex items-center px-2 py-0.5 rounded-md bg-primary/15 border border-primary/35 text-primary text-xs font-black tracking-widest">
                   BT
                 </span>
-                {isAudiomack && (
-                  <span className="inline-flex items-center px-2 py-0.5 rounded-md bg-amber-500/12 border border-amber-400/25 text-amber-400 text-[10px] font-semibold">
-                    Audiomack
-                  </span>
-                )}
               </div>
               <p className="text-sm text-muted-foreground">{song.artist}</p>
             </div>
@@ -125,91 +133,133 @@ export default function MediaPlayerModal({
           </div>
 
           {/* Player Area */}
-          {isSoundCloud || isSearch ? (
+          {isSoundCloud && (
             <div className="rounded-xl overflow-hidden shadow-2xl border border-border/30">
-              {/* Album art / visualizer */}
-              <div
-                className={`relative w-full bg-gradient-to-br ${song.gradient} flex flex-col items-center justify-center gap-4 py-10`}
-              >
-                <div className="absolute inset-0 bg-black/50" />
-                <div className="relative flex flex-col items-center gap-3">
-                  <div className="w-16 h-16 rounded-full bg-white/8 border border-white/20 flex items-center justify-center backdrop-blur-sm">
-                    <Music2 className="w-7 h-7 text-white/70" />
-                  </div>
-                  <div className="flex items-end gap-1 h-8">
-                    {VISUALIZER_BARS.map((bar) => (
-                      <motion.div
-                        key={bar.id}
-                        className="w-1 rounded-full bg-primary/60"
-                        animate={{
-                          height: [
-                            `${bar.h * 2.5}px`,
-                            `${((bar.h * 2.5 + 8) % 32) + 6}px`,
-                            `${bar.h * 2.5}px`,
-                          ],
-                        }}
-                        transition={{
-                          duration: bar.dur,
-                          repeat: Number.POSITIVE_INFINITY,
-                          ease: "easeInOut",
-                        }}
-                      />
-                    ))}
+              {/* Album art / visualizer — only for direct tracks, not search */}
+              {!isSearchEmbed && (
+                <div
+                  className={`relative w-full bg-gradient-to-br ${song.gradient} flex flex-col items-center justify-center gap-4 py-8`}
+                >
+                  <div className="absolute inset-0 bg-black/50" />
+                  <div className="relative flex flex-col items-center gap-3">
+                    <div className="w-16 h-16 rounded-full bg-white/8 border border-white/20 flex items-center justify-center backdrop-blur-sm">
+                      <Music2 className="w-7 h-7 text-white/70" />
+                    </div>
+                    <div className="flex items-end gap-1 h-8">
+                      {VISUALIZER_BARS.map((bar) => (
+                        <motion.div
+                          key={bar.id}
+                          className="w-1 rounded-full bg-primary/60"
+                          animate={{
+                            height: [
+                              `${bar.h * 2.5}px`,
+                              `${((bar.h * 2.5 + 8) % 32) + 6}px`,
+                              `${bar.h * 2.5}px`,
+                            ],
+                          }}
+                          transition={{
+                            duration: bar.dur,
+                            repeat: Number.POSITIVE_INFINITY,
+                            ease: "easeInOut",
+                          }}
+                        />
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </div>
+              )}
 
-              {/*
-                SoundCloud iframe — overlays cover ALL SoundCloud branding:
-                1. Bottom bar ("Play on SoundCloud" footer)
-                2. Top-right ("Play on SoundCloud" in artwork)
-                3. Top-left (SoundCloud logo branding)
-                Overlays have pointer-events ENABLED to block all clicks through to SC links.
-              */}
-              <div
-                className="relative w-full"
-                style={{
-                  height: "130px",
-                  overflow: "hidden",
-                  background: COVER_BG,
-                }}
-              >
-                <iframe
-                  className="absolute top-0 left-0 w-full"
-                  height="166"
-                  scrolling="no"
-                  frameBorder="no"
-                  allow="autoplay"
-                  src={scEmbedSrc}
-                  title={song.title}
-                />
-                {/* Bottom overlay — covers "Play on SoundCloud" footer bar */}
+              {/* Search embed hint */}
+              {isSearchEmbed && (
                 <div
-                  className="absolute bottom-0 left-0 right-0 z-10"
-                  style={{ height: "44px", background: COVER_BG }}
-                />
-                {/* Top-right overlay — covers "Play on SoundCloud" link in artwork */}
+                  className="relative flex items-center gap-2 px-3 py-2"
+                  style={{ background: COVER_BG }}
+                >
+                  <span className="inline-flex items-center px-2 py-0.5 rounded-md bg-primary/15 border border-primary/35 text-primary text-xs font-black tracking-widest">
+                    BT
+                  </span>
+                  <span
+                    className="text-xs"
+                    style={{ color: "oklch(0.72 0.08 72)" }}
+                  >
+                    Tap a result to play
+                  </span>
+                </div>
+              )}
+
+              {/* SoundCloud iframe */}
+              {isSearchEmbed ? (
+                // Search results — full height, no overlays blocking the list
                 <div
-                  className="absolute top-0 right-0 z-10"
+                  className="relative w-full"
+                  style={{ background: COVER_BG }}
+                >
+                  <iframe
+                    className="w-full block"
+                    height="300"
+                    scrolling="no"
+                    frameBorder="no"
+                    allow="autoplay"
+                    src={scEmbedSrc}
+                    title={song.title}
+                  />
+                </div>
+              ) : (
+                // Direct track — clip to 130px to hide "Play on SoundCloud" footer
+                <div
+                  className="relative w-full"
                   style={{
-                    width: "180px",
-                    height: "40px",
+                    height: "130px",
+                    overflow: "hidden",
                     background: COVER_BG,
                   }}
-                />
-                {/* Top-left overlay — covers SoundCloud logo branding */}
-                <div
-                  className="absolute top-0 left-0 z-10"
-                  style={{
-                    width: "80px",
-                    height: "32px",
-                    background: COVER_BG,
-                  }}
-                />
-              </div>
+                >
+                  <iframe
+                    className="absolute top-0 left-0 w-full"
+                    height="166"
+                    scrolling="no"
+                    frameBorder="no"
+                    allow="autoplay"
+                    src={scEmbedSrc}
+                    title={song.title}
+                  />
+                  {/* Bottom: covers "Play on SoundCloud" footer */}
+                  <div
+                    className="absolute bottom-0 left-0 right-0 z-10"
+                    style={{
+                      height: "44px",
+                      background: COVER_BG,
+                      pointerEvents: "all",
+                    }}
+                  />
+                  {/* Top-right: covers waveform SC link */}
+                  <div
+                    className="absolute top-0 right-0 z-10"
+                    style={{
+                      width: "200px",
+                      height: "36px",
+                      background: COVER_BG,
+                      pointerEvents: "all",
+                    }}
+                  />
+                  {/* Top-left: covers SC logo */}
+                  <div
+                    className="absolute top-0 left-0 z-10"
+                    style={{
+                      width: "90px",
+                      height: "36px",
+                      background: COVER_BG,
+                      pointerEvents: "all",
+                    }}
+                  />
+                </div>
+              )}
             </div>
-          ) : isAudiomack ? (
+          )}
+
+          {isAudiomack && (
             <div className="rounded-xl overflow-hidden shadow-2xl border border-border/30">
+              {/* BT header bar */}
               <div
                 className="flex items-center gap-2 px-4 py-2.5 border-b border-border/25"
                 style={{ background: COVER_BG }}
@@ -218,7 +268,9 @@ export default function MediaPlayerModal({
                   BT
                 </span>
                 <span className="text-border/60 mx-1">·</span>
-                <span className="text-muted-foreground text-xs">Audiomack</span>
+                <span className="text-muted-foreground text-xs truncate">
+                  {song.title}
+                </span>
                 <span className="ml-auto flex items-center gap-1.5">
                   <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
                   <span className="text-muted-foreground/60 text-xs">Live</span>
@@ -233,11 +285,12 @@ export default function MediaPlayerModal({
                 allow="autoplay"
                 title={song.title}
               />
+              {/* Visualizer footer */}
               <div
-                className="flex items-end justify-center gap-1 h-7 px-4 py-1"
+                className="flex items-end justify-center gap-1 h-8 px-4 py-1"
                 style={{ background: COVER_BG }}
               >
-                {VISUALIZER_BARS.slice(0, 10).map((bar) => (
+                {VISUALIZER_BARS.slice(0, 12).map((bar) => (
                   <motion.div
                     key={bar.id}
                     className="w-1 rounded-full bg-primary/50"
@@ -257,7 +310,7 @@ export default function MediaPlayerModal({
                 ))}
               </div>
             </div>
-          ) : null}
+          )}
 
           <p className="text-center text-xs text-muted-foreground/40 mt-4">
             Tap outside to close

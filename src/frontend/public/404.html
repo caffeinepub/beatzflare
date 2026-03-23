@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BEATZFLARE</title>
+    <script>
+      // SPA redirect: save the current path then redirect to root
+      var path = window.location.pathname + window.location.search + window.location.hash;
+      if (path !== '/') {
+        sessionStorage.setItem('spa_redirect', path);
+      }
+      window.location.replace('/');
+    </script>
+    <style>
+      body { margin: 0; background: #0a0a0a; display: flex; align-items: center; justify-content: center; min-height: 100vh; }
+      p { color: #c9a227; font-family: sans-serif; font-size: 1.1rem; }
+    </style>
+  </head>
+  <body>
+    <p>Loading BEATZFLARE...</p>
+  </body>
+</html>

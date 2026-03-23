@@ -4,11 +4,10 @@ import Header from "@/components/Header";
 import HomePage from "@/components/HomePage";
 import MediaPlayerModal from "@/components/MediaPlayerModal";
 import PlayerBar from "@/components/PlayerBar";
-import ReelViewer from "@/components/ReelViewer";
 import SearchModal from "@/components/SearchModal";
 import SplashScreen from "@/components/SplashScreen";
 import { songs } from "@/data/mockData";
-import type { Reel, Song } from "@/data/mockData";
+import type { Song } from "@/data/mockData";
 import { AnimatePresence } from "motion/react";
 import { useCallback, useEffect, useRef, useState } from "react";
 
@@ -24,7 +23,6 @@ export default function App() {
   const [volume, setVolume] = useState(75);
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
-  const [activeReel, setActiveReel] = useState<Reel | null>(null);
   const progressRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const hasExternalMedia = !!(
@@ -112,7 +110,6 @@ export default function App() {
         onPrev={handlePrev}
         onGenre={handleGenre}
         onExplore={() => handleNavigate("Explore")}
-        onReel={setActiveReel}
       />
     );
   };
@@ -211,15 +208,6 @@ export default function App() {
         onPlay={handlePlay}
         initialQuery={searchQuery}
       />
-
-      <AnimatePresence>
-        {activeReel && (
-          <ReelViewer
-            initialReel={activeReel}
-            onClose={() => setActiveReel(null)}
-          />
-        )}
-      </AnimatePresence>
 
       <AnimatePresence>
         {hasExternalMedia && currentSong && (
