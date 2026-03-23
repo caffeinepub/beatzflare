@@ -2,6 +2,7 @@ import ExplorePage from "@/components/ExplorePage";
 import GenrePage from "@/components/GenrePage";
 import Header from "@/components/Header";
 import HomePage from "@/components/HomePage";
+import LoginPage from "@/components/LoginPage";
 import MediaPlayerModal from "@/components/MediaPlayerModal";
 import PlayerBar from "@/components/PlayerBar";
 import SearchModal from "@/components/SearchModal";
@@ -13,8 +14,20 @@ import { useCallback, useEffect, useRef, useState } from "react";
 
 type Page = "Home" | "Explore" | "Radio" | "Charts" | "Library" | "Genre";
 
+function getStoredUser(): string | null {
+  try {
+    const raw = localStorage.getItem("beatzflare_user");
+    if (!raw) return null;
+    const parsed = JSON.parse(raw);
+    return parsed?.loggedIn ? parsed.username : null;
+  } catch {
+    return null;
+  }
+}
+
 export default function App() {
   const [splashDone, setSplashDone] = useState(false);
+  const [loggedInUser, setLoggedInUser] = useState<string | null>(null);
   const [currentPage, setCurrentPage] = useState<Page>("Home");
   const [currentGenre, setCurrentGenre] = useState<string | null>(null);
   const [currentSong, setCurrentSong] = useState<Song | null>(null);
@@ -99,6 +112,20 @@ export default function App() {
     });
   }, []);
 
+  const handleLogin = (username: string) => {
+    setLoggedInUser(username);
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem("beatzflare_user");
+    setLoggedInUser(null);
+  };
+
+  const handleSplashComplete = () => {
+    setSplashDone(true);
+    setLoggedInUser(getStoredUser());
+  };
+
   const renderPage = () => {
     if (currentPage === "Genre" && currentGenre) {
       return (
@@ -141,15 +168,21 @@ export default function App() {
   return (
     <>
       <AnimatePresence>
-        {!splashDone && <SplashScreen onComplete={() => setSplashDone(true)} />}
+        {!splashDone && <SplashScreen onComplete={handleSplashComplete} />}
       </AnimatePresence>
 
-      {splashDone && (
+      <AnimatePresence>
+        {splashDone && !loggedInUser && <LoginPage onLogin={handleLogin} />}
+      </AnimatePresence>
+
+      {splashDone && loggedInUser && (
         <div className="min-h-screen bg-background">
           <Header
             currentPage={currentPage}
             onNavigate={handleNavigate}
             onSearchOpen={() => setSearchOpen(true)}
+            username={loggedInUser}
+            onLogout={handleLogout}
           />
           <main>{renderPage()}</main>
 

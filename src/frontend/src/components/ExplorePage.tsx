@@ -36,7 +36,7 @@ export default function ExplorePage({
       </div>
 
       {genres.map((genre) => {
-        const genreSongs = songs.filter((s) => s.category === genre.id);
+        const genreSongs = songs.filter((s) => s.category === genre.category);
         return (
           <motion.div
             key={genre.id}

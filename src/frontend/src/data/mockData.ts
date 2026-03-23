@@ -44,6 +44,8 @@ export const songs: Song[] = [
     duration: "12:30",
     gradient: g(0),
     plays: "18M",
+    soundcloudUrl:
+      "https://soundcloud.com/itslovesmusic/sets/top-50-haryanvi-songs-2025",
     audiomackUrl:
       "https://audiomack.com/surender-romio/song/mashup-haryanvi-songs-2021-vol-4-6527817",
   },
@@ -55,6 +57,8 @@ export const songs: Song[] = [
     duration: "10:15",
     gradient: g(1),
     plays: "22M",
+    soundcloudUrl:
+      "https://soundcloud.com/itslovesmusic/sets/top-50-haryanvi-songs-2025",
     audiomackUrl:
       "https://audiomack.com/lokesh-gurjar/song/the-haryanvi-mashup-1",
   },
@@ -66,6 +70,8 @@ export const songs: Song[] = [
     duration: "11:40",
     gradient: g(2),
     plays: "19M",
+    soundcloudUrl:
+      "https://soundcloud.com/itslovesmusic/sets/top-50-haryanvi-songs-2025",
     audiomackUrl:
       "https://audiomack.com/lokesh-gurjar/song/the-haryanvi-mashup-2",
   },
@@ -77,6 +83,8 @@ export const songs: Song[] = [
     duration: "12:05",
     gradient: g(3),
     plays: "25M",
+    soundcloudUrl:
+      "https://soundcloud.com/itslovesmusic/sets/top-50-haryanvi-songs-2025",
     audiomackUrl:
       "https://audiomack.com/lokesh-gurjar/song/the-haryanvi-mashup-3",
   },
@@ -88,6 +96,8 @@ export const songs: Song[] = [
     duration: "9:50",
     gradient: g(4),
     plays: "14M",
+    soundcloudUrl:
+      "https://soundcloud.com/itslovesmusic/sets/top-50-haryanvi-songs-2025",
     audiomackUrl:
       "https://audiomack.com/vandana-jangir/song/haryanvi-mashup-01-6189651",
   },
@@ -99,6 +109,8 @@ export const songs: Song[] = [
     duration: "11:20",
     gradient: g(5),
     plays: "16M",
+    soundcloudUrl:
+      "https://soundcloud.com/itslovesmusic/sets/top-50-haryanvi-songs-2025",
     audiomackUrl:
       "https://audiomack.com/kanchan-nagar/song/new-haryanvi-mashup-4-7728547",
   },
@@ -110,7 +122,8 @@ export const songs: Song[] = [
     duration: "10:45",
     gradient: g(6),
     plays: "20M",
-    audiomackUrl: "https://audiomack.com/haryanvi-dj/song/desi-haryanvi-mashup",
+    soundcloudUrl:
+      "https://soundcloud.com/itslovesmusic/sets/top-50-haryanvi-songs-2025",
   },
   {
     id: "h8",
@@ -120,7 +133,8 @@ export const songs: Song[] = [
     duration: "13:10",
     gradient: g(7),
     plays: "12M",
-    audiomackUrl: "https://audiomack.com/desi-music/song/haryanvi-dj-mix-2022",
+    soundcloudUrl:
+      "https://soundcloud.com/itslovesmusic/sets/top-50-haryanvi-songs-2025",
   },
   {
     id: "h9",
@@ -131,7 +145,7 @@ export const songs: Song[] = [
     gradient: g(8),
     plays: "30M",
     soundcloudUrl:
-      "https://soundcloud.com/gurmeetbhadana/the-haryanvi-mashup-2017",
+      "https://soundcloud.com/itslovesmusic/sets/top-50-haryanvi-songs-2025",
   },
   {
     id: "h10",
@@ -142,7 +156,7 @@ export const songs: Song[] = [
     gradient: g(9),
     plays: "17M",
     soundcloudUrl:
-      "https://soundcloud.com/uddhav-46265729/the-haryanvi-mashup-2-5-thm-2",
+      "https://soundcloud.com/itslovesmusic/sets/top-50-haryanvi-songs-2025",
   },
 
   // ===== HARYANVI HITS - GROUP 1: FRESH HITS (h11-h20) =====
@@ -154,7 +168,8 @@ export const songs: Song[] = [
     duration: "3:40",
     gradient: g(0),
     plays: "98M",
-    soundcloudUrl: "https://soundcloud.com/itslovesmusic/naam-chale",
+    soundcloudUrl:
+      "https://soundcloud.com/itslovesmusic/sets/top-50-haryanvi-songs-2025",
   },
   {
     id: "h12",
@@ -164,7 +179,8 @@ export const songs: Song[] = [
     duration: "3:25",
     gradient: g(1),
     plays: "52M",
-    soundcloudUrl: "https://soundcloud.com/itslovesmusic/raat-ke-shikari",
+    soundcloudUrl:
+      "https://soundcloud.com/itslovesmusic/sets/top-50-haryanvi-songs-2025",
   },
   {
     id: "h13",
@@ -174,7 +190,8 @@ export const songs: Song[] = [
     duration: "3:50",
     gradient: g(2),
     plays: "76M",
-    soundcloudUrl: "https://soundcloud.com/itslovesmusic/yaari",
+    soundcloudUrl:
+      "https://soundcloud.com/itslovesmusic/sets/top-50-haryanvi-songs-2025",
   },
   {
     id: "h14",
@@ -184,7 +201,8 @@ export const songs: Song[] = [
     duration: "3:30",
     gradient: g(3),
     plays: "65M",
-    soundcloudUrl: "https://soundcloud.com/itslovesmusic/gaadi-150",
+    soundcloudUrl:
+      "https://soundcloud.com/itslovesmusic/sets/top-50-haryanvi-songs-2025",
   },
   {
     id: "h15",
@@ -194,7 +212,8 @@ export const songs: Song[] = [
     duration: "3:45",
     gradient: g(4),
     plays: "48M",
-    soundcloudUrl: "https://soundcloud.com/itslovesmusic/black-ride",
+    soundcloudUrl:
+      "https://soundcloud.com/itslovesmusic/sets/top-50-haryanvi-songs-2025",
   },
   {
     id: "h16",
@@ -204,7 +223,8 @@ export const songs: Song[] = [
     duration: "4:05",
     gradient: g(5),
     plays: "43M",
-    soundcloudUrl: "https://soundcloud.com/itslovesmusic/ramayan-ka-saar",
+    soundcloudUrl:
+      "https://soundcloud.com/itslovesmusic/sets/top-50-haryanvi-songs-2025",
   },
   {
     id: "h17",
@@ -214,7 +234,8 @@ export const songs: Song[] = [
     duration: "3:38",
     gradient: g(6),
     plays: "55M",
-    soundcloudUrl: "https://soundcloud.com/itslovesmusic/nazra-ke-teer",
+    soundcloudUrl:
+      "https://soundcloud.com/itslovesmusic/sets/top-50-haryanvi-songs-2025",
   },
   {
     id: "h18",
@@ -224,7 +245,8 @@ export const songs: Song[] = [
     duration: "3:55",
     gradient: g(7),
     plays: "48M",
-    soundcloudUrl: "https://soundcloud.com/itslovesmusic/russian-bandana",
+    soundcloudUrl:
+      "https://soundcloud.com/itslovesmusic/sets/top-50-haryanvi-songs-2025",
   },
   {
     id: "h19",
@@ -234,7 +256,8 @@ export const songs: Song[] = [
     duration: "3:42",
     gradient: g(8),
     plays: "41M",
-    soundcloudUrl: "https://soundcloud.com/itslovesmusic/chambal-k-dakku",
+    soundcloudUrl:
+      "https://soundcloud.com/itslovesmusic/sets/top-50-haryanvi-songs-2025",
   },
   {
     id: "h20",
@@ -244,7 +267,8 @@ export const songs: Song[] = [
     duration: "3:28",
     gradient: g(9),
     plays: "66M",
-    soundcloudUrl: "https://soundcloud.com/itslovesmusic/lofar",
+    soundcloudUrl:
+      "https://soundcloud.com/itslovesmusic/sets/top-50-haryanvi-songs-2025",
   },
 
   // ===== HARYANVI HITS - GROUP 2: ROMANTIC / SAD (h21-h30) =====
@@ -256,7 +280,8 @@ export const songs: Song[] = [
     duration: "4:10",
     gradient: g(0),
     plays: "88M",
-    soundcloudUrl: "https://soundcloud.com/haryanvi-songs/tere-bina",
+    soundcloudUrl:
+      "https://soundcloud.com/itslovesmusic/sets/top-50-haryanvi-songs-2025",
   },
   {
     id: "h22",
@@ -266,7 +291,8 @@ export const songs: Song[] = [
     duration: "3:52",
     gradient: g(1),
     plays: "72M",
-    soundcloudUrl: "https://soundcloud.com/haryanvi-songs/teri-kami-thi",
+    soundcloudUrl:
+      "https://soundcloud.com/itslovesmusic/sets/top-50-haryanvi-songs-2025",
   },
   {
     id: "h23",
@@ -276,7 +302,8 @@ export const songs: Song[] = [
     duration: "3:35",
     gradient: g(2),
     plays: "58M",
-    soundcloudUrl: "https://soundcloud.com/haryanvi-songs/ussee-mod-pe",
+    soundcloudUrl:
+      "https://soundcloud.com/itslovesmusic/sets/top-50-haryanvi-songs-2025",
   },
   {
     id: "h24",
@@ -286,7 +313,8 @@ export const songs: Song[] = [
     duration: "3:20",
     gradient: g(3),
     plays: "45M",
-    soundcloudUrl: "https://soundcloud.com/haryanvi-songs/moon-dance",
+    soundcloudUrl:
+      "https://soundcloud.com/itslovesmusic/sets/top-50-haryanvi-songs-2025",
   },
   {
     id: "h25",
@@ -296,7 +324,8 @@ export const songs: Song[] = [
     duration: "3:48",
     gradient: g(4),
     plays: "61M",
-    soundcloudUrl: "https://soundcloud.com/haryanvi-songs/maan-gaye-yaar",
+    soundcloudUrl:
+      "https://soundcloud.com/itslovesmusic/sets/top-50-haryanvi-songs-2025",
   },
   {
     id: "h26",
@@ -306,7 +335,8 @@ export const songs: Song[] = [
     duration: "4:02",
     gradient: g(5),
     plays: "54M",
-    soundcloudUrl: "https://soundcloud.com/haryanvi-songs/papa-ne-socha",
+    soundcloudUrl:
+      "https://soundcloud.com/itslovesmusic/sets/top-50-haryanvi-songs-2025",
   },
   {
     id: "h27",
@@ -316,7 +346,8 @@ export const songs: Song[] = [
     duration: "3:58",
     gradient: g(6),
     plays: "79M",
-    soundcloudUrl: "https://soundcloud.com/haryanvi-songs/tere-do-naina",
+    soundcloudUrl:
+      "https://soundcloud.com/itslovesmusic/sets/top-50-haryanvi-songs-2025",
   },
   {
     id: "h28",
@@ -326,7 +357,8 @@ export const songs: Song[] = [
     duration: "3:32",
     gradient: g(7),
     plays: "67M",
-    soundcloudUrl: "https://soundcloud.com/haryanvi-songs/jamidaar-vs-pyaar",
+    soundcloudUrl:
+      "https://soundcloud.com/itslovesmusic/sets/top-50-haryanvi-songs-2025",
   },
   {
     id: "h29",
@@ -336,7 +368,8 @@ export const songs: Song[] = [
     duration: "3:45",
     gradient: g(8),
     plays: "49M",
-    soundcloudUrl: "https://soundcloud.com/haryanvi-songs/gulak-main-sikka",
+    soundcloudUrl:
+      "https://soundcloud.com/itslovesmusic/sets/top-50-haryanvi-songs-2025",
   },
   {
     id: "h30",
@@ -346,7 +379,8 @@ export const songs: Song[] = [
     duration: "3:22",
     gradient: g(9),
     plays: "93M",
-    soundcloudUrl: "https://soundcloud.com/haryanvi-songs/fans-from-chandigarh",
+    soundcloudUrl:
+      "https://soundcloud.com/itslovesmusic/sets/top-50-haryanvi-songs-2025",
   },
 
   // ===== HARYANVI HITS - GROUP 3: OLD HIT / CLASSIC (h31-h40) =====
@@ -358,7 +392,8 @@ export const songs: Song[] = [
     duration: "4:15",
     gradient: g(0),
     plays: "110M",
-    soundcloudUrl: "https://soundcloud.com/haryanvi-songs/paiya-pittal",
+    soundcloudUrl:
+      "https://soundcloud.com/itslovesmusic/sets/top-50-haryanvi-songs-2025",
   },
   {
     id: "h32",
@@ -368,7 +403,8 @@ export const songs: Song[] = [
     duration: "3:40",
     gradient: g(1),
     plays: "85M",
-    soundcloudUrl: "https://soundcloud.com/haryanvi-songs/badmash22",
+    soundcloudUrl:
+      "https://soundcloud.com/itslovesmusic/sets/top-50-haryanvi-songs-2025",
   },
   {
     id: "h33",
@@ -378,7 +414,8 @@ export const songs: Song[] = [
     duration: "3:55",
     gradient: g(2),
     plays: "120M",
-    soundcloudUrl: "https://soundcloud.com/haryanvi-songs/total-talli",
+    soundcloudUrl:
+      "https://soundcloud.com/itslovesmusic/sets/top-50-haryanvi-songs-2025",
   },
   {
     id: "h34",
@@ -388,7 +425,8 @@ export const songs: Song[] = [
     duration: "3:28",
     gradient: g(3),
     plays: "75M",
-    soundcloudUrl: "https://soundcloud.com/haryanvi-songs/lal-kila",
+    soundcloudUrl:
+      "https://soundcloud.com/itslovesmusic/sets/top-50-haryanvi-songs-2025",
   },
   {
     id: "h35",
@@ -398,7 +436,8 @@ export const songs: Song[] = [
     duration: "4:00",
     gradient: g(4),
     plays: "68M",
-    soundcloudUrl: "https://soundcloud.com/haryanvi-songs/zamidaar-vs-sarkar",
+    soundcloudUrl:
+      "https://soundcloud.com/itslovesmusic/sets/top-50-haryanvi-songs-2025",
   },
   {
     id: "h36",
@@ -408,7 +447,8 @@ export const songs: Song[] = [
     duration: "3:48",
     gradient: g(5),
     plays: "57M",
-    soundcloudUrl: "https://soundcloud.com/haryanvi-songs/ek-gau-to-palo",
+    soundcloudUrl:
+      "https://soundcloud.com/itslovesmusic/sets/top-50-haryanvi-songs-2025",
   },
   {
     id: "h37",
@@ -418,7 +458,8 @@ export const songs: Song[] = [
     duration: "3:35",
     gradient: g(6),
     plays: "44M",
-    soundcloudUrl: "https://soundcloud.com/haryanvi-songs/dimag-bhand",
+    soundcloudUrl:
+      "https://soundcloud.com/itslovesmusic/sets/top-50-haryanvi-songs-2025",
   },
   {
     id: "h38",
@@ -428,7 +469,8 @@ export const songs: Song[] = [
     duration: "3:22",
     gradient: g(7),
     plays: "96M",
-    soundcloudUrl: "https://soundcloud.com/haryanvi-songs/beauty-parlour",
+    soundcloudUrl:
+      "https://soundcloud.com/itslovesmusic/sets/top-50-haryanvi-songs-2025",
   },
   {
     id: "h39",
@@ -438,7 +480,8 @@ export const songs: Song[] = [
     duration: "3:50",
     gradient: g(8),
     plays: "52M",
-    soundcloudUrl: "https://soundcloud.com/haryanvi-songs/hand-to-hand",
+    soundcloudUrl:
+      "https://soundcloud.com/itslovesmusic/sets/top-50-haryanvi-songs-2025",
   },
   {
     id: "h40",
@@ -448,7 +491,8 @@ export const songs: Song[] = [
     duration: "3:38",
     gradient: g(9),
     plays: "81M",
-    soundcloudUrl: "https://soundcloud.com/haryanvi-songs/gamand-karniya",
+    soundcloudUrl:
+      "https://soundcloud.com/itslovesmusic/sets/top-50-haryanvi-songs-2025",
   },
 
   // ===== HARYANVI HITS - GROUP 4: MIX / DJ / PARTY (h41-h50) =====
@@ -460,7 +504,8 @@ export const songs: Song[] = [
     duration: "3:45",
     gradient: g(0),
     plays: "38M",
-    audiomackUrl: "https://audiomack.com/search/songs?q=boss+feels+haryanvi",
+    soundcloudUrl:
+      "https://soundcloud.com/itslovesmusic/sets/top-50-haryanvi-songs-2025",
   },
   {
     id: "h42",
@@ -470,7 +515,8 @@ export const songs: Song[] = [
     duration: "3:30",
     gradient: g(1),
     plays: "47M",
-    audiomackUrl: "https://audiomack.com/search/songs?q=parwah+haryanvi",
+    soundcloudUrl:
+      "https://soundcloud.com/itslovesmusic/sets/top-50-haryanvi-songs-2025",
   },
   {
     id: "h43",
@@ -480,7 +526,8 @@ export const songs: Song[] = [
     duration: "3:55",
     gradient: g(2),
     plays: "63M",
-    audiomackUrl: "https://audiomack.com/search/songs?q=jaat+yaar+haryanvi",
+    soundcloudUrl:
+      "https://soundcloud.com/itslovesmusic/sets/top-50-haryanvi-songs-2025",
   },
   {
     id: "h44",
@@ -490,7 +537,8 @@ export const songs: Song[] = [
     duration: "3:20",
     gradient: g(3),
     plays: "55M",
-    audiomackUrl: "https://audiomack.com/search/songs?q=no+doubt+haryanvi",
+    soundcloudUrl:
+      "https://soundcloud.com/itslovesmusic/sets/top-50-haryanvi-songs-2025",
   },
   {
     id: "h45",
@@ -500,7 +548,8 @@ export const songs: Song[] = [
     duration: "3:42",
     gradient: g(4),
     plays: "41M",
-    audiomackUrl: "https://audiomack.com/search/songs?q=control+haryanvi",
+    soundcloudUrl:
+      "https://soundcloud.com/itslovesmusic/sets/top-50-haryanvi-songs-2025",
   },
   {
     id: "h46",
@@ -510,7 +559,8 @@ export const songs: Song[] = [
     duration: "3:38",
     gradient: g(5),
     plays: "36M",
-    audiomackUrl: "https://audiomack.com/search/songs?q=gheda+haryanvi",
+    soundcloudUrl:
+      "https://soundcloud.com/itslovesmusic/sets/top-50-haryanvi-songs-2025",
   },
   {
     id: "h47",
@@ -520,7 +570,8 @@ export const songs: Song[] = [
     duration: "4:05",
     gradient: g(6),
     plays: "72M",
-    audiomackUrl: "https://audiomack.com/search/songs?q=balam+rangila+haryanvi",
+    soundcloudUrl:
+      "https://soundcloud.com/itslovesmusic/sets/top-50-haryanvi-songs-2025",
   },
   {
     id: "h48",
@@ -530,7 +581,8 @@ export const songs: Song[] = [
     duration: "3:28",
     gradient: g(7),
     plays: "49M",
-    audiomackUrl: "https://audiomack.com/search/songs?q=chubare+aali+haryanvi",
+    soundcloudUrl:
+      "https://soundcloud.com/itslovesmusic/sets/top-50-haryanvi-songs-2025",
   },
   {
     id: "h49",
@@ -540,7 +592,8 @@ export const songs: Song[] = [
     duration: "3:50",
     gradient: g(8),
     plays: "58M",
-    audiomackUrl: "https://audiomack.com/search/songs?q=sheesha+haryanvi",
+    soundcloudUrl:
+      "https://soundcloud.com/itslovesmusic/sets/top-50-haryanvi-songs-2025",
   },
   {
     id: "h50",
@@ -550,7 +603,8 @@ export const songs: Song[] = [
     duration: "3:35",
     gradient: g(9),
     plays: "44M",
-    audiomackUrl: "https://audiomack.com/search/songs?q=maruti+haryanvi",
+    soundcloudUrl:
+      "https://soundcloud.com/itslovesmusic/sets/top-50-haryanvi-songs-2025",
   },
 
   // ===== HARYANVI HITS - GROUP 5: EXTRA FRESH / INDIE (h51-h60) =====
@@ -562,8 +616,8 @@ export const songs: Song[] = [
     duration: "3:48",
     gradient: g(0),
     plays: "67M",
-    audiomackUrl:
-      "https://audiomack.com/search/songs?q=pehli+mulakaat+haryanvi",
+    soundcloudUrl:
+      "https://soundcloud.com/itslovesmusic/sets/top-50-haryanvi-songs-2025",
   },
   {
     id: "h52",
@@ -573,7 +627,8 @@ export const songs: Song[] = [
     duration: "3:32",
     gradient: g(1),
     plays: "39M",
-    audiomackUrl: "https://audiomack.com/search/songs?q=kargi+barbaad+haryanvi",
+    soundcloudUrl:
+      "https://soundcloud.com/itslovesmusic/sets/top-50-haryanvi-songs-2025",
   },
   {
     id: "h53",
@@ -583,7 +638,8 @@ export const songs: Song[] = [
     duration: "3:55",
     gradient: g(2),
     plays: "52M",
-    audiomackUrl: "https://audiomack.com/search/songs?q=control+sinta+haryanvi",
+    soundcloudUrl:
+      "https://soundcloud.com/itslovesmusic/sets/top-50-haryanvi-songs-2025",
   },
   {
     id: "h54",
@@ -593,7 +649,8 @@ export const songs: Song[] = [
     duration: "3:40",
     gradient: g(3),
     plays: "61M",
-    audiomackUrl: "https://audiomack.com/search/songs?q=the+game+haryanvi",
+    soundcloudUrl:
+      "https://soundcloud.com/itslovesmusic/sets/top-50-haryanvi-songs-2025",
   },
   {
     id: "h55",
@@ -603,7 +660,8 @@ export const songs: Song[] = [
     duration: "3:25",
     gradient: g(4),
     plays: "48M",
-    audiomackUrl: "https://audiomack.com/search/songs?q=jatav+gaam+ka+haryanvi",
+    soundcloudUrl:
+      "https://soundcloud.com/itslovesmusic/sets/top-50-haryanvi-songs-2025",
   },
   {
     id: "h56",
@@ -613,7 +671,8 @@ export const songs: Song[] = [
     duration: "3:18",
     gradient: g(5),
     plays: "73M",
-    audiomackUrl: "https://audiomack.com/search/songs?q=thermometer+haryanvi",
+    soundcloudUrl:
+      "https://soundcloud.com/itslovesmusic/sets/top-50-haryanvi-songs-2025",
   },
   {
     id: "h57",
@@ -623,7 +682,8 @@ export const songs: Song[] = [
     duration: "3:42",
     gradient: g(6),
     plays: "85M",
-    audiomackUrl: "https://audiomack.com/search/songs?q=chatak+matak+haryanvi",
+    soundcloudUrl:
+      "https://soundcloud.com/itslovesmusic/sets/top-50-haryanvi-songs-2025",
   },
   {
     id: "h58",
@@ -633,7 +693,8 @@ export const songs: Song[] = [
     duration: "3:55",
     gradient: g(7),
     plays: "46M",
-    audiomackUrl: "https://audiomack.com/search/songs?q=adalat+haryanvi",
+    soundcloudUrl:
+      "https://soundcloud.com/itslovesmusic/sets/top-50-haryanvi-songs-2025",
   },
   {
     id: "h59",
@@ -643,7 +704,8 @@ export const songs: Song[] = [
     duration: "4:08",
     gradient: g(8),
     plays: "92M",
-    audiomackUrl: "https://audiomack.com/search/songs?q=dil+todke+haryanvi",
+    soundcloudUrl:
+      "https://soundcloud.com/itslovesmusic/sets/top-50-haryanvi-songs-2025",
   },
   {
     id: "h60",
@@ -653,7 +715,422 @@ export const songs: Song[] = [
     duration: "3:30",
     gradient: g(9),
     plays: "57M",
-    audiomackUrl: "https://audiomack.com/search/songs?q=reply+haryanvi",
+    soundcloudUrl:
+      "https://soundcloud.com/itslovesmusic/sets/top-50-haryanvi-songs-2025",
+  },
+  {
+    id: "h61",
+    title: "Top 50 Haryanvi Songs 2026",
+    artist: "Various Artists",
+    category: "Haryanvi Hits",
+    duration: "playlist",
+    gradient: g(0),
+    plays: "50M",
+    soundcloudUrl:
+      "https://soundcloud.com/darpan-saini-158157546/sets/top-50-haryanvi-songs-2026",
+  },
+
+  // ===== HARYANVI HITS - AUDIOMACK BATCH (h62-h93) =====
+  {
+    id: "h62",
+    title: "Haryanvi Top Songs",
+    artist: "New Punjabi",
+    category: "Haryanvi Hits",
+    duration: "album",
+    gradient: "from-yellow-900 to-yellow-600",
+    plays: "10M",
+    audiomackUrl: "https://audiomack.com/newpunjabi/album/haryanvi-top-songs",
+  },
+  {
+    id: "h63",
+    title: "Knife Brows",
+    artist: "Choudhary Sahab",
+    category: "Haryanvi Hits",
+    duration: "3:30",
+    gradient: "from-amber-900 to-amber-600",
+    plays: "8M",
+    audiomackUrl:
+      "https://audiomack.com/choudhary-sahab-1/song/knife-brows-new-haryanvi-songs-2024",
+  },
+  {
+    id: "h64",
+    title: "Kallo",
+    artist: "Ajay Hooda & Pooja Hooda",
+    category: "Haryanvi Hits",
+    duration: "3:45",
+    gradient: "from-yellow-800 to-yellow-500",
+    plays: "12M",
+    audiomackUrl:
+      "https://audiomack.com/0221dcsml/song/kallo-ajay-hooda-pooja-hoodapardeep-boora-offical-audio-new-haryanvi-songs-haryanavi-2023",
+  },
+  {
+    id: "h65",
+    title: "Haryanvi Dance Songs",
+    artist: "Raju Punjabi",
+    category: "Haryanvi Hits",
+    duration: "album",
+    gradient: "from-orange-900 to-orange-600",
+    plays: "15M",
+    audiomackUrl:
+      "https://audiomack.com/raju-punjabi/album/haryanvi-dance-songs",
+  },
+  {
+    id: "h66",
+    title: "Top Haryanvi Songs (Sapna Chaudhary)",
+    artist: "DJ Mix Tape",
+    category: "Haryanvi Hits",
+    duration: "album",
+    gradient: "from-yellow-900 to-amber-600",
+    plays: "20M",
+    audiomackUrl:
+      "https://audiomack.com/dj-mix-tape/album/top-haryanvi-songs-from-sapna-chaudhary",
+  },
+  {
+    id: "h67",
+    title: "Gori Nagori Hit Songs",
+    artist: "Gori Nagori",
+    category: "Haryanvi Hits",
+    duration: "album",
+    gradient: "from-amber-800 to-yellow-500",
+    plays: "18M",
+    audiomackUrl:
+      "https://audiomack.com/gori-nagori/album/gori-nagori-haryanvi-hit-songs-9107261",
+  },
+  {
+    id: "h68",
+    title: "College Aali Chori",
+    artist: "Haryanvi",
+    category: "Haryanvi Hits",
+    duration: "3:20",
+    gradient: "from-yellow-900 to-orange-600",
+    plays: "9M",
+    audiomackUrl:
+      "https://audiomack.com/ranbi0381/song/latest-haryanvi-songs-2020-college-aali-chori",
+  },
+  {
+    id: "h69",
+    title: "Jaata Aali",
+    artist: "NJ Nindaniya",
+    category: "Haryanvi Hits",
+    duration: "3:35",
+    gradient: "from-amber-900 to-amber-500",
+    plays: "7M",
+    audiomackUrl:
+      "https://audiomack.com/nodewarrior2005/song/jaata-aali-official-video-nj-nindaniya-maan-saab-kabira-new-haryanvi-songs-haryanavi-2023",
+  },
+  {
+    id: "h70",
+    title: "Falani",
+    artist: "Vikram Sarkar",
+    category: "Haryanvi Hits",
+    duration: "3:40",
+    gradient: "from-yellow-800 to-amber-600",
+    plays: "11M",
+    audiomackUrl:
+      "https://audiomack.com/nk412000india/song/falani-official-music-video-vikram-sarkar-new-haryanvi-songs-2025-latest-haryanvi-songs-2025",
+  },
+  {
+    id: "h71",
+    title: "Warning",
+    artist: "Masoom Sharma",
+    category: "Haryanvi Hits",
+    duration: "3:50",
+    gradient: "from-orange-900 to-yellow-600",
+    plays: "14M",
+    audiomackUrl:
+      "https://audiomack.com/choudhary-sahab-1/song/warning-l-masoom-sharma-l-new-haryanvi-songs-haryanavi-2025",
+  },
+  {
+    id: "h72",
+    title: "Kalam Tod Di",
+    artist: "Masoom Sharma",
+    category: "Haryanvi Hits",
+    duration: "3:45",
+    gradient: "from-amber-900 to-orange-600",
+    plays: "16M",
+    audiomackUrl:
+      "https://audiomack.com/choudhary-sahab-1/song/kalam-tod-di-l-masoom-sharma-l-new-haryanvi-songs-2025",
+  },
+  {
+    id: "h73",
+    title: "Bhai Tera Gunda",
+    artist: "Narendra Bhagana",
+    category: "Haryanvi Hits",
+    duration: "3:30",
+    gradient: "from-yellow-900 to-yellow-600",
+    plays: "8M",
+    audiomackUrl:
+      "https://audiomack.com/tekan-sumit85/song/bhai-tera-gunda-narendra-bhagana-mukesh-j-aman-jaji-vaishali-sanket-new-haryanvi-songs-2023",
+  },
+  {
+    id: "h74",
+    title: "Abya Ni Karde Remix",
+    artist: "Ndee Kundu & Bintu Pabra",
+    category: "Haryanvi Hits",
+    duration: "3:25",
+    gradient: "from-amber-800 to-amber-500",
+    plays: "10M",
+    audiomackUrl:
+      "https://audiomack.com/_jugnii_beatz/song/abya-ni-karde-remix-new-haryanvi-songs-2021-ndee-kundu-bintu-pabra",
+  },
+  {
+    id: "h75",
+    title: "Mai Chori High Figh",
+    artist: "Haryanvi",
+    category: "Haryanvi Hits",
+    duration: "3:40",
+    gradient: "from-yellow-800 to-orange-500",
+    plays: "9M",
+    audiomackUrl:
+      "https://audiomack.com/rahulgurjartongar_/song/mai-chori-high-figh-new-haryanvi-songs-lambe-thade-chore-ka-kar-diya-na-bus-bus-katrina-song",
+  },
+  {
+    id: "h76",
+    title: "On The Way",
+    artist: "Sahil Ahlawat",
+    category: "Haryanvi Hits",
+    duration: "3:35",
+    gradient: "from-orange-900 to-amber-600",
+    plays: "7M",
+    audiomackUrl:
+      "https://audiomack.com/sahilahlawat551/song/on-the-way-official-video",
+  },
+  {
+    id: "h77",
+    title: "Baby Mere Birthday Pe Goli Chalegi",
+    artist: "Prajal Dahiya",
+    category: "Haryanvi Hits",
+    duration: "3:20",
+    gradient: "from-amber-900 to-yellow-600",
+    plays: "13M",
+    audiomackUrl:
+      "https://audiomack.com/thecosmosguru/song/baby-mere-birthday-pe-goli-chalegiprajal-dahiyatcg",
+  },
+  {
+    id: "h78",
+    title: "Chora Yo Jaata Ka Se",
+    artist: "Fiza Choudhary",
+    category: "Haryanvi Hits",
+    duration: "3:30",
+    gradient: "from-yellow-900 to-amber-500",
+    plays: "8M",
+    audiomackUrl:
+      "https://audiomack.com/sahilahlawat551/song/chora-yo-jaata-ka-se-full-videofiza-choudhary",
+  },
+  {
+    id: "h79",
+    title: "Gulshan Grooves",
+    artist: "Masoom Sharma",
+    category: "Haryanvi Hits",
+    duration: "album",
+    gradient: "from-amber-800 to-orange-600",
+    plays: "22M",
+    audiomackUrl:
+      "https://audiomack.com/masoom-sharma/album/gulshan-grooves-gulshan-music-hits-1927098",
+  },
+  {
+    id: "h80",
+    title: "Jalebi Sa Juda",
+    artist: "Haryanvi",
+    category: "Haryanvi Hits",
+    duration: "3:45",
+    gradient: "from-yellow-800 to-yellow-500",
+    plays: "11M",
+    audiomackUrl:
+      "https://audiomack.com/vjsheokand555/song/jalebi-sa-juda-pagalnew",
+  },
+  {
+    id: "h81",
+    title: "Bahu Nachi Kilki Pati",
+    artist: "UK Haryanvi",
+    category: "Haryanvi Hits",
+    duration: "3:30",
+    gradient: "from-orange-900 to-yellow-600",
+    plays: "9M",
+    audiomackUrl:
+      "https://audiomack.com/uk-haryanvi-1/song/bahu-nachi-kilki-pati-from-bahu-nachi-kilki-pati-2239553",
+  },
+  {
+    id: "h82",
+    title: "Rang Milki",
+    artist: "Masoom Sharma",
+    category: "Haryanvi Hits",
+    duration: "3:50",
+    gradient: "from-amber-900 to-amber-600",
+    plays: "17M",
+    audiomackUrl:
+      "https://audiomack.com/masoom-sharma/song/rang-milki-from-rang-milki-5419053",
+  },
+  {
+    id: "h83",
+    title: "Mood Garam Remix",
+    artist: "Gyanander Sardhana",
+    category: "Haryanvi Hits",
+    duration: "3:40",
+    gradient: "from-yellow-900 to-orange-500",
+    plays: "10M",
+    audiomackUrl:
+      "https://audiomack.com/falag40516/song/mood-garam-remix-version-bajrangi-ke-doot-preet-nagar-new-gujjar-song-gyanander-sardhana",
+  },
+  {
+    id: "h84",
+    title: "DJ Madan Mix",
+    artist: "DJ Madan",
+    category: "Haryanvi Hits",
+    duration: "4:00",
+    gradient: "from-amber-800 to-yellow-600",
+    plays: "6M",
+    audiomackUrl: "https://audiomack.com/djmadan/song/17023893",
+  },
+  {
+    id: "h85",
+    title: "Barood Se Itna 2",
+    artist: "Naam Ka Bawaal",
+    category: "Haryanvi Hits",
+    duration: "3:35",
+    gradient: "from-yellow-900 to-amber-500",
+    plays: "8M",
+    audiomackUrl:
+      "https://audiomack.com/raxhid-5/song/barood-se-itna-2-naam-ka-bawaal",
+  },
+  {
+    id: "h86",
+    title: "Narendra Modi Ji",
+    artist: "Rohit Sardhana",
+    category: "Haryanvi Hits",
+    duration: "3:30",
+    gradient: "from-orange-800 to-yellow-600",
+    plays: "12M",
+    audiomackUrl:
+      "https://audiomack.com/virendervirender9986/song/narendra-modi-ji-song-rohit-sardhana-new-song-up-se-pradhan-new-lofy-song",
+  },
+  {
+    id: "h87",
+    title: "Bahu Batase Si",
+    artist: "Ishika Yadav",
+    category: "Haryanvi Hits",
+    duration: "3:25",
+    gradient: "from-amber-900 to-orange-500",
+    plays: "9M",
+    audiomackUrl: "https://audiomack.com/ishika-yadav/song/bahu-batase-si",
+  },
+  {
+    id: "h88",
+    title: "Meetha Meetha Dard",
+    artist: "Harendra Nagar",
+    category: "Haryanvi Hits",
+    duration: "3:40",
+    gradient: "from-yellow-800 to-amber-600",
+    plays: "7M",
+    audiomackUrl:
+      "https://audiomack.com/harendra-nagar/song/meetha-meetha-dard",
+  },
+  {
+    id: "h89",
+    title: "Katam Katta Bhole Se",
+    artist: "Harendra Nagar",
+    category: "Haryanvi Hits",
+    duration: "3:30",
+    gradient: "from-amber-800 to-yellow-500",
+    plays: "6M",
+    audiomackUrl:
+      "https://audiomack.com/harendra-nagar/song/katam-katta-bhole-se",
+  },
+  {
+    id: "h90",
+    title: "Asli Yaar",
+    artist: "Harendra Nagar",
+    category: "Haryanvi Hits",
+    duration: "3:45",
+    gradient: "from-yellow-900 to-orange-600",
+    plays: "8M",
+    audiomackUrl: "https://audiomack.com/harendra-nagar/song/asli-yaar",
+  },
+  {
+    id: "h91",
+    title: "18 Lakh Suit",
+    artist: "DJ Madan",
+    category: "Haryanvi Hits",
+    duration: "3:50",
+    gradient: "from-orange-900 to-amber-500",
+    plays: "11M",
+    audiomackUrl:
+      "https://audiomack.com/djmadan/song/18-lakh-suit-dhai-dhai-lakh-ka",
+  },
+  {
+    id: "h92",
+    title: "Choudhary Jaat Ki",
+    artist: "Alok Poonia",
+    category: "Haryanvi Hits",
+    duration: "3:35",
+    gradient: "from-amber-900 to-yellow-600",
+    plays: "14M",
+    audiomackUrl: "https://audiomack.com/pooniaalok/song/choudher-jaat-ki",
+  },
+  {
+    id: "h93",
+    title: "Haryane Ka Jaat",
+    artist: "Haryanvi",
+    category: "Haryanvi Hits",
+    duration: "3:30",
+    gradient: "from-yellow-800 to-orange-500",
+    plays: "10M",
+    audiomackUrl: "https://audiomack.com/netflixmg70/song/haryane-ka-jaat",
+  },
+
+  // ===== HARYANVI HITS - NEW BATCH (h94-h99) =====
+  {
+    id: "h94",
+    title: "Laad Piya Ke (Slowed Reverb)",
+    artist: "Sapna Choudhary",
+    category: "Haryanvi Hits",
+    duration: "3:30",
+    gradient: "from-yellow-900 to-amber-600",
+    plays: "5M",
+    audiomackUrl:
+      "https://audiomack.com/oldhits/song/laad-piya-ke-slowed-reverb-sapna-choudhary-haryanvi-song-slowed-reverb256k",
+  },
+  {
+    id: "h95",
+    title: "Sandal Saindala (DJ Song)",
+    artist: "Vijay Varma, Anjali Raghav",
+    category: "Haryanvi Hits",
+    duration: "3:45",
+    gradient: "from-orange-800 to-yellow-600",
+    plays: "8M",
+    audiomackUrl:
+      "https://audiomack.com/nitdksharma91/song/sandal-saindala-haryanvi-dj-song-2016-vijay-varma-anjali-raghav-raju-punjabi-sonika-singh",
+  },
+  {
+    id: "h96",
+    title: "Mithi Boli",
+    artist: "Raju Punjabi",
+    category: "Haryanvi Hits",
+    duration: "4:00",
+    gradient: "from-amber-700 to-yellow-500",
+    plays: "12M",
+    audiomackUrl: "https://audiomack.com/raju-punjabi/song/mithi-boli",
+  },
+  {
+    id: "h97",
+    title: "2 Peg Tere Naam Ke",
+    artist: "Raju Punjabi",
+    category: "Haryanvi Hits",
+    duration: "3:50",
+    gradient: "from-yellow-800 to-orange-600",
+    plays: "15M",
+    audiomackUrl: "https://audiomack.com/raju-punjabi/song/2-peg-tere-naam-ke",
+  },
+  {
+    id: "h98",
+    title: "Punjabi DJ Mashup 2021 Vol 2",
+    artist: "DJ Raju",
+    category: "Haryanvi Hits",
+    duration: "10:00",
+    gradient: "from-orange-900 to-amber-700",
+    plays: "7M",
+    audiomackUrl:
+      "https://audiomack.com/deejay-raju/song/punjabi-dj-mashup-2021-vol-2-dj-raju-feat-new-punjabi-song-2021",
   },
 
   // ===== PUNJABI HITS - MASHUPS =====
@@ -665,7 +1142,7 @@ export const songs: Song[] = [
     duration: "14:00",
     gradient: g(0),
     plays: "28M",
-    audiomackUrl: "https://audiomack.com/djmonofficial/song/16814915",
+    soundcloudUrl: "https://soundcloud.com/search?q=Punjabi+Party+Mix+DJ+Mon",
   },
   {
     id: "p2",
@@ -719,7 +1196,7 @@ export const songs: Song[] = [
     duration: "3:18",
     gradient: g(5),
     plays: "500M",
-    soundcloudUrl: "https://soundcloud.com/apdhillon/brown-munde",
+    soundcloudUrl: "https://soundcloud.com/search?q=Brown+Munde+AP+Dhillon",
   },
   {
     id: "p7",
@@ -729,7 +1206,7 @@ export const songs: Song[] = [
     duration: "3:05",
     gradient: g(6),
     plays: "450M",
-    soundcloudUrl: "https://soundcloud.com/apdhillon/excuses",
+    soundcloudUrl: "https://soundcloud.com/search?q=Excuses+AP+Dhillon",
   },
   {
     id: "p8",
@@ -739,7 +1216,7 @@ export const songs: Song[] = [
     duration: "2:58",
     gradient: g(7),
     plays: "300M",
-    soundcloudUrl: "https://soundcloud.com/apdhillon/insane",
+    soundcloudUrl: "https://soundcloud.com/search?q=Insane+AP+Dhillon",
   },
   {
     id: "p9",
@@ -749,7 +1226,7 @@ export const songs: Song[] = [
     duration: "3:10",
     gradient: g(8),
     plays: "380M",
-    soundcloudUrl: "https://soundcloud.com/shubh/we-rollin",
+    soundcloudUrl: "https://soundcloud.com/search?q=We+Rollin+Shubh",
   },
   {
     id: "p10",
@@ -759,7 +1236,7 @@ export const songs: Song[] = [
     duration: "2:55",
     gradient: g(9),
     plays: "280M",
-    soundcloudUrl: "https://soundcloud.com/shubh/baller",
+    soundcloudUrl: "https://soundcloud.com/search?q=Baller+Shubh",
   },
   {
     id: "p11",
@@ -769,7 +1246,7 @@ export const songs: Song[] = [
     duration: "3:22",
     gradient: g(0),
     plays: "320M",
-    soundcloudUrl: "https://soundcloud.com/shubh/no-love",
+    soundcloudUrl: "https://soundcloud.com/search?q=No+Love+Shubh",
   },
   {
     id: "p12",
@@ -779,7 +1256,7 @@ export const songs: Song[] = [
     duration: "3:15",
     gradient: g(1),
     plays: "260M",
-    soundcloudUrl: "https://soundcloud.com/karanaujlaofficial/softly",
+    soundcloudUrl: "https://soundcloud.com/search?q=Softly+Karan+Aujla",
   },
   {
     id: "p13",
@@ -789,7 +1266,7 @@ export const songs: Song[] = [
     duration: "3:28",
     gradient: g(2),
     plays: "400M",
-    soundcloudUrl: "https://soundcloud.com/baadshahofficial/players",
+    soundcloudUrl: "https://soundcloud.com/search?q=Players+Badshah",
   },
   {
     id: "p14",
@@ -799,7 +1276,7 @@ export const songs: Song[] = [
     duration: "3:35",
     gradient: g(3),
     plays: "220M",
-    soundcloudUrl: "https://soundcloud.com/diljitdosanjh/lover",
+    soundcloudUrl: "https://soundcloud.com/search?q=Lover+Diljit+Dosanjh",
   },
   {
     id: "p15",
@@ -809,7 +1286,7 @@ export const songs: Song[] = [
     duration: "3:42",
     gradient: g(4),
     plays: "180M",
-    soundcloudUrl: "https://soundcloud.com/diljitdosanjh/goat",
+    soundcloudUrl: "https://soundcloud.com/search?q=GOAT+Diljit+Dosanjh",
   },
   {
     id: "p16",
@@ -819,7 +1296,7 @@ export const songs: Song[] = [
     duration: "4:02",
     gradient: g(5),
     plays: "600M",
-    soundcloudUrl: "https://soundcloud.com/sidhumoosewala/295",
+    soundcloudUrl: "https://soundcloud.com/search?q=295+Sidhu+Moosewala",
   },
   {
     id: "p17",
@@ -829,7 +1306,7 @@ export const songs: Song[] = [
     duration: "3:48",
     gradient: g(6),
     plays: "250M",
-    soundcloudUrl: "https://soundcloud.com/sidhumoosewala/same-beef",
+    soundcloudUrl: "https://soundcloud.com/search?q=Same+Beef+Sidhu+Moosewala",
   },
   {
     id: "p18",
@@ -839,7 +1316,7 @@ export const songs: Song[] = [
     duration: "3:55",
     gradient: g(7),
     plays: "300M",
-    soundcloudUrl: "https://soundcloud.com/sidhumoosewala/so-high",
+    soundcloudUrl: "https://soundcloud.com/search?q=So+High+Sidhu+Moosewala",
   },
   {
     id: "p19",
@@ -849,7 +1326,7 @@ export const songs: Song[] = [
     duration: "3:32",
     gradient: g(8),
     plays: "350M",
-    soundcloudUrl: "https://soundcloud.com/sidhumoosewala/old-skool",
+    soundcloudUrl: "https://soundcloud.com/search?q=Old+Skool+Sidhu+Moosewala",
   },
   {
     id: "p20",
@@ -859,7 +1336,8 @@ export const songs: Song[] = [
     duration: "3:20",
     gradient: g(9),
     plays: "190M",
-    soundcloudUrl: "https://soundcloud.com/diljitdosanjh/born-to-shine",
+    soundcloudUrl:
+      "https://soundcloud.com/search?q=Born+To+Shine+Diljit+Dosanjh",
   },
   {
     id: "p21",
@@ -869,7 +1347,7 @@ export const songs: Song[] = [
     duration: "4:15",
     gradient: g(0),
     plays: "280M",
-    soundcloudUrl: "https://soundcloud.com/mannat-noor/laung-laachi",
+    soundcloudUrl: "https://soundcloud.com/search?q=Laung+Laachi+Mannat+Noor",
   },
   {
     id: "p22",
@@ -879,7 +1357,7 @@ export const songs: Song[] = [
     duration: "3:28",
     gradient: g(1),
     plays: "420M",
-    soundcloudUrl: "https://soundcloud.com/jassmanak/lehanga",
+    soundcloudUrl: "https://soundcloud.com/search?q=Lehanga+Jass+Manak",
   },
   {
     id: "p23",
@@ -889,7 +1367,7 @@ export const songs: Song[] = [
     duration: "3:15",
     gradient: g(2),
     plays: "350M",
-    soundcloudUrl: "https://soundcloud.com/jassmanak/prada",
+    soundcloudUrl: "https://soundcloud.com/search?q=Prada+Jass+Manak",
   },
   {
     id: "p24",
@@ -899,7 +1377,7 @@ export const songs: Song[] = [
     duration: "3:38",
     gradient: g(3),
     plays: "310M",
-    soundcloudUrl: "https://soundcloud.com/hardysandhu/naah",
+    soundcloudUrl: "https://soundcloud.com/search?q=Naah+Hardy+Sandhu",
   },
   {
     id: "p25",
@@ -909,7 +1387,7 @@ export const songs: Song[] = [
     duration: "3:45",
     gradient: g(4),
     plays: "270M",
-    soundcloudUrl: "https://soundcloud.com/hardysandhu/backbone",
+    soundcloudUrl: "https://soundcloud.com/search?q=Backbone+Hardy+Sandhu",
   },
   {
     id: "p26",
@@ -919,7 +1397,7 @@ export const songs: Song[] = [
     duration: "3:08",
     gradient: g(5),
     plays: "290M",
-    soundcloudUrl: "https://soundcloud.com/shubh/cheques",
+    soundcloudUrl: "https://soundcloud.com/search?q=Cheques+Shubh",
   },
   {
     id: "p27",
@@ -929,7 +1407,7 @@ export const songs: Song[] = [
     duration: "3:18",
     gradient: g(6),
     plays: "240M",
-    soundcloudUrl: "https://soundcloud.com/shubh/elevated",
+    soundcloudUrl: "https://soundcloud.com/search?q=Elevated+Shubh",
   },
   {
     id: "p28",
@@ -939,7 +1417,7 @@ export const songs: Song[] = [
     duration: "3:22",
     gradient: g(7),
     plays: "210M",
-    soundcloudUrl: "https://soundcloud.com/karanaujlaofficial/admirin-you",
+    soundcloudUrl: "https://soundcloud.com/search?q=Admirin+You+Karan+Aujla",
   },
   {
     id: "p29",
@@ -949,7 +1427,8 @@ export const songs: Song[] = [
     duration: "3:12",
     gradient: g(8),
     plays: "180M",
-    soundcloudUrl: "https://soundcloud.com/apdhillon/white-brown-black",
+    soundcloudUrl:
+      "https://soundcloud.com/search?q=White+Brown+Black+AP+Dhillon",
   },
   {
     id: "p30",
@@ -959,7 +1438,7 @@ export const songs: Song[] = [
     duration: "3:30",
     gradient: g(9),
     plays: "160M",
-    soundcloudUrl: "https://soundcloud.com/karanaujlaofficial/8-asle",
+    soundcloudUrl: "https://soundcloud.com/search?q=8+Asle+Karan+Aujla",
   },
   {
     id: "p31",
@@ -969,7 +1448,8 @@ export const songs: Song[] = [
     duration: "3:40",
     gradient: g(0),
     plays: "140M",
-    soundcloudUrl: "https://soundcloud.com/sidhumoosewala/jatt-mehkma",
+    soundcloudUrl:
+      "https://soundcloud.com/search?q=Jatt+Mehkma+Sidhu+Moosewala",
   },
   {
     id: "p32",
@@ -979,7 +1459,7 @@ export const songs: Song[] = [
     duration: "3:25",
     gradient: g(1),
     plays: "130M",
-    soundcloudUrl: "https://soundcloud.com/amritmaan/difference",
+    soundcloudUrl: "https://soundcloud.com/search?q=Difference+Amrit+Maan",
   },
   {
     id: "p33",
@@ -989,7 +1469,7 @@ export const songs: Song[] = [
     duration: "3:18",
     gradient: g(2),
     plays: "200M",
-    soundcloudUrl: "https://soundcloud.com/karanaujlaofficial/chitta-kurta",
+    soundcloudUrl: "https://soundcloud.com/search?q=Chitta+Kurta+Karan+Aujla",
   },
   {
     id: "p34",
@@ -999,7 +1479,7 @@ export const songs: Song[] = [
     duration: "3:35",
     gradient: g(3),
     plays: "175M",
-    soundcloudUrl: "https://soundcloud.com/karanaujlaofficial/gangsta",
+    soundcloudUrl: "https://soundcloud.com/search?q=Gangsta+Karan+Aujla",
   },
   {
     id: "p35",
@@ -1009,7 +1489,7 @@ export const songs: Song[] = [
     duration: "3:42",
     gradient: g(4),
     plays: "220M",
-    soundcloudUrl: "https://soundcloud.com/hardysandhu/kya-baat-ay",
+    soundcloudUrl: "https://soundcloud.com/search?q=Kya+Baat+Ay+Hardy+Sandhu",
   },
   {
     id: "p36",
@@ -1019,7 +1499,7 @@ export const songs: Song[] = [
     duration: "3:15",
     gradient: g(5),
     plays: "185M",
-    soundcloudUrl: "https://soundcloud.com/jasminsandlas/sip-sip",
+    soundcloudUrl: "https://soundcloud.com/search?q=Sip+Sip+Jasmin+Sandlas",
   },
   {
     id: "p37",
@@ -1029,7 +1509,7 @@ export const songs: Song[] = [
     duration: "3:50",
     gradient: g(6),
     plays: "260M",
-    soundcloudUrl: "https://soundcloud.com/hardysandhu/titliaan",
+    soundcloudUrl: "https://soundcloud.com/search?q=Titliaan+Hardy+Sandhu",
   },
   {
     id: "p38",
@@ -1039,7 +1519,7 @@ export const songs: Song[] = [
     duration: "4:08",
     gradient: g(7),
     plays: "300M",
-    soundcloudUrl: "https://soundcloud.com/ammyvirk/qismat",
+    soundcloudUrl: "https://soundcloud.com/search?q=Qismat+Ammy+Virk",
   },
   {
     id: "p39",
@@ -1049,7 +1529,7 @@ export const songs: Song[] = [
     duration: "4:20",
     gradient: g(8),
     plays: "500M",
-    soundcloudUrl: "https://soundcloud.com/bpraak/filhall",
+    soundcloudUrl: "https://soundcloud.com/search?q=Filhall+BPraak",
   },
   {
     id: "p40",
@@ -1059,7 +1539,7 @@ export const songs: Song[] = [
     duration: "3:52",
     gradient: g(9),
     plays: "280M",
-    soundcloudUrl: "https://soundcloud.com/ammyvirk/hath-chumme",
+    soundcloudUrl: "https://soundcloud.com/search?q=Hath+Chumme+Ammy+Virk",
   },
 
   // ===== PUNJABI HITS - NEW BATCH 1 (p41-p60) =====
@@ -1498,6 +1978,56 @@ export const songs: Song[] = [
     plays: "140M",
     soundcloudUrl: "https://soundcloud.com/user-139500692/wah-wai-wah",
   },
+  {
+    id: "p83",
+    title: "Punjabi Top Songs",
+    artist: "Various Artists",
+    category: "Punjabi Hits",
+    duration: "playlist",
+    gradient: g(2),
+    plays: "100M",
+    soundcloudUrl: "https://soundcloud.com/punjabi-top-songs",
+  },
+  {
+    id: "p84",
+    title: "Punjabi Songs Popular",
+    artist: "Various Artists",
+    category: "Punjabi Hits",
+    duration: "playlist",
+    gradient: g(3),
+    plays: "80M",
+    soundcloudUrl: "https://soundcloud.com/tags/punjabi%20songs/popular-tracks",
+  },
+  {
+    id: "p85",
+    title: "Punjabi Vibes",
+    artist: "Various Artists",
+    category: "Punjabi Hits",
+    duration: "playlist",
+    gradient: g(4),
+    plays: "70M",
+    soundcloudUrl: "https://soundcloud.com/punjabi-821927763",
+  },
+  {
+    id: "p86",
+    title: "Brand New Punjabi Songs",
+    artist: "Various Artists",
+    category: "Punjabi Hits",
+    duration: "playlist",
+    gradient: g(5),
+    plays: "60M",
+    soundcloudUrl: "https://soundcloud.com/brand-new-punjabi-songs25",
+  },
+  {
+    id: "p87",
+    title: "New Punjabi Songs",
+    artist: "Various Artists",
+    category: "Punjabi Hits",
+    duration: "playlist",
+    gradient: g(6),
+    plays: "90M",
+    soundcloudUrl: "https://soundcloud.com/toppunjabisongs",
+  },
 
   // ===== 90s HITS =====
   {
@@ -1573,7 +2103,7 @@ export const songs: Song[] = [
     duration: "12:30",
     gradient: g(6),
     plays: "10M",
-    audiomackUrl: "https://audiomack.com/mixingdjold/song/mix-20190405-120558",
+    soundcloudUrl: "https://soundcloud.com/gw2001/sets/90s-hits-top-100-songs",
   },
   {
     id: "90s8",
@@ -1583,8 +2113,8 @@ export const songs: Song[] = [
     duration: "11:10",
     gradient: g(7),
     plays: "24M",
-    audiomackUrl:
-      "https://audiomack.com/dj-saad/song/1-beat-mashup-90s-bollywood-dj-saad-remix-2018",
+    soundcloudUrl:
+      "https://soundcloud.com/storemusic-974485696/sets/90s-hits-top-songs-90s",
   },
   {
     id: "90s9",
@@ -1594,8 +2124,8 @@ export const songs: Song[] = [
     duration: "13:45",
     gradient: g(8),
     plays: "31M",
-    audiomackUrl:
-      "https://audiomack.com/hitesh-kumar-3/song/classic-romantic-90s-mashup-pagalworldcom",
+    soundcloudUrl:
+      "https://soundcloud.com/11patrickhne11/sets/90s-hits-100-greatest-songs-of",
   },
   {
     id: "90s10",
@@ -1606,6 +2136,38 @@ export const songs: Song[] = [
     gradient: g(9),
     plays: "150M",
     soundcloudUrl: "https://soundcloud.com/user-139500692/tu-tu-hai-wahi",
+  },
+  {
+    id: "90s11",
+    title: "90s Hits Top 100 Songs",
+    artist: "Various Artists",
+    category: "90s Hits",
+    duration: "playlist",
+    gradient: g(0),
+    plays: "45M",
+    soundcloudUrl: "https://soundcloud.com/gw2001/sets/90s-hits-top-100-songs",
+  },
+  {
+    id: "90s12",
+    title: "90s Hits Top Songs",
+    artist: "Various Artists",
+    category: "90s Hits",
+    duration: "playlist",
+    gradient: g(1),
+    plays: "38M",
+    soundcloudUrl:
+      "https://soundcloud.com/storemusic-974485696/sets/90s-hits-top-songs-90s",
+  },
+  {
+    id: "90s13",
+    title: "100 Greatest Songs of 90s",
+    artist: "Various Artists",
+    category: "90s Hits",
+    duration: "playlist",
+    gradient: g(2),
+    plays: "55M",
+    soundcloudUrl:
+      "https://soundcloud.com/11patrickhne11/sets/90s-hits-100-greatest-songs-of",
   },
 
   // ===== BOLLYWOOD HITS =====
@@ -1639,8 +2201,7 @@ export const songs: Song[] = [
     duration: "11:10",
     gradient: g(2),
     plays: "24M",
-    audiomackUrl:
-      "https://audiomack.com/dj-saad/song/1-beat-mashup-90s-bollywood-dj-saad-remix-2018",
+    soundcloudUrl: "https://soundcloud.com/hindi_songs",
   },
   {
     id: "b4",
@@ -1650,8 +2211,7 @@ export const songs: Song[] = [
     duration: "13:45",
     gradient: g(3),
     plays: "31M",
-    audiomackUrl:
-      "https://audiomack.com/hitesh-kumar-3/song/classic-romantic-90s-mashup-pagalworldcom",
+    soundcloudUrl: "https://soundcloud.com/bollywood-songs-2020",
   },
   {
     id: "b5",
@@ -1745,6 +2305,995 @@ export const songs: Song[] = [
     plays: "350M",
     soundcloudUrl: "https://soundcloud.com/user-139500692/agar-tum-saath-ho",
   },
+  {
+    id: "b14",
+    title: "Bollywood Latest Songs",
+    artist: "Various Artists",
+    category: "Bollywood Hits",
+    duration: "playlist",
+    gradient: g(3),
+    plays: "120M",
+    soundcloudUrl: "https://soundcloud.com/hindi_songs",
+  },
+  {
+    id: "b15",
+    title: "Bollywood Songs 2020",
+    artist: "Various Artists",
+    category: "Bollywood Hits",
+    duration: "playlist",
+    gradient: g(4),
+    plays: "85M",
+    soundcloudUrl: "https://soundcloud.com/bollywood-songs-2020",
+  },
+  {
+    id: "b16",
+    title: "Popular Bollywood Tracks",
+    artist: "Various Artists",
+    category: "Bollywood Hits",
+    duration: "playlist",
+    gradient: g(5),
+    plays: "200M",
+    soundcloudUrl: "https://soundcloud.com/tags/bollywood/popular-tracks",
+  },
+  {
+    id: "b17",
+    title: "Bollywood Music Tag",
+    artist: "Various Artists",
+    category: "Bollywood Hits",
+    duration: "playlist",
+    gradient: g(6),
+    plays: "150M",
+    soundcloudUrl:
+      "https://soundcloud.com/tags/bollywood%20music/popular-tracks",
+  },
+  {
+    id: "b18",
+    title: "Bollywood Mix Collection",
+    artist: "Various Artists",
+    category: "Bollywood Hits",
+    duration: "playlist",
+    gradient: g(7),
+    plays: "95M",
+    soundcloudUrl: "https://soundcloud.com/tags/Bollywood%20Mix",
+  },
+  {
+    id: "sad1",
+    title: "Sad Music Playlist",
+    artist: "Various Artists",
+    category: "Sad Songs",
+    duration: "playlist",
+    gradient: g(5),
+    plays: "80M",
+    soundcloudUrl: "https://soundcloud.com/sad-songs-180410349/sets/sad-music",
+  },
+  {
+    id: "sad2",
+    title: "Sad Songs Collection",
+    artist: "Various Artists",
+    category: "Sad Songs",
+    duration: "playlist",
+    gradient: g(6),
+    plays: "65M",
+    soundcloudUrl:
+      "https://soundcloud.com/sad-songs-180410349/sets/sad-songs-1",
+  },
+  {
+    id: "sad3",
+    title: "Sad Vibes - Emotional Playlist",
+    artist: "Various Artists",
+    category: "Sad Songs",
+    duration: "playlist",
+    gradient: g(7),
+    plays: "101M",
+    soundcloudUrl:
+      "https://soundcloud.com/dawning_records/sets/sad-songs-sad-vibes",
+  },
+  {
+    id: "top1",
+    title: "SoundCloud Top 100",
+    artist: "Various Artists",
+    category: "Top 100",
+    duration: "playlist",
+    gradient: g(3),
+    plays: "500M",
+    soundcloudUrl: "https://soundcloud.com/soundcloud-top-100",
+  },
+  {
+    id: "top2",
+    title: "Top 100 Songs Collection",
+    artist: "Various Artists",
+    category: "Top 100",
+    duration: "playlist",
+    gradient: g(4),
+    plays: "450M",
+    soundcloudUrl: "https://soundcloud.com/top100sc",
+  },
+  {
+    id: "ms_am1",
+    title: "4-5 Pistol",
+    artist: "Masoom Sharma",
+    category: "Masoom Sharma",
+    duration: "3:30",
+    gradient: "from-orange-600 via-red-500 to-pink-600",
+    plays: "5M+",
+    audiomackUrl: "https://audiomack.com/embed/song/brown-studios/4-5-pistol",
+  },
+  {
+    id: "ms_am2",
+    title: "Ramayan Ka Saar",
+    artist: "Masoom Sharma",
+    category: "Masoom Sharma",
+    duration: "3:45",
+    gradient: "from-orange-600 via-red-500 to-pink-600",
+    plays: "4M+",
+    audiomackUrl:
+      "https://audiomack.com/embed/song/choudhary-sahab-1/ramayan-ka-saar-l-latest-haryanvi-song-2025",
+  },
+  {
+    id: "ms_am3",
+    title: "Raat Ke Shikari",
+    artist: "Masoom Sharma",
+    category: "Masoom Sharma",
+    duration: "3:30",
+    gradient: "from-orange-600 via-red-500 to-pink-600",
+    plays: "3M+",
+    audiomackUrl:
+      "https://audiomack.com/embed/song/anurag_naagar_/raat-ke-shikari",
+  },
+  {
+    id: "ms_am4",
+    title: "Yaari",
+    artist: "Masoom Sharma",
+    category: "Masoom Sharma",
+    duration: "3:20",
+    gradient: "from-orange-600 via-red-500 to-pink-600",
+    plays: "3M+",
+    audiomackUrl:
+      "https://audiomack.com/embed/song/owner_raaz/yaarikoshalworldcom",
+  },
+  {
+    id: "ms_am5",
+    title: "Warning",
+    artist: "Masoom Sharma",
+    category: "Masoom Sharma",
+    duration: "3:15",
+    gradient: "from-orange-600 via-red-500 to-pink-600",
+    plays: "2M+",
+    audiomackUrl: "https://audiomack.com/embed/song/anurag_naagar_/warning",
+  },
+  {
+    id: "ms_am6",
+    title: "Ghode 3",
+    artist: "Masoom Sharma",
+    category: "Masoom Sharma",
+    duration: "3:40",
+    gradient: "from-orange-600 via-red-500 to-pink-600",
+    plays: "6M+",
+    audiomackUrl:
+      "https://audiomack.com/embed/song/owner_raaz/ghode-3-riskyjattcom",
+  },
+  {
+    id: "ms_am7",
+    title: "Lofar",
+    artist: "Masoom Sharma",
+    category: "Masoom Sharma",
+    duration: "3:25",
+    gradient: "from-orange-600 via-red-500 to-pink-600",
+    plays: "2M+",
+    audiomackUrl: "https://audiomack.com/embed/song/ranasuraj58005/lofar",
+  },
+  {
+    id: "ms_am8",
+    title: "Blender",
+    artist: "Masoom Sharma",
+    category: "Masoom Sharma",
+    duration: "3:30",
+    gradient: "from-orange-600 via-red-500 to-pink-600",
+    plays: "4M+",
+    audiomackUrl: "https://audiomack.com/embed/song/anmolgagneja0101/blender",
+  },
+  {
+    id: "ms_am9",
+    title: "Bhagat Aadmi",
+    artist: "Masoom Sharma",
+    category: "Masoom Sharma",
+    duration: "3:20",
+    gradient: "from-orange-600 via-red-500 to-pink-600",
+    plays: "2M+",
+    audiomackUrl:
+      "https://audiomack.com/embed/song/vjsheokand555/bhagatt-aadmi-haryanvi-song",
+  },
+  {
+    id: "ms_am10",
+    title: "Tuition Badmashi Ka",
+    artist: "Masoom Sharma",
+    category: "Masoom Sharma",
+    duration: "3:15",
+    gradient: "from-orange-600 via-red-500 to-pink-600",
+    plays: "3M+",
+    audiomackUrl:
+      "https://audiomack.com/embed/song/sc--arshmahla47/tuition-badmashi-kaa-riskyjattcom",
+  },
+  {
+    id: "ms_am11",
+    title: "Shikari",
+    artist: "Masoom Sharma",
+    category: "Masoom Sharma",
+    duration: "3:30",
+    gradient: "from-orange-600 via-red-500 to-pink-600",
+    plays: "3M+",
+    audiomackUrl:
+      "https://audiomack.com/embed/song/vjsheokand555/shikari-masoom-sharma-meetmp3in",
+  },
+  {
+    id: "ms_am12",
+    title: "Bhirad Lad Gi",
+    artist: "Masoom Sharma",
+    category: "Masoom Sharma",
+    duration: "3:20",
+    gradient: "from-orange-600 via-red-500 to-pink-600",
+    plays: "2M+",
+    audiomackUrl: "https://audiomack.com/embed/song/amythkumar/bhirad-lad-gi",
+  },
+  {
+    id: "ms_am13",
+    title: "Chambal Ke Dakku",
+    artist: "Masoom Sharma",
+    category: "Masoom Sharma",
+    duration: "3:45",
+    gradient: "from-orange-600 via-red-500 to-pink-600",
+    plays: "5M+",
+    audiomackUrl:
+      "https://audiomack.com/embed/song/_masoom_sharama_/chambal-k-dakku-masoom-sharma-swara-verma-rahul-muana-ruba-khan-new-haryanvi-song-2024",
+  },
+  {
+    id: "ms_am14",
+    title: "Baaz Pagal",
+    artist: "Masoom Sharma",
+    category: "Masoom Sharma",
+    duration: "3:20",
+    gradient: "from-orange-600 via-red-500 to-pink-600",
+    plays: "2M+",
+    audiomackUrl:
+      "https://audiomack.com/embed/song/mohitkaushikms3/baaz-pagalnew",
+  },
+  {
+    id: "ms_am15",
+    title: "Mithe Tere Bol Pari",
+    artist: "Masoom Sharma",
+    category: "Masoom Sharma",
+    duration: "3:30",
+    gradient: "from-orange-600 via-red-500 to-pink-600",
+    plays: "4M+",
+    audiomackUrl:
+      "https://audiomack.com/embed/song/masoom-sharma/mithe-tere-bol-pari",
+  },
+  {
+    id: "ms_am16",
+    title: "Khapitar",
+    artist: "Masoom Sharma",
+    category: "Masoom Sharma",
+    duration: "3:15",
+    gradient: "from-orange-600 via-red-500 to-pink-600",
+    plays: "3M+",
+    audiomackUrl: "https://audiomack.com/embed/song/masoomsharma/khapitar",
+  },
+  {
+    id: "ms_am17",
+    title: "12 Bande",
+    artist: "Masoom Sharma",
+    category: "Masoom Sharma",
+    duration: "3:25",
+    gradient: "from-orange-600 via-red-500 to-pink-600",
+    plays: "2M+",
+    audiomackUrl:
+      "https://audiomack.com/embed/song/rajendravashist5556/12-bande-riskyjattcom",
+  },
+  {
+    id: "ms_am18",
+    title: "Farm Gundagardi Ka",
+    artist: "Masoom Sharma",
+    category: "Masoom Sharma",
+    duration: "3:30",
+    gradient: "from-orange-600 via-red-500 to-pink-600",
+    plays: "3M+",
+    audiomackUrl:
+      "https://audiomack.com/embed/song/masoomsharma/farm-gundagardi-ka",
+  },
+  {
+    id: "ms_am19",
+    title: "2 Numbari",
+    artist: "Masoom Sharma",
+    category: "Masoom Sharma",
+    duration: "3:20",
+    gradient: "from-orange-600 via-red-500 to-pink-600",
+    plays: "2M+",
+    audiomackUrl:
+      "https://audiomack.com/embed/song/jitendra_yadav9899/2-numbari",
+  },
+  {
+    id: "ms_am20",
+    title: "Paapi Purane",
+    artist: "Masoom Sharma",
+    category: "Masoom Sharma",
+    duration: "3:35",
+    gradient: "from-orange-600 via-red-500 to-pink-600",
+    plays: "3M+",
+    audiomackUrl:
+      "https://audiomack.com/embed/song/anurag_naagar_/paapi-purane",
+  },
+  {
+    id: "ms_am21",
+    title: "Khoon Ki Holi",
+    artist: "Masoom Sharma",
+    category: "Masoom Sharma",
+    duration: "3:40",
+    gradient: "from-orange-600 via-red-500 to-pink-600",
+    plays: "4M+",
+    audiomackUrl:
+      "https://audiomack.com/embed/song/masoom-sharma/khoon-ki-holi",
+  },
+  {
+    id: "ms_am22",
+    title: "Chand",
+    artist: "Masoom Sharma",
+    category: "Masoom Sharma",
+    duration: "3:25",
+    gradient: "from-orange-600 via-red-500 to-pink-600",
+    plays: "2M+",
+    audiomackUrl: "https://audiomack.com/embed/song/amythkumar/chand",
+  },
+  {
+    id: "ms_am23",
+    title: "Olha Mein Patola",
+    artist: "Masoom Sharma",
+    category: "Masoom Sharma",
+    duration: "3:30",
+    gradient: "from-orange-600 via-red-500 to-pink-600",
+    plays: "3M+",
+    audiomackUrl:
+      "https://audiomack.com/embed/song/s07180922/olha-mein-patola-pagalallcom",
+  },
+  {
+    id: "ms_am24",
+    title: "Thekedara Ka Byah",
+    artist: "Masoom Sharma",
+    category: "Masoom Sharma",
+    duration: "3:20",
+    gradient: "from-orange-600 via-red-500 to-pink-600",
+    plays: "2M+",
+    audiomackUrl:
+      "https://audiomack.com/embed/song/vjsheokand555/thekedara-ka-byahkoshalworldcom",
+  },
+  {
+    id: "ms_am25",
+    title: "Badnam Gabru",
+    artist: "Masoom Sharma",
+    category: "Masoom Sharma",
+    duration: "3:35",
+    gradient: "from-orange-600 via-red-500 to-pink-600",
+    plays: "3M+",
+    audiomackUrl: "https://audiomack.com/embed/song/masoomsharma/badnam-gabru",
+  },
+  {
+    id: "ms_am26",
+    title: "2 Khatola DJ Remix",
+    artist: "Masoom Sharma",
+    category: "Masoom Sharma",
+    duration: "3:30",
+    gradient: "from-orange-600 via-red-500 to-pink-600",
+    plays: "2M+",
+    audiomackUrl:
+      "https://audiomack.com/embed/song/__shobhit_101/2-khatola-dj-remix",
+  },
+  {
+    id: "ms_am27",
+    title: "Byah Ke Lavange",
+    artist: "Masoom Sharma",
+    category: "Masoom Sharma",
+    duration: "3:25",
+    gradient: "from-orange-600 via-red-500 to-pink-600",
+    plays: "4M+",
+    audiomackUrl:
+      "https://audiomack.com/embed/song/brown-studios/byah-ke-lavange",
+  },
+  {
+    id: "ms_am28",
+    title: "Paapi Purane",
+    artist: "Masoom Sharma",
+    category: "Masoom Sharma",
+    duration: "3:35",
+    gradient: "from-orange-600 via-red-500 to-pink-600",
+    plays: "3M+",
+    audiomackUrl:
+      "https://audiomack.com/embed/song/anurag_naagar_/paapi-purane",
+  },
+  {
+    id: "ms_am29",
+    title: "Khoon Ki Holi",
+    artist: "Masoom Sharma",
+    category: "Masoom Sharma",
+    duration: "3:40",
+    gradient: "from-orange-600 via-red-500 to-pink-600",
+    plays: "4M+",
+    audiomackUrl:
+      "https://audiomack.com/embed/song/masoom-sharma/khoon-ki-holi",
+  },
+  {
+    id: "ms_am30",
+    title: "Jailer",
+    artist: "Masoom Sharma",
+    category: "Masoom Sharma",
+    duration: "3:20",
+    gradient: "from-orange-600 via-red-500 to-pink-600",
+    plays: "2M+",
+    audiomackUrl: "https://audiomack.com/embed/song/anshugaming9165/jailer",
+  },
+  {
+    id: "ms_am31",
+    title: "Gandaas Hori Se",
+    artist: "Masoom Sharma",
+    category: "Masoom Sharma",
+    duration: "3:30",
+    gradient: "from-orange-600 via-red-500 to-pink-600",
+    plays: "3M+",
+    audiomackUrl:
+      "https://audiomack.com/embed/song/masoomsharma/gandaas-hori-se",
+  },
+  {
+    id: "ms_am32",
+    title: "Girkana",
+    artist: "Masoom Sharma",
+    category: "Masoom Sharma",
+    duration: "3:25",
+    gradient: "from-orange-600 via-red-500 to-pink-600",
+    plays: "2M+",
+    audiomackUrl:
+      "https://audiomack.com/embed/song/masoom-sharma/girkana-9241625",
+  },
+  {
+    id: "ms_am33",
+    title: "Badnaam",
+    artist: "Masoom Sharma",
+    category: "Masoom Sharma",
+    duration: "3:30",
+    gradient: "from-orange-600 via-red-500 to-pink-600",
+    plays: "4M+",
+    audiomackUrl: "https://audiomack.com/embed/song/masoomsharma/badnaam",
+  },
+  {
+    id: "ms_am34",
+    title: "Kharbuja",
+    artist: "Masoom Sharma",
+    category: "Masoom Sharma",
+    duration: "3:15",
+    gradient: "from-orange-600 via-red-500 to-pink-600",
+    plays: "2M+",
+    audiomackUrl: "https://audiomack.com/embed/song/masoom-sharma/kharbuja",
+  },
+  {
+    id: "ms_am35",
+    title: "Parole",
+    artist: "Masoom Sharma",
+    category: "Masoom Sharma",
+    duration: "3:20",
+    gradient: "from-orange-600 via-red-500 to-pink-600",
+    plays: "2M+",
+    audiomackUrl:
+      "https://audiomack.com/embed/song/mayankyadav2252/parole-mayank-yadav",
+  },
+  {
+    id: "ms_am36",
+    title: "Baaz",
+    artist: "Masoom Sharma",
+    category: "Masoom Sharma",
+    duration: "3:25",
+    gradient: "from-orange-600 via-red-500 to-pink-600",
+    plays: "3M+",
+    audiomackUrl: "https://audiomack.com/embed/song/masoomsharma/baaz",
+  },
+  {
+    id: "ms_am37",
+    title: "Mere Mittar",
+    artist: "Masoom Sharma",
+    category: "Masoom Sharma",
+    duration: "3:30",
+    gradient: "from-orange-600 via-red-500 to-pink-600",
+    plays: "2M+",
+    audiomackUrl: "https://audiomack.com/embed/song/pb65am0008jaat/mere-mittar",
+  },
+  {
+    id: "ms_am38",
+    title: "Jaan Jatni",
+    artist: "Masoom Sharma",
+    category: "Masoom Sharma",
+    duration: "3:35",
+    gradient: "from-orange-600 via-red-500 to-pink-600",
+    plays: "3M+",
+    audiomackUrl: "https://audiomack.com/embed/song/masoomsharma/jaan-jatni",
+  },
+  {
+    id: "ms_am39",
+    title: "Mard",
+    artist: "Masoom Sharma",
+    category: "Masoom Sharma",
+    duration: "3:20",
+    gradient: "from-orange-600 via-red-500 to-pink-600",
+    plays: "2M+",
+    audiomackUrl:
+      "https://audiomack.com/embed/song/choudhary-sahab-1/mard-l-new-haryanvi-song-2025",
+  },
+  {
+    id: "ms_am40",
+    title: "Angoor",
+    artist: "Masoom Sharma",
+    category: "Masoom Sharma",
+    duration: "3:25",
+    gradient: "from-orange-600 via-red-500 to-pink-600",
+    plays: "3M+",
+    audiomackUrl:
+      "https://audiomack.com/embed/song/masoom-sharma-and-sheenam-katholic/angoor",
+  },
+  {
+    id: "sc_new1",
+    title: "Top Haryanvi Songs From Sapna Chaudhary",
+    artist: "Sapna Chaudhary",
+    category: "Sapna Chaudhary",
+    duration: "album",
+    gradient: "from-pink-600 via-rose-500 to-orange-500",
+    plays: "10M+",
+    audiomackUrl:
+      "https://audiomack.com/embed/album/dj-mix-tape/top-haryanvi-songs-from-sapna-chaudhary",
+  },
+  {
+    id: "sc_new2",
+    title: "Teri Lat Lag Jagi (Slow Reverb Lofi)",
+    artist: "Sapna Chaudhary",
+    category: "Sapna Chaudhary",
+    duration: "3:30",
+    gradient: "from-purple-600 via-violet-500 to-pink-500",
+    plays: "2M+",
+    audiomackUrl:
+      "https://audiomack.com/embed/song/ZSamurai/teri-lat-lag-jagi-slow-reverb-sapna-chaudhary-haryanvi-song-lofi-anytime",
+  },
+  {
+    id: "sc_new3",
+    title: "Ghungroo",
+    artist: "Sapna Chaudhary",
+    category: "Sapna Chaudhary",
+    duration: "3:30",
+    gradient: "from-orange-600 via-red-500 to-pink-600",
+    plays: "3M+",
+    audiomackUrl:
+      "https://audiomack.com/embed/song/dj-mix-tape/ghungroo-riskyjattcom",
+  },
+  {
+    id: "sc_new4",
+    title: "Khadi Matke",
+    artist: "Sapna Chaudhary",
+    category: "Sapna Chaudhary",
+    duration: "3:30",
+    gradient: "from-blue-600 via-indigo-500 to-purple-500",
+    plays: "5M+",
+    audiomackUrl:
+      "https://audiomack.com/embed/song/sapna-chaudhary-1/khadi-matke",
+  },
+  {
+    id: "sc_new5",
+    title: "Bandook Chalgi Haryanvi",
+    artist: "Sapna Chaudhary",
+    category: "Sapna Chaudhary",
+    duration: "3:30",
+    gradient: "from-amber-500 via-yellow-400 to-orange-400",
+    plays: "2M+",
+    audiomackUrl:
+      "https://audiomack.com/embed/song/lovesh-puru/bandook-chalgi-haryanvi",
+  },
+  {
+    id: "sc_new6",
+    title: "Gajban Pani Ne Chali",
+    artist: "Sapna Chaudhary",
+    category: "Sapna Chaudhary",
+    duration: "3:30",
+    gradient: "from-red-600 via-orange-500 to-yellow-500",
+    plays: "4M+",
+    audiomackUrl:
+      "https://audiomack.com/embed/song/dj-mix-tape/gajban-pani-ne-chali-riskyjattcom",
+  },
+  {
+    id: "sc_new7",
+    title: "Payal Chandi Ki",
+    artist: "Sapna Chaudhary",
+    category: "Sapna Chaudhary",
+    duration: "3:30",
+    gradient: "from-green-600 via-teal-500 to-cyan-500",
+    plays: "3M+",
+    audiomackUrl:
+      "https://audiomack.com/embed/song/dj-mix-tape/payal-chandi-ki-riskyjattcom",
+  },
+  {
+    id: "sc_new8",
+    title: "Teri Aakhya Ka Yo Kajal (Remix)",
+    artist: "Sapna Chaudhary",
+    category: "Sapna Chaudhary",
+    duration: "3:30",
+    gradient: "from-pink-600 via-rose-500 to-orange-500",
+    plays: "6M+",
+    audiomackUrl:
+      "https://audiomack.com/embed/song/tera-ohi-gill-1/teri-aakhya-ka-yo-kajal-sapna-chaudhary-remix",
+  },
+  {
+    id: "sc_new9",
+    title: "Katal",
+    artist: "Sapna Chaudhary",
+    category: "Sapna Chaudhary",
+    duration: "3:30",
+    gradient: "from-purple-600 via-violet-500 to-pink-500",
+    plays: "2M+",
+    audiomackUrl:
+      "https://audiomack.com/embed/song/dj-mix-tape/katal-riskyjattcom",
+  },
+  {
+    id: "sc_new10",
+    title: "Na Manungi Piya",
+    artist: "Sapna Chaudhary",
+    category: "Sapna Chaudhary",
+    duration: "album",
+    gradient: "from-orange-600 via-red-500 to-pink-600",
+    plays: "3M+",
+    audiomackUrl:
+      "https://audiomack.com/embed/album/priya-chaudhary-1/na-manungi-piya",
+  },
+  {
+    id: "sc_new11",
+    title: "Khadi Matke (Version 2)",
+    artist: "Sapna Chaudhary",
+    category: "Sapna Chaudhary",
+    duration: "3:30",
+    gradient: "from-blue-600 via-indigo-500 to-purple-500",
+    plays: "1M+",
+    audiomackUrl: "https://audiomack.com/embed/song/mr-udit/khadi-matke",
+  },
+  {
+    id: "sc_new12",
+    title: "Chetak Remix",
+    artist: "Sapna Chaudhary",
+    category: "Sapna Chaudhary",
+    duration: "3:30",
+    gradient: "from-amber-500 via-yellow-400 to-orange-400",
+    plays: "4M+",
+    audiomackUrl:
+      "https://audiomack.com/embed/song/rinku-lahoria/chetak-remix-sapna-chaudhary-raj-mawar-mehar-feat-chetak-remix-sapna-chaudh",
+  },
+  {
+    id: "rp1",
+    title: "Balam Khota Remix",
+    artist: "Renuka Panwar",
+    category: "Renuka Panwar",
+    duration: "3:30",
+    gradient: "from-violet-600 via-purple-500 to-fuchsia-500",
+    plays: "5M+",
+    soundcloudUrl: "https://soundcloud.com/renukapanwar/balam-khota-remix",
+  },
+  {
+    id: "rp2",
+    title: "32 Ke Fire (Kabootar)",
+    artist: "Renuka Panwar",
+    category: "Renuka Panwar",
+    duration: "3:45",
+    gradient: "from-fuchsia-600 via-violet-500 to-purple-500",
+    plays: "8M+",
+    soundcloudUrl:
+      "https://soundcloud.com/renukapanwar/32-ke-fire-kabootar-feat-nidhi-sharma",
+  },
+  {
+    id: "rp3",
+    title: "Lapeta",
+    artist: "Renuka Panwar",
+    category: "Renuka Panwar",
+    duration: "3:20",
+    gradient: "from-purple-600 via-violet-500 to-indigo-500",
+    plays: "6M+",
+    soundcloudUrl: "https://soundcloud.com/renukapanwar/lapeta",
+  },
+  {
+    id: "rp4",
+    title: "Dukh Mota",
+    artist: "Renuka Panwar",
+    category: "Renuka Panwar",
+    duration: "3:50",
+    gradient: "from-indigo-600 via-purple-500 to-violet-500",
+    plays: "4M+",
+    soundcloudUrl: "https://soundcloud.com/renukapanwar/dukh-mota",
+  },
+  {
+    id: "rp5",
+    title: "Jhanjar",
+    artist: "Renuka Panwar",
+    category: "Renuka Panwar",
+    duration: "3:15",
+    gradient: "from-violet-600 via-purple-500 to-pink-500",
+    plays: "10M+",
+    soundcloudUrl: "https://soundcloud.com/renukapanwar/jhanjar",
+  },
+  {
+    id: "rp6",
+    title: "Shyano Ji",
+    artist: "Renuka Panwar",
+    category: "Renuka Panwar",
+    duration: "3:30",
+    gradient: "from-purple-600 via-fuchsia-500 to-pink-500",
+    plays: "7M+",
+    soundcloudUrl: "https://soundcloud.com/renukapanwar/shyano-ji",
+  },
+  {
+    id: "rp7",
+    title: "Ram Kasam",
+    artist: "Renuka Panwar",
+    category: "Renuka Panwar",
+    duration: "3:40",
+    gradient: "from-fuchsia-600 via-purple-500 to-violet-500",
+    plays: "5M+",
+    soundcloudUrl: "https://soundcloud.com/renukapanwar/ram-kasam",
+  },
+  {
+    id: "rp8",
+    title: "Bhartaar 2",
+    artist: "Renuka Panwar",
+    category: "Renuka Panwar",
+    duration: "3:25",
+    gradient: "from-violet-600 via-indigo-500 to-purple-500",
+    plays: "6M+",
+    soundcloudUrl: "https://soundcloud.com/renukapanwar/bhartaar-2",
+  },
+  {
+    id: "rp9",
+    title: "Padharo Bholenath",
+    artist: "Renuka Panwar",
+    category: "Renuka Panwar",
+    duration: "4:00",
+    gradient: "from-purple-600 via-violet-500 to-fuchsia-500",
+    plays: "9M+",
+    soundcloudUrl: "https://soundcloud.com/renukapanwar/padharo-bholenath",
+  },
+  {
+    id: "rp10",
+    title: "Dj Pe Thumka",
+    artist: "Renuka Panwar",
+    category: "Renuka Panwar",
+    duration: "3:30",
+    gradient: "from-fuchsia-600 via-pink-500 to-violet-500",
+    plays: "8M+",
+    soundcloudUrl: "https://soundcloud.com/renukapanwar/dj-pe-thumka",
+  },
+  {
+    id: "rp11",
+    title: "Dj Pe Matkungi",
+    artist: "Renuka Panwar",
+    category: "Renuka Panwar",
+    duration: "3:20",
+    gradient: "from-violet-600 via-purple-500 to-fuchsia-500",
+    plays: "7M+",
+    soundcloudUrl: "https://soundcloud.com/renukapanwar/dj-pe-matkungi",
+  },
+  {
+    id: "rp12",
+    title: "Chatak Matak",
+    artist: "Renuka Panwar",
+    category: "Renuka Panwar",
+    duration: "3:45",
+    gradient: "from-purple-600 via-fuchsia-500 to-rose-500",
+    plays: "12M+",
+    soundcloudUrl: "https://soundcloud.com/renukapanwar/chatak-matak",
+  },
+  {
+    id: "rp13",
+    title: "Kala Daman",
+    artist: "Renuka Panwar",
+    category: "Renuka Panwar",
+    duration: "3:55",
+    gradient: "from-fuchsia-600 via-violet-500 to-purple-500",
+    plays: "15M+",
+    soundcloudUrl: "https://soundcloud.com/renukapanwar/kala-daman",
+  },
+  {
+    id: "rp14",
+    title: "Naina Ke Teer",
+    artist: "Renuka Panwar",
+    category: "Renuka Panwar",
+    duration: "3:30",
+    gradient: "from-violet-600 via-purple-500 to-indigo-500",
+    plays: "6M+",
+    soundcloudUrl: "https://soundcloud.com/renukapanwar/naina-ke-teer-1",
+  },
+  {
+    id: "rp15",
+    title: "Kabootar",
+    artist: "Renuka Panwar",
+    category: "Renuka Panwar",
+    duration: "3:40",
+    gradient: "from-indigo-600 via-violet-500 to-purple-500",
+    plays: "20M+",
+    soundcloudUrl:
+      "https://soundcloud.com/user-142311887/kabootar-renuka-panwar-pranjal",
+  },
+  {
+    id: "rp16",
+    title: "Manne Aave Hichki",
+    artist: "Renuka Panwar",
+    category: "Renuka Panwar",
+    duration: "3:20",
+    gradient: "from-purple-600 via-violet-500 to-fuchsia-500",
+    plays: "5M+",
+    soundcloudUrl: "https://soundcloud.com/renukapanwar/manne-aave-hichki",
+  },
+  {
+    id: "rp17",
+    title: "Bhola Baan Baithgya",
+    artist: "Renuka Panwar",
+    category: "Renuka Panwar",
+    duration: "3:35",
+    gradient: "from-fuchsia-600 via-purple-500 to-violet-500",
+    plays: "4M+",
+    soundcloudUrl: "https://soundcloud.com/renukapanwar/bhola-baan-baithgya",
+  },
+  {
+    id: "rp18",
+    title: "O More Baalma",
+    artist: "Renuka Panwar",
+    category: "Renuka Panwar",
+    duration: "3:50",
+    gradient: "from-violet-600 via-fuchsia-500 to-pink-500",
+    plays: "6M+",
+    soundcloudUrl: "https://soundcloud.com/renukapanwar/o-more-baalma",
+  },
+  {
+    id: "rp19",
+    title: "61-62 Challu",
+    artist: "Renuka Panwar",
+    category: "Renuka Panwar",
+    duration: "3:25",
+    gradient: "from-purple-600 via-violet-500 to-fuchsia-500",
+    plays: "5M+",
+    soundcloudUrl: "https://soundcloud.com/renukapanwar/61-62-challu",
+  },
+  {
+    id: "rp20",
+    title: "Chhore Kanker Na Maar",
+    artist: "Renuka Panwar",
+    category: "Renuka Panwar",
+    duration: "3:30",
+    gradient: "from-fuchsia-600 via-violet-500 to-purple-500",
+    plays: "4M+",
+    soundcloudUrl: "https://soundcloud.com/renukapanwar/chhore-kanker-na-maar",
+  },
+  {
+    id: "rp21",
+    title: "Mhare Ke School Futge",
+    artist: "Renuka Panwar",
+    category: "Renuka Panwar",
+    duration: "3:40",
+    gradient: "from-violet-600 via-purple-500 to-indigo-500",
+    plays: "3M+",
+    soundcloudUrl: "https://soundcloud.com/renukapanwar/mhare-ke-school-futge",
+  },
+  {
+    id: "rp22",
+    title: "Batan Aali Manny Bhi Diye",
+    artist: "Renuka Panwar",
+    category: "Renuka Panwar",
+    duration: "3:35",
+    gradient: "from-indigo-600 via-purple-500 to-violet-500",
+    plays: "4M+",
+    soundcloudUrl:
+      "https://soundcloud.com/renukapanwar/batan-aali-manny-bhi-diye",
+  },
+  {
+    id: "rp23",
+    title: "Fashion Wala Suit (Lofi)",
+    artist: "Renuka Panwar",
+    category: "Renuka Panwar",
+    duration: "3:20",
+    gradient: "from-violet-600 via-fuchsia-500 to-purple-500",
+    plays: "5M+",
+    soundcloudUrl: "https://soundcloud.com/renukapanwar/fashion-wala-suit-lofi",
+  },
+  {
+    id: "vvip1",
+    title: "Sharp Shooter",
+    artist: "Masoom Sharma",
+    category: "VVIP",
+    duration: "3:30",
+    gradient: "from-yellow-600 via-amber-500 to-orange-600",
+    plays: "10M+",
+    audiomackUrl:
+      "https://audiomack.com/embed/song/kharishma-entertainment/sharp-shooter",
+  },
+  {
+    id: "vvip2",
+    title: "Sheesha",
+    artist: "Various Artists",
+    category: "VVIP",
+    duration: "3:45",
+    gradient: "from-amber-600 via-yellow-500 to-orange-500",
+    plays: "8M+",
+    soundcloudUrl: "https://soundcloud.com/1sheesha/popular-tracks",
+  },
+  {
+    id: "vvip3",
+    title: "Ramjhol Bolegi 2",
+    artist: "Masoom Sharma",
+    category: "VVIP",
+    duration: "3:30",
+    gradient: "from-orange-600 via-amber-500 to-yellow-500",
+    plays: "6M+",
+    audiomackUrl:
+      "https://audiomack.com/embed/song/masoom-sharma/ramjhol-bolegi-2",
+  },
+  {
+    id: "vvip4",
+    title: "Pistol Bolegi",
+    artist: "Masoom Sharma",
+    category: "VVIP",
+    duration: "3:20",
+    gradient: "from-red-600 via-orange-500 to-yellow-500",
+    plays: "7M+",
+    soundcloudUrl: "https://soundcloud.com/masoomsharma/pistol-bolegi",
+  },
+  {
+    id: "vvip5",
+    title: "Asla Tera Yaar Bhi Rakhe",
+    artist: "R Maan",
+    category: "VVIP",
+    duration: "3:40",
+    gradient: "from-purple-600 via-violet-500 to-pink-500",
+    plays: "5M+",
+    audiomackUrl:
+      "https://audiomack.com/embed/song/r-maan-1/asla-tera-yaar-bhi-rakhe",
+  },
+  {
+    id: "vvip6",
+    title: "Bairi",
+    artist: "Haryanvi Hits",
+    category: "VVIP",
+    duration: "3:15",
+    gradient: "from-teal-600 via-emerald-500 to-green-400",
+    plays: "4M+",
+    soundcloudUrl: "https://soundcloud.com/search?q=bairi+haryanvi",
+  },
+  {
+    id: "vvip7",
+    title: "Sheesha Mitta Ror",
+    artist: "RememberMe Listner",
+    category: "VVIP",
+    duration: "3:30",
+    gradient: "from-blue-600 via-cyan-500 to-teal-400",
+    plays: "3M+",
+    audiomackUrl:
+      "https://audiomack.com/embed/song/remembermelistner/sheesha-mitta-ror",
+  },
+  {
+    id: "vvip8",
+    title: "Bairi Chandni Raat Mein Goli",
+    artist: "Shashwat Sachdev",
+    category: "VVIP",
+    duration: "3:45",
+    gradient: "from-pink-600 via-rose-500 to-red-500",
+    plays: "5M+",
+    audiomackUrl:
+      "https://audiomack.com/embed/song/shashwatsachdev/bairi-chandni-raat-mein-goli",
+  },
+  {
+    id: "vvip9",
+    title: "Haryanvi Swag Mashup",
+    artist: "DJ Shiv Chauhan",
+    category: "VVIP",
+    duration: "5:00",
+    gradient: "from-green-600 via-emerald-500 to-teal-500",
+    plays: "4M+",
+    audiomackUrl:
+      "https://audiomack.com/embed/song/mrnihalkashyap/haryanvi-swag-mashup-dj-shiv-chauhan-pistol-bolegi-russian-bandana-blender-tag-awara-ke",
+  },
 ];
 
 export const genres = [
@@ -1756,7 +3305,7 @@ export const genres = [
     emoji: "🎺",
     description: "Best of Haryanvi folk & dance tracks",
     gradient: "from-orange-600 via-red-500 to-pink-600",
-    songCount: 60,
+    songCount: 61,
     category: "Haryanvi Hits",
   },
   {
@@ -1767,7 +3316,7 @@ export const genres = [
     emoji: "🎸",
     description: "Top Punjabi bangers & mashups",
     gradient: "from-yellow-500 via-orange-500 to-red-500",
-    songCount: 82,
+    songCount: 87,
     category: "Punjabi Hits",
   },
   {
@@ -1778,7 +3327,7 @@ export const genres = [
     emoji: "📼",
     description: "Nostalgic 90s Bollywood classics",
     gradient: "from-purple-600 via-violet-500 to-pink-500",
-    songCount: 10,
+    songCount: 13,
     category: "90s Hits",
   },
   {
@@ -1789,8 +3338,76 @@ export const genres = [
     emoji: "🎬",
     description: "Blockbuster Bollywood hits & mashups",
     gradient: "from-pink-600 via-rose-500 to-orange-500",
-    songCount: 13,
+    songCount: 18,
     category: "Bollywood Hits",
+  },
+  {
+    id: "sad",
+    name: "Sad Songs",
+    label: "Sad Songs",
+    icon: "💔",
+    emoji: "💔",
+    description: "Emotional & heartbreak songs",
+    gradient: "from-blue-600 via-indigo-500 to-purple-500",
+    songCount: 3,
+    category: "Sad Songs",
+  },
+  {
+    id: "top100",
+    name: "Top 100",
+    label: "Top 100",
+    icon: "🏆",
+    emoji: "🏆",
+    description: "Most popular tracks on SoundCloud",
+    gradient: "from-amber-500 via-yellow-400 to-orange-400",
+    songCount: 2,
+    category: "Top 100",
+  },
+
+  {
+    id: "masoom",
+    name: "Masoom Sharma",
+    label: "Masoom Sharma",
+    icon: "🎤",
+    emoji: "🎤",
+    description: "Top 40 hits by Masoom Sharma",
+    gradient: "from-emerald-600 via-teal-500 to-cyan-500",
+    songCount: 40,
+    category: "Masoom Sharma",
+  },
+
+  {
+    id: "sapna",
+    name: "Sapna Chaudhary",
+    label: "Sapna Chaudhary",
+    icon: "💃",
+    emoji: "💃",
+    description: "Hit songs by Sapna Chaudhary",
+    gradient: "from-pink-600 via-rose-500 to-orange-500",
+    songCount: 17,
+    category: "Sapna Chaudhary",
+  },
+  {
+    id: "renuka",
+    name: "Renuka Panwar",
+    label: "Renuka Panwar",
+    icon: "🎤",
+    emoji: "🎤",
+    description: "Hit songs by Renuka Panwar",
+    gradient: "from-violet-600 via-purple-500 to-fuchsia-500",
+    songCount: 23,
+    category: "Renuka Panwar",
+  },
+  {
+    id: "vvip",
+    name: "VVIP",
+    label: "VVIP",
+    icon: "👑",
+    emoji: "👑",
+    description: "Exclusive VVIP tracks",
+    gradient: "from-yellow-500 via-amber-400 to-orange-500",
+    songCount: 6,
+    category: "VVIP",
   },
 ];
 
@@ -1830,23 +3447,5 @@ export const reels: Reel[] = [
     gradient: "from-pink-600 via-rose-500 to-orange-500",
     likes: "76K",
     category: "Bollywood",
-  },
-  {
-    id: "r5",
-    title: "Haryanvi Beats",
-    artist: "@haryanvibeats",
-    views: "4.5M",
-    gradient: "from-green-500 via-teal-500 to-cyan-500",
-    likes: "315K",
-    category: "Haryanvi",
-  },
-  {
-    id: "r6",
-    title: "Punjabi Wedding Mix",
-    artist: "@weddingvibes",
-    views: "2.7M",
-    gradient: "from-indigo-600 via-blue-500 to-orange-400",
-    likes: "187K",
-    category: "Punjabi",
   },
 ];

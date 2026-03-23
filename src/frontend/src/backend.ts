@@ -90,8 +90,10 @@ export class ExternalBlob {
     }
 }
 export interface backendInterface {
+    _initializeAccessControlWithSecret: (token: string) => Promise<void>;
 }
 export class Backend implements backendInterface {
+    async _initializeAccessControlWithSecret(_token: string): Promise<void> {}
     constructor(private actor: ActorSubclass<_SERVICE>, private _uploadFile: (file: ExternalBlob) => Promise<Uint8Array>, private _downloadFile: (file: Uint8Array) => Promise<ExternalBlob>, private processError?: (error: unknown) => never){}
 }
 export interface CreateActorOptions {

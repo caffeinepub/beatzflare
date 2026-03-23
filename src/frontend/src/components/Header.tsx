@@ -1,10 +1,12 @@
-import { Menu, Music2, Search } from "lucide-react";
+import { LogOut, Menu, Music2, Search } from "lucide-react";
 import { useState } from "react";
 
 interface HeaderProps {
   currentPage: string;
   onNavigate: (page: string) => void;
   onSearchOpen: () => void;
+  username?: string;
+  onLogout?: () => void;
 }
 
 const navLinks = ["Home", "Explore", "Radio", "Charts", "Library"];
@@ -13,6 +15,8 @@ export default function Header({
   currentPage,
   onNavigate,
   onSearchOpen,
+  username,
+  onLogout,
 }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -69,6 +73,27 @@ export default function Header({
           <span className="sm:hidden text-xs">Search</span>
         </button>
 
+        {/* User + Logout */}
+        {username && onLogout && (
+          <div className="hidden md:flex items-center gap-2 flex-shrink-0">
+            <span
+              className="text-xs font-medium truncate max-w-[80px]"
+              style={{ color: "oklch(0.72 0.12 75)" }}
+            >
+              {username}
+            </span>
+            <button
+              type="button"
+              onClick={onLogout}
+              data-ocid="auth.button"
+              title="Logout"
+              className="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-secondary text-muted-foreground hover:text-foreground transition-colors"
+            >
+              <LogOut className="w-4 h-4" />
+            </button>
+          </div>
+        )}
+
         {/* Mobile menu toggle */}
         <button
           type="button"
@@ -105,6 +130,17 @@ export default function Header({
               {link}
             </button>
           ))}
+          {username && onLogout && (
+            <button
+              type="button"
+              onClick={onLogout}
+              data-ocid="auth.button"
+              className="px-4 py-1.5 text-sm rounded-full border border-border/30 text-muted-foreground hover:text-foreground flex items-center gap-1.5 transition-colors"
+            >
+              <LogOut className="w-3 h-3" />
+              Logout ({username})
+            </button>
+          )}
         </div>
       )}
     </header>
