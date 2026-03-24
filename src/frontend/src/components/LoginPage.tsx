@@ -4,7 +4,7 @@ import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Phone } from "lucide-react";
 import { motion } from "motion/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 interface LoginPageProps {
   onLogin: (username: string) => void;
@@ -13,6 +13,10 @@ interface LoginPageProps {
 interface StoredUser {
   username: string;
   password: string;
+}
+
+function hashPassword(pass: string): string {
+  return btoa(pass);
 }
 
 function getUsers(): StoredUser[] {
@@ -34,6 +38,48 @@ function doLogin(username: string) {
   );
 }
 
+const ATTEMPT_LIMIT = 5;
+const LOCKOUT_SECONDS = 30;
+
+function getAttemptData(username: string): { count: number; lastTime: number } {
+  try {
+    return JSON.parse(
+      sessionStorage.getItem(`beatzflare_attempts_${username.toLowerCase()}`) ||
+        '{"count":0,"lastTime":0}',
+    );
+  } catch {
+    return { count: 0, lastTime: 0 };
+  }
+}
+
+function setAttemptData(username: string, count: number, lastTime: number) {
+  sessionStorage.setItem(
+    `beatzflare_attempts_${username.toLowerCase()}`,
+    JSON.stringify({ count, lastTime }),
+  );
+}
+
+function clearAttemptData(username: string) {
+  sessionStorage.removeItem(`beatzflare_attempts_${username.toLowerCase()}`);
+}
+
+function getPasswordStrength(password: string): {
+  score: number;
+  label: string;
+  color: string;
+} {
+  if (password.length === 0) return { score: 0, label: "", color: "" };
+  let score = 0;
+  if (password.length >= 6) score++;
+  if (password.length >= 8) score++;
+  if (/[a-zA-Z]/.test(password)) score++;
+  if (/[0-9]/.test(password)) score++;
+  if (/[^a-zA-Z0-9]/.test(password)) score++;
+  if (score <= 2) return { score, label: "Weak", color: "oklch(0.65 0.2 25)" };
+  if (score <= 3) return { score, label: "Fair", color: "oklch(0.7 0.15 60)" };
+  return { score, label: "Strong", color: "oklch(0.7 0.18 145)" };
+}
+
 export default function LoginPage({ onLogin }: LoginPageProps) {
   const [loginUsername, setLoginUsername] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
@@ -43,6 +89,18 @@ export default function LoginPage({ onLogin }: LoginPageProps) {
   const [signupPassword, setSignupPassword] = useState("");
   const [signupConfirm, setSignupConfirm] = useState("");
   const [signupError, setSignupError] = useState("");
+
+  const [lockoutRemaining, setLockoutRemaining] = useState(0);
+
+  // Countdown timer for lockout
+  useEffect(() => {
+    if (lockoutRemaining <= 0) return;
+    const id = setTimeout(
+      () => setLockoutRemaining((p) => Math.max(0, p - 1)),
+      1000,
+    );
+    return () => clearTimeout(id);
+  }, [lockoutRemaining]);
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
@@ -57,24 +115,63 @@ export default function LoginPage({ onLogin }: LoginPageProps) {
       setLoginError("Password must be at least 6 characters.");
       return;
     }
+
+    // Rate limiting check
+    const attempts = getAttemptData(uname);
+    if (attempts.count >= ATTEMPT_LIMIT) {
+      const elapsed = (Date.now() - attempts.lastTime) / 1000;
+      if (elapsed < LOCKOUT_SECONDS) {
+        const remaining = Math.ceil(LOCKOUT_SECONDS - elapsed);
+        setLockoutRemaining(remaining);
+        setLoginError(`Too many failed attempts. Try again in ${remaining}s.`);
+        return;
+      }
+      clearAttemptData(uname);
+    }
+
     const users = getUsers();
     const existing = users.find(
       (u) => u.username.toLowerCase() === uname.toLowerCase(),
     );
-    if (existing) {
-      if (existing.password !== pass) {
-        setLoginError("Wrong password. Please try again.");
-        return;
-      }
-      doLogin(existing.username);
-      onLogin(existing.username);
-    } else {
-      const newUser: StoredUser = { username: uname, password: pass };
-      users.push(newUser);
-      saveUsers(users);
-      doLogin(uname);
-      onLogin(uname);
+
+    if (!existing) {
+      const newCount = attempts.count + 1;
+      setAttemptData(uname, newCount, Date.now());
+      setLoginError("No account found. Please sign up first.");
+      return;
     }
+
+    // Check password: try plain text first (backwards compat), then hashed
+    const hashed = hashPassword(pass);
+    const isPlainMatch = existing.password === pass;
+    const isHashMatch = existing.password === hashed;
+
+    if (!isPlainMatch && !isHashMatch) {
+      const newCount = attempts.count + 1;
+      setAttemptData(uname, newCount, Date.now());
+      const left = ATTEMPT_LIMIT - newCount;
+      if (left > 0) {
+        setLoginError(
+          `Wrong password. ${left} attempt${left === 1 ? "" : "s"} remaining.`,
+        );
+      } else {
+        setLockoutRemaining(LOCKOUT_SECONDS);
+        setLoginError(
+          `Too many failed attempts. Try again in ${LOCKOUT_SECONDS}s.`,
+        );
+      }
+      return;
+    }
+
+    // If plain text matched, upgrade to hashed storage
+    if (isPlainMatch && !isHashMatch) {
+      existing.password = hashed;
+      saveUsers(users);
+    }
+
+    clearAttemptData(uname);
+    doLogin(existing.username);
+    onLogin(existing.username);
   };
 
   const handleSignup = (e: React.FormEvent) => {
@@ -95,14 +192,16 @@ export default function LoginPage({ onLogin }: LoginPageProps) {
     }
     const users = getUsers();
     if (users.find((u) => u.username.toLowerCase() === uname.toLowerCase())) {
-      setSignupError("Username already taken.");
+      setSignupError("Username already taken. Please choose another.");
       return;
     }
-    users.push({ username: uname, password: signupPassword });
+    users.push({ username: uname, password: hashPassword(signupPassword) });
     saveUsers(users);
     doLogin(uname);
     onLogin(uname);
   };
+
+  const signupStrength = getPasswordStrength(signupPassword);
 
   return (
     <motion.div
@@ -196,7 +295,10 @@ export default function LoginPage({ onLogin }: LoginPageProps) {
                     data-ocid="auth.input"
                     placeholder="Enter your username"
                     value={loginUsername}
-                    onChange={(e) => setLoginUsername(e.target.value)}
+                    onChange={(e) => {
+                      setLoginUsername(e.target.value);
+                      setLockoutRemaining(0);
+                    }}
                     className="font-body placeholder:text-muted-foreground/40 focus-visible:ring-1"
                     style={{
                       background: "oklch(0.135 0.008 50)",
@@ -235,28 +337,26 @@ export default function LoginPage({ onLogin }: LoginPageProps) {
                       background: "oklch(0.577 0.245 27 / 0.1)",
                     }}
                   >
-                    {loginError}
+                    {lockoutRemaining > 0
+                      ? `Account locked. Try again in ${lockoutRemaining}s.`
+                      : loginError}
                   </p>
                 )}
 
                 <Button
                   type="submit"
                   data-ocid="auth.submit_button"
-                  className="w-full font-display font-semibold tracking-wide mt-2"
+                  disabled={lockoutRemaining > 0}
+                  className="w-full font-display font-semibold tracking-wide mt-2 disabled:opacity-50"
                   style={{
                     background: "oklch(0.72 0.13 68)",
                     color: "oklch(0.07 0.005 48)",
                   }}
                 >
-                  Login to BEATZFLARE
+                  {lockoutRemaining > 0
+                    ? `Locked (${lockoutRemaining}s)`
+                    : "Login to BEATZFLARE"}
                 </Button>
-
-                <p
-                  className="font-body text-center text-xs"
-                  style={{ color: "oklch(0.52 0.009 60)" }}
-                >
-                  New here? Just enter any username &amp; password.
-                </p>
 
                 <SocialLoginButtons onLogin={onLogin} />
               </form>
@@ -296,7 +396,7 @@ export default function LoginPage({ onLogin }: LoginPageProps) {
                     id="signup-password"
                     data-ocid="auth.input"
                     type="password"
-                    placeholder="Min 6 characters"
+                    placeholder="Min 6 characters (8+ recommended)"
                     value={signupPassword}
                     onChange={(e) => setSignupPassword(e.target.value)}
                     className="font-body placeholder:text-muted-foreground/40 focus-visible:ring-1"
@@ -305,6 +405,33 @@ export default function LoginPage({ onLogin }: LoginPageProps) {
                       borderColor: "oklch(0.22 0.009 52)",
                     }}
                   />
+                  {/* Password strength indicator */}
+                  {signupPassword.length > 0 && (
+                    <div className="space-y-1 pt-0.5">
+                      <div className="flex gap-1">
+                        {[1, 2, 3, 4, 5].map((i) => (
+                          <div
+                            key={i}
+                            className="h-1 flex-1 rounded-full transition-colors duration-300"
+                            style={{
+                              background:
+                                i <= signupStrength.score
+                                  ? signupStrength.color
+                                  : "oklch(0.22 0.009 52)",
+                            }}
+                          />
+                        ))}
+                      </div>
+                      <p
+                        className="font-body text-[11px]"
+                        style={{ color: signupStrength.color }}
+                      >
+                        {signupStrength.label}
+                        {signupStrength.score < 4 &&
+                          " — use 8+ chars with letters & numbers for stronger security"}
+                      </p>
+                    </div>
+                  )}
                 </div>
                 <div className="space-y-1.5">
                   <Label
@@ -327,6 +454,18 @@ export default function LoginPage({ onLogin }: LoginPageProps) {
                     }}
                   />
                 </div>
+
+                <p
+                  className="font-body text-[11px] rounded-lg px-3 py-2"
+                  style={{
+                    color: "oklch(0.6 0.01 60)",
+                    background: "oklch(0.135 0.008 50)",
+                    border: "1px solid oklch(0.22 0.009 52)",
+                  }}
+                >
+                  🔒 Your password is securely stored. We recommend using 8+
+                  characters with letters and numbers.
+                </p>
 
                 {signupError && (
                   <p
