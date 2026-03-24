@@ -28,12 +28,12 @@ export default function GenrePage({
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
-      {/* Back button */}
+      {/* Back */}
       <button
         type="button"
         onClick={onBack}
         data-ocid="genre.secondary_button"
-        className="flex items-center gap-2 text-muted-foreground hover:text-white mb-6 transition-colors font-body text-sm"
+        className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-7 transition-colors font-body text-sm"
       >
         <ArrowLeft className="w-4 h-4" /> Back
       </button>
@@ -41,29 +41,28 @@ export default function GenrePage({
       {/* Genre hero */}
       {genre && (
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          className={`relative rounded-2xl overflow-hidden mb-8 bg-gradient-to-br ${genre.gradient}`}
-          style={{ minHeight: "180px" }}
+          transition={{ duration: 0.45 }}
+          className={`relative rounded-2xl overflow-hidden mb-9 bg-gradient-to-br ${genre.gradient}`}
+          style={{ minHeight: "176px" }}
         >
-          {/* Background image if available */}
           {heroPhoto && (
             <img
               src={heroPhoto}
               alt={genre.name}
-              className="absolute inset-0 w-full h-full object-cover opacity-40"
+              className="absolute inset-0 w-full h-full object-cover opacity-35"
             />
           )}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/45 to-transparent" />
 
-          <div className="relative flex items-center gap-6 p-8">
-            {/* Section image thumbnail */}
+          <div className="relative flex items-center gap-6 p-7 sm:p-9">
             {heroPhoto && (
               <div
-                className="flex-shrink-0 w-24 h-24 rounded-xl overflow-hidden border-2 shadow-xl hidden sm:block"
+                className="flex-shrink-0 w-20 h-20 sm:w-24 sm:h-24 rounded-xl overflow-hidden shadow-xl hidden sm:block"
                 style={{
-                  borderColor: "oklch(0.74 0.135 70 / 0.5)",
-                  boxShadow: "0 0 30px oklch(0.74 0.135 70 / 0.3)",
+                  border: "1px solid oklch(0.72 0.13 68 / 0.4)",
+                  boxShadow: "0 0 24px oklch(0.72 0.13 68 / 0.2)",
                 }}
               >
                 <img
@@ -75,11 +74,14 @@ export default function GenrePage({
             )}
 
             <div>
-              <div className="text-4xl mb-2">{genre.emoji}</div>
-              <h1 className="font-display text-4xl font-black text-white tracking-tight">
+              <div className="text-3xl mb-2">{genre.emoji}</div>
+              <h1 className="font-display text-3xl sm:text-4xl font-black text-white tracking-tight">
                 {genre.name}
               </h1>
-              <p className="font-body text-white/60 text-sm mt-1">
+              <p
+                className="font-body text-sm mt-1"
+                style={{ color: "oklch(0.72 0.13 68 / 0.7)" }}
+              >
                 {genreSongs.length} songs
               </p>
             </div>
@@ -87,9 +89,21 @@ export default function GenrePage({
         </motion.div>
       )}
 
-      <h2 className="font-display text-lg font-bold uppercase tracking-widest text-white mb-4">
-        Songs
-      </h2>
+      {/* Section header */}
+      <div className="flex items-center gap-3 mb-6">
+        <h2 className="section-header">Songs</h2>
+        <div
+          className="flex-1 h-px"
+          style={{
+            background:
+              "linear-gradient(to right, oklch(0.72 0.13 68 / 0.2), transparent)",
+          }}
+        />
+        <span className="font-body text-xs text-muted-foreground">
+          {genreSongs.length} tracks
+        </span>
+      </div>
+
       <div
         className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4"
         data-ocid="genre.list"

@@ -34,22 +34,29 @@ const TRENDING_NAMES = [
 
 function SectionHeader({
   title,
+  count,
   action,
-}: { title: string; action?: React.ReactNode }) {
+}: { title: string; count?: number; action?: React.ReactNode }) {
   return (
     <div className="flex items-center gap-3 mb-6">
-      <div
-        className="w-1 h-7 rounded-full flex-shrink-0"
-        style={{ background: "linear-gradient(to bottom, #d4a017, #92600a)" }}
-      />
-      <h2 className="font-display text-xl font-black uppercase tracking-widest text-white">
-        {title}
-      </h2>
+      <h2 className="section-header">{title}</h2>
+      {count !== undefined && (
+        <span
+          className="font-body text-xs px-2 py-0.5 rounded-full"
+          style={{
+            background: "oklch(0.72 0.13 68 / 0.1)",
+            color: "oklch(0.72 0.13 68 / 0.7)",
+            border: "1px solid oklch(0.72 0.13 68 / 0.15)",
+          }}
+        >
+          {count}
+        </span>
+      )}
       <div
         className="flex-1 h-px"
         style={{
           background:
-            "linear-gradient(to right, rgba(212,160,23,0.3), transparent)",
+            "linear-gradient(to right, oklch(0.72 0.13 68 / 0.18), transparent)",
         }}
       />
       {action && <div className="flex-shrink-0">{action}</div>}
@@ -59,12 +66,12 @@ function SectionHeader({
 
 function SectionDivider() {
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 py-0.5">
       <div
         className="h-px w-full"
         style={{
           background:
-            "linear-gradient(to right, transparent, rgba(212,160,23,0.25), transparent)",
+            "linear-gradient(to right, transparent, oklch(0.19 0.008 52), transparent)",
         }}
       />
     </div>
@@ -97,40 +104,48 @@ export default function HomePage({
     <div className="pb-24">
       <HeroSection onExplore={onExplore} />
 
-      {/* NOW TRENDING marquee */}
+      {/* NOW TRENDING marquee — refined, subtle */}
       <div
-        className="overflow-hidden border-y py-2.5 my-2"
+        className="overflow-hidden py-2 my-0"
         style={{
-          background: "rgba(212,160,23,0.06)",
-          borderColor: "rgba(212,160,23,0.18)",
+          background: "oklch(0.72 0.13 68 / 0.04)",
+          borderTop: "1px solid oklch(0.72 0.13 68 / 0.12)",
+          borderBottom: "1px solid oklch(0.72 0.13 68 / 0.12)",
         }}
       >
-        <div className="flex gap-10 animate-marquee whitespace-nowrap">
+        <div className="flex gap-8 animate-marquee whitespace-nowrap">
           {[
             ...TRENDING_NAMES.map((n) => ({ n, k: `a-${n}` })),
             ...TRENDING_NAMES.map((n) => ({ n, k: `b-${n}` })),
           ].map(({ n, k }) => (
             <span
               key={k}
-              className="font-display text-xs font-black tracking-[0.2em] uppercase inline-flex items-center gap-2"
-              style={{ color: "#d4a017" }}
+              className="font-body text-[11px] font-bold tracking-[0.18em] uppercase inline-flex items-center gap-2"
+              style={{ color: "oklch(0.72 0.13 68 / 0.65)" }}
             >
-              <span className="opacity-60">⬡</span> {n}
+              <span
+                className="w-1 h-1 rounded-full flex-shrink-0"
+                style={{ background: "oklch(0.72 0.13 68 / 0.5)" }}
+              />
+              {n}
             </span>
           ))}
         </div>
       </div>
 
-      {/* Favorites section */}
+      {/* Favorites */}
       {favoriteSongs.length > 0 && (
         <>
           <section className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
+              initial={{ opacity: 0, x: -16 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <SectionHeader title="My Favorites" />
+              <SectionHeader
+                title="My Favorites"
+                count={favoriteSongs.length}
+              />
             </motion.div>
             <div className="relative">
               <div
@@ -150,10 +165,10 @@ export default function HomePage({
                 ))}
               </div>
               <div
-                className="absolute right-0 top-0 bottom-2 w-16 pointer-events-none"
+                className="absolute right-0 top-0 bottom-2 w-12 pointer-events-none"
                 style={{
                   background:
-                    "linear-gradient(to left, oklch(0.08 0.006 48), transparent)",
+                    "linear-gradient(to left, oklch(0.07 0.005 48), transparent)",
                 }}
               />
             </div>
@@ -165,11 +180,11 @@ export default function HomePage({
       {/* Featured Genres */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 py-10">
         <motion.div
-          initial={{ opacity: 0, x: -20 }}
+          initial={{ opacity: 0, x: -16 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
         >
-          <SectionHeader title="Featured Genres" />
+          <SectionHeader title="Featured Genres" count={genres.length} />
         </motion.div>
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
           {genres.map((g, i) => (
@@ -185,12 +200,12 @@ export default function HomePage({
 
       <SectionDivider />
 
-      {/* Just For You + Now Playing */}
+      {/* Just For You */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
         <div className="flex gap-6">
           <div className="flex-1">
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
+              initial={{ opacity: 0, x: -16 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
@@ -201,8 +216,8 @@ export default function HomePage({
                     type="button"
                     onClick={onExplore}
                     data-ocid="home.link"
-                    className="font-body text-xs font-bold uppercase tracking-widest hover:opacity-80 transition-opacity"
-                    style={{ color: "#d4a017" }}
+                    className="font-body text-xs font-semibold uppercase tracking-widest transition-opacity hover:opacity-75"
+                    style={{ color: "oklch(0.72 0.13 68)" }}
                   >
                     View All
                   </button>
@@ -227,7 +242,7 @@ export default function HomePage({
               ))}
             </div>
           </div>
-          {/* Now Playing */}
+          {/* Now Playing Widget */}
           <div className="hidden lg:block w-64 xl:w-72 flex-shrink-0">
             <NowPlayingWidget
               song={currentSong}
@@ -243,7 +258,7 @@ export default function HomePage({
 
       <SectionDivider />
 
-      {/* Masoom Sharma Hits */}
+      {/* Masoom Sharma */}
       {masoomSongs.length > 0 && (
         <>
           <section
@@ -251,19 +266,20 @@ export default function HomePage({
             data-ocid="masoom.section"
           >
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
+              initial={{ opacity: 0, x: -16 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
               <SectionHeader
                 title="Masoom Sharma Hits"
+                count={masoomSongs.length}
                 action={
                   <button
                     type="button"
                     onClick={() => onGenre("masoom")}
                     data-ocid="masoom.link"
-                    className="font-body text-xs font-bold uppercase tracking-widest hover:opacity-80 transition-opacity"
-                    style={{ color: "#d4a017" }}
+                    className="font-body text-xs font-semibold uppercase tracking-widest hover:opacity-75 transition-opacity"
+                    style={{ color: "oklch(0.72 0.13 68)" }}
                   >
                     View All
                   </button>
@@ -296,19 +312,20 @@ export default function HomePage({
             data-ocid="sapna.section"
           >
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
+              initial={{ opacity: 0, x: -16 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
               <SectionHeader
                 title="Sapna Chaudhary"
+                count={sapnaSongs.length}
                 action={
                   <button
                     type="button"
                     onClick={() => onGenre("sapna")}
                     data-ocid="sapna.link"
-                    className="font-body text-xs font-bold uppercase tracking-widest hover:opacity-80 transition-opacity"
-                    style={{ color: "#d4a017" }}
+                    className="font-body text-xs font-semibold uppercase tracking-widest hover:opacity-75 transition-opacity"
+                    style={{ color: "oklch(0.72 0.13 68)" }}
                   >
                     View All
                   </button>

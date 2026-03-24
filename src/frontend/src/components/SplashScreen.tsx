@@ -19,10 +19,8 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
   const [phase, setPhase] = useState<"welcome" | "logo">("welcome");
 
   useEffect(() => {
-    // Phase 1: show WELCOME for 1.6s, then transition to logo
-    const t1 = setTimeout(() => setPhase("logo"), 1600);
-    // Phase 2: logo shows for 2s then done
-    const t2 = setTimeout(onComplete, 3800);
+    const t1 = setTimeout(() => setPhase("logo"), 1700);
+    const t2 = setTimeout(onComplete, 3900);
     return () => {
       clearTimeout(t1);
       clearTimeout(t2);
@@ -33,50 +31,47 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
     <motion.div
       initial={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.45 }}
       className="fixed inset-0 z-[200] flex flex-col items-center justify-center overflow-hidden"
-      style={{ background: "oklch(0.06 0.006 48)" }}
+      style={{ background: "oklch(0.06 0.005 48)" }}
     >
-      {/* Background ambient glow */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div
-          className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full blur-[150px]"
-          style={{ background: "oklch(0.74 0.135 70 / 0.12)" }}
-        />
-        <div
-          className="absolute bottom-1/4 right-1/4 w-64 h-64 rounded-full blur-[120px]"
-          style={{ background: "oklch(0.74 0.135 70 / 0.06)" }}
-        />
-      </div>
+      {/* Single, subtle gold orb */}
+      <div
+        className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 rounded-full pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(circle, oklch(0.72 0.13 68 / 0.10) 0%, transparent 70%)",
+        }}
+        aria-hidden="true"
+      />
 
-      {/* Phase 1: WELCOME entrance */}
+      {/* Phase 1: WELCOME */}
       <AnimatePresence>
         {phase === "welcome" && (
           <motion.div
             key="welcome"
-            exit={{ opacity: 0, scale: 0.85 }}
-            transition={{ duration: 0.4 }}
-            className="absolute inset-0 flex flex-col items-center justify-center gap-6"
+            exit={{ opacity: 0, scale: 0.9 }}
+            transition={{ duration: 0.35 }}
+            className="absolute inset-0 flex flex-col items-center justify-center gap-5"
           >
-            {/* Animated welcome letters */}
+            {/* Letter-by-letter WELCOME */}
             <div className="flex items-center gap-1 sm:gap-2">
               {WELCOME_LETTERS.map(({ ch, id }, i) => (
                 <motion.span
                   key={id}
-                  initial={{ opacity: 0, y: 40, rotateX: -90 }}
+                  initial={{ opacity: 0, y: 36, rotateX: -80 }}
                   animate={{ opacity: 1, y: 0, rotateX: 0 }}
                   transition={{
-                    duration: 0.55,
+                    duration: 0.5,
                     delay: i * 0.07,
                     type: "spring",
-                    damping: 14,
+                    damping: 15,
                   }}
-                  className="font-display font-black text-5xl sm:text-7xl md:text-8xl tracking-tight"
+                  className="font-display font-black inline-block"
                   style={{
-                    color: "oklch(0.82 0.15 70)",
-                    textShadow:
-                      "0 0 40px oklch(0.74 0.135 70 / 0.6), 0 0 80px oklch(0.74 0.135 70 / 0.3)",
-                    display: "inline-block",
+                    fontSize: "clamp(2.5rem, 12vw, 5.5rem)",
+                    color: "oklch(0.80 0.14 68)",
+                    textShadow: "0 0 32px oklch(0.72 0.13 68 / 0.5)",
                   }}
                 >
                   {ch}
@@ -84,95 +79,92 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
               ))}
             </div>
 
-            {/* Subtitle */}
             <motion.p
-              initial={{ opacity: 0, y: 12 }}
+              initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.65, duration: 0.5 }}
-              className="font-body text-sm sm:text-base tracking-[0.3em] uppercase text-center"
-              style={{ color: "oklch(0.74 0.135 70 / 0.7)" }}
+              transition={{ delay: 0.62, duration: 0.45 }}
+              className="font-body text-sm sm:text-base tracking-[0.32em] uppercase text-center"
+              style={{ color: "oklch(0.72 0.13 68 / 0.6)" }}
             >
               to BEATZFLARE
             </motion.p>
 
-            {/* Divider line with glow */}
             <motion.div
               initial={{ width: 0, opacity: 0 }}
-              animate={{ width: "200px", opacity: 1 }}
-              transition={{ delay: 0.8, duration: 0.6 }}
+              animate={{ width: "160px", opacity: 1 }}
+              transition={{ delay: 0.78, duration: 0.55 }}
               className="h-px rounded-full"
               style={{
                 background:
-                  "linear-gradient(to right, transparent, oklch(0.74 0.135 70), transparent)",
+                  "linear-gradient(to right, transparent, oklch(0.72 0.13 68 / 0.6), transparent)",
               }}
             />
 
-            {/* Users welcome text */}
             <motion.p
-              initial={{ opacity: 0, y: 8 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.0, duration: 0.5 }}
-              className="font-body text-xs sm:text-sm tracking-[0.15em] uppercase"
-              style={{ color: "oklch(0.6 0.08 70 / 0.8)" }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1.0, duration: 0.45 }}
+              className="font-body text-xs tracking-[0.18em] uppercase"
+              style={{ color: "oklch(0.52 0.009 60)" }}
             >
-              Your Premium Music Experience Awaits
+              Your Premium Music Experience
             </motion.p>
           </motion.div>
         )}
       </AnimatePresence>
 
-      {/* Phase 2: Logo + credits */}
+      {/* Phase 2: Logo */}
       <AnimatePresence>
         {phase === "logo" && (
           <motion.div
             key="logo"
-            initial={{ opacity: 0, scale: 0.85 }}
+            initial={{ opacity: 0, scale: 0.88 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, type: "spring", damping: 16 }}
+            transition={{ duration: 0.45, type: "spring", damping: 18 }}
             className="flex flex-col items-center gap-5"
           >
             <img
               src="/assets/generated/beatzflare-logo.dim_600x400.png"
               alt="BEATZFLARE"
-              className="w-64 h-auto mx-auto"
+              className="w-60 h-auto mx-auto"
             />
 
-            {/* Loading bar */}
+            {/* Thin gold progress bar */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.3 }}
-              className="w-40 h-px rounded-full overflow-hidden"
-              style={{ background: "oklch(0.74 0.135 70 / 0.12)" }}
+              transition={{ delay: 0.25 }}
+              className="w-36 h-0.5 rounded-full overflow-hidden"
+              style={{ background: "oklch(0.19 0.008 52)" }}
             >
               <motion.div
                 initial={{ width: 0 }}
                 animate={{ width: "100%" }}
-                transition={{ delay: 0.3, duration: 1.8, ease: "easeInOut" }}
+                transition={{ delay: 0.3, duration: 1.7, ease: "easeInOut" }}
                 className="h-full rounded-full"
-                style={{ background: "oklch(0.74 0.135 70)" }}
+                style={{ background: "oklch(0.72 0.13 68)" }}
               />
             </motion.div>
 
-            {/* Developer credit ABOVE powered by */}
+            {/* Credits */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.5 }}
+              transition={{ delay: 0.45 }}
               className="flex flex-col items-center gap-1"
             >
               <p
-                className="font-display text-[10px] tracking-[0.35em] uppercase font-semibold"
-                style={{ color: "oklch(0.82 0.15 70 / 0.8)" }}
+                className="font-display text-[10px] tracking-[0.32em] uppercase font-semibold"
+                style={{ color: "oklch(0.80 0.14 68 / 0.75)" }}
               >
                 Developed by{" "}
-                <span style={{ color: "oklch(0.82 0.15 70)" }}>
+                <span style={{ color: "oklch(0.80 0.14 68)" }}>
                   ADARSH CHAUDHARY
                 </span>
               </p>
               <p
-                className="font-display text-[10px] tracking-[0.3em] uppercase"
-                style={{ color: "oklch(0.74 0.135 70 / 0.45)" }}
+                className="font-display text-[10px] tracking-[0.28em] uppercase"
+                style={{ color: "oklch(0.42 0.006 55)" }}
               >
                 Powered by MR. DINESH KUMAR CHAUDHARY
               </p>

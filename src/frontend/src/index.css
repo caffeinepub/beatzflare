@@ -28,41 +28,41 @@
 
 @layer base {
   :root {
-    --radius: 0.75rem;
+    --radius: 0.625rem;
     /* Deep warm-black luxury palette */
-    --background: 0.08 0.006 48;
-    --foreground: 0.95 0.006 68;
-    --card: 0.115 0.008 50;
-    --card-foreground: 0.95 0.006 68;
-    --popover: 0.13 0.009 50;
-    --popover-foreground: 0.95 0.006 68;
+    --background: 0.07 0.005 48;
+    --foreground: 0.94 0.005 68;
+    --card: 0.11 0.007 50;
+    --card-foreground: 0.94 0.005 68;
+    --popover: 0.13 0.008 50;
+    --popover-foreground: 0.94 0.005 68;
     /* Luxurious deep gold — warm, not garish */
-    --primary: 0.74 0.135 70;
+    --primary: 0.72 0.13 68;
     --primary-foreground: 0.07 0.005 48;
-    --secondary: 0.155 0.008 50;
-    --secondary-foreground: 0.95 0.006 68;
-    --muted: 0.165 0.008 50;
-    --muted-foreground: 0.58 0.01 62;
-    --accent: 0.74 0.135 70;
+    --secondary: 0.15 0.007 50;
+    --secondary-foreground: 0.94 0.005 68;
+    --muted: 0.16 0.007 50;
+    --muted-foreground: 0.52 0.009 60;
+    --accent: 0.72 0.13 68;
     --accent-foreground: 0.07 0.005 48;
     --destructive: 0.577 0.245 27.325;
     --destructive-foreground: 0.985 0 0;
-    --border: 0.21 0.009 54;
-    --input: 0.155 0.008 50;
-    --ring: 0.74 0.135 70;
-    --chart-1: 0.74 0.135 70;
+    --border: 0.19 0.008 52;
+    --input: 0.15 0.007 50;
+    --ring: 0.72 0.13 68;
+    --chart-1: 0.72 0.13 68;
     --chart-2: 0.65 0.12 200;
     --chart-3: 0.58 0.1 280;
     --chart-4: 0.7 0.16 50;
     --chart-5: 0.62 0.18 320;
-    --sidebar: 0.1 0.007 48;
-    --sidebar-foreground: 0.95 0.006 68;
-    --sidebar-primary: 0.74 0.135 70;
+    --sidebar: 0.09 0.006 48;
+    --sidebar-foreground: 0.94 0.005 68;
+    --sidebar-primary: 0.72 0.13 68;
     --sidebar-primary-foreground: 0.07 0.005 48;
-    --sidebar-accent: 0.155 0.008 50;
-    --sidebar-accent-foreground: 0.95 0.006 68;
-    --sidebar-border: 0.21 0.009 54;
-    --sidebar-ring: 0.74 0.135 70;
+    --sidebar-accent: 0.15 0.007 50;
+    --sidebar-accent-foreground: 0.94 0.005 68;
+    --sidebar-border: 0.19 0.008 52;
+    --sidebar-ring: 0.72 0.13 68;
   }
 
   * {
@@ -88,6 +88,22 @@
     font-family: "Bricolage Grotesque", "Plus Jakarta Sans", system-ui,
       sans-serif;
   }
+
+  /* Professional scrollbar */
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    background: oklch(0.11 0.007 50);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: oklch(0.22 0.009 54);
+    border-radius: 99px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: oklch(0.72 0.13 68 / 0.4);
+  }
 }
 
 @layer utilities {
@@ -97,23 +113,39 @@
       sans-serif;
   }
 
-  /* Deep gold glow — refined, luxury feel */
+  /* Glass card — frosted dark panel */
+  .glass-card {
+    background: oklch(0.12 0.008 55 / 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid oklch(0.72 0.13 68 / 0.12);
+  }
+
+  /* Section header utility */
+  .section-header {
+    font-family: "Bricolage Grotesque", system-ui, sans-serif;
+    font-size: 1.125rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: oklch(0.94 0.005 68);
+  }
+
+  /* Refined gold glow */
   .glow-gold {
-    box-shadow: 0 0 32px oklch(0.74 0.135 70 / 0.2), 0 0 64px
-      oklch(0.74 0.135 70 / 0.07);
+    box-shadow: 0 0 24px oklch(0.72 0.13 68 / 0.18), 0 0 48px
+      oklch(0.72 0.13 68 / 0.06);
   }
   .glow-gold-sm {
-    box-shadow: 0 0 12px oklch(0.74 0.135 70 / 0.18);
+    box-shadow: 0 0 10px oklch(0.72 0.13 68 / 0.16);
   }
   .text-glow-gold {
-    text-shadow: 0 0 24px oklch(0.74 0.135 70 / 0.3);
+    text-shadow: 0 0 20px oklch(0.72 0.13 68 / 0.28);
   }
   .gold-border {
-    border: 1px solid oklch(0.74 0.135 70 / 0.3);
+    border: 1px solid oklch(0.72 0.13 68 / 0.28);
   }
-  .genre-accent {
-    border-left: 3px solid oklch(0.74 0.135 70 / 0.7);
-  }
+
   .scrollbar-hide {
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -121,25 +153,28 @@
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
-  /* Elevated card surface with subtle depth */
+
+  /* Elevated card — clean subtle surface */
   .card-warm {
-    background: oklch(0.115 0.008 50);
-    box-shadow: inset 0 1px 0 oklch(0.74 0.135 70 / 0.05), 0 2px 8px
-      oklch(0 0 0 / 0.4);
+    background: oklch(0.11 0.007 50);
+    border: 1px solid oklch(0.19 0.008 52);
+    box-shadow: 0 2px 8px oklch(0 0 0 / 0.35);
   }
   .card-warm:hover {
-    background: oklch(0.14 0.01 54);
-    box-shadow: inset 0 1px 0 oklch(0.74 0.135 70 / 0.08), 0 6px 20px
-      oklch(0 0 0 / 0.5), 0 0 24px oklch(0.74 0.135 70 / 0.14);
+    background: oklch(0.135 0.009 52);
+    border-color: oklch(0.72 0.13 68 / 0.22);
+    box-shadow: 0 6px 20px oklch(0 0 0 / 0.45), 0 0 16px
+      oklch(0.72 0.13 68 / 0.08);
   }
-  /* Song card gold hover shimmer */
+
+  /* Song card — clean hover */
   .song-card-hover:hover {
-    box-shadow: 0 0 0 1px oklch(0.74 0.135 70 / 0.3), 0 0 20px
-      oklch(0.74 0.135 70 / 0.12), 0 8px 28px oklch(0 0 0 / 0.55);
+    box-shadow: 0 0 0 1px oklch(0.72 0.13 68 / 0.25), 0 8px 24px
+      oklch(0 0 0 / 0.5);
   }
 }
 
-/* Trending marquee animation */
+/* Trending marquee */
 @keyframes marquee {
   from {
     transform: translateX(0);
@@ -150,5 +185,5 @@
 }
 
 .animate-marquee {
-  animation: marquee 28s linear infinite;
+  animation: marquee 32s linear infinite;
 }
